@@ -1,6 +1,7 @@
 const express =require("express")
 const cors =require("cors")
 const mongoose =require("mongoose")
+const userRoutes =require('./routes/userRoutes')
 
 const app =express()
 require("dotenv").config()
@@ -8,20 +9,8 @@ require("dotenv").config()
 app.use(cors())
 app.use(express.json())
 
-// const connectToMongo = () => {
-//     mongoose.connect(process.env.MONGO_URL, () => {
-//       console.log("Connected to Mongo Successfully!");
-//     });
-//   };
-// connectToMongo()
-// mongoose.connect(process.env.MONGO_URL,()=>{
-//     useNewUrlParser=true,
-//     useUnifiedTopology=true
-// }).then(()=>{
-//     console.log("DB connected successfully")
-// }).catch((err)=>{
-//     console.log(err.message)
-// })
+app.use("/api/auth",userRoutes)
+
 const connectToMongo = async () => {
     try {
         mongoose.set('strictQuery', false)
