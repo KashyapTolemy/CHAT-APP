@@ -1,0 +1,154 @@
+@use "../../styles/mixins.scss";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@100;300;400&family=Wix+Madefor+Display:wght@400;500&display=swap');
+
+// font-family: 'Roboto', sans-serif;
+// font-family: 'Wix Madefor Display', sans-serif;
+
+* {
+    background: radial-gradient(circle at 90vw 5vh,
+            rgb(122, 96, 219),
+            rgb(35, 33, 68) 50%);
+    align-items: center;
+    overflow: hidden;
+
+    border: 0px;
+    margin: 0px;
+
+    .container {
+        .smallLight {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 30rem;
+            width: 30rem;
+            background: radial-gradient(50rem circle at 0vw 10vh,
+                    rgb(104, 80, 190),
+                    transparent 30%);
+        }
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: auto;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+
+        // border-radius: 50%;
+        .form {
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 3rem;
+            height: 30rem;
+            width: 50rem;
+            @include mixins.flexCenter;
+            flex-direction: column;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            background: inherit;
+            font-family: 'Wix Madefor Display', sans-serif;
+
+            .brand {
+                @include mixins.flexCenter;
+                font-family: 'Poppins', sans-serif;
+                font-size: 1.5rem;
+                height: 5rem;
+                margin: 2rem;
+                background: initial;
+
+                .image {
+                    height: 7rem;
+                    width: 7rem;
+                    background-color: inherit;
+                }
+            }
+
+            .username {
+                height: 2rem;
+                width: 20rem;
+                margin: 0.3rem;
+                font-size: 1rem;
+                outline: none;
+                color: white;
+
+                &:hover {
+                    transition-duration: 0.8s;
+                    border-bottom: 0.03rem solid rgba(241, 242, 250, 0.498);
+                }
+            }
+
+            .email {
+                height: 2rem;
+                width: 20rem;
+                margin: 0.3rem;
+                font-size: 1rem;
+                outline: none;
+                color: white;
+
+                &:hover {
+                    transition-duration: 0.7s;
+                    border-bottom: 0.03rem solid rgba(241, 242, 250, 0.498);
+                }
+            }
+
+            .password {
+                height: 2rem;
+                width: 20rem;
+                margin: 0.3rem;
+                font-size: 1rem;
+                outline: none;
+                color: white;
+
+                &:hover {
+                    transition-duration: 0.7s;
+                    border-bottom: 0.03rem solid rgba(241, 242, 250, 0.498);
+                }
+            }
+
+            .confirmPassword {
+                height: 2rem;
+                width: 20rem;
+                margin: 0.3rem 0rem 1.5rem 0rem;
+                font-size: 1rem;
+                outline: none;
+                color: white;
+
+                &:hover {
+                    transition-duration: 0.7s;
+                    border-bottom: 0.03rem solid rgba(241, 242, 250, 0.498);
+                }
+            }
+
+            .submit {
+                height: 2rem;
+                font-size: 1rem;
+
+                padding: 0.3rem 1rem;
+                background: radial-gradient(10rem circle at bottom right,
+                        rgb(35, 33, 68),
+                        rgb(122, 96, 219));
+                border-radius: 0.3rem;
+                cursor: pointer;
+                transition: all 0.3s ease-in-out;
+                color: white;
+
+                &:hover {
+                    background: radial-gradient(circle at top right,
+                            rgb(35, 33, 68),
+                            rgb(122, 96, 219));
+                }
+
+                margin-bottom: 1rem;
+            }
+
+            .loginlink {
+                height: 2rem;
+
+                .login {
+                    font-weight: 600;
+                }
+            }
+
+        }
+    }
+}
