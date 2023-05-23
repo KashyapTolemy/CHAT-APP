@@ -23,6 +23,11 @@ export default function Login() {
   //     navigate("/");
   //   }
   // }, []);
+  useEffect(()=>{
+    if(localStorage.getItem("chat-app-user")){
+      navigate("/")
+    }
+  })
 
   const handleChange = (event) => {
     setValues({ ...values, [event.target.name]: event.target.value });
@@ -31,10 +36,10 @@ export default function Login() {
   const validateForm = () => {
     const { username, password } = values;
     if (username === "") {
-      toast.error("Email and Password is required.", toastOptions);
+      toast.error("Username and Password is required.", toastOptions);
       return false;
     } else if (password === "") {
-      toast.error("Email and Password is required.", toastOptions);
+      toast.error("Username and Password is required.", toastOptions);
       return false;
     }
     return true;
@@ -119,6 +124,7 @@ export default function Login() {
             type="text"
             placeholder="Username"
             name="username"
+            min="4"
             className={styles.username}
             onChange={(e) => handleChange(e)}
           />
