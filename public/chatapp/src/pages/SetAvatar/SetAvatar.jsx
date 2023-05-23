@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import styles from "../Register/style.module.scss";
+import styles from "../SetAvatar/style.module.scss";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"
 import axios from "axios"
@@ -9,7 +9,8 @@ import { motion } from 'framer-motion';
 import { Buffer } from "buffer";
 
 const SetAvatar = () => {
-  const api = `https://api.multiavatar.com/4645646.png?apikey=4zgBsur12FtEPY`;
+  const api = 'https://api.multiavatar.com/4645646'
+  const apiKey = '4zgBsur12FtEPY'
   const navigate = useNavigate()
   const [avatars, setAvatars] = useState([])
   const [isLoading, setIsLoading] = useState(true)
@@ -20,31 +21,116 @@ const SetAvatar = () => {
     pauseOnHover: true,
     draggable: true,
   };
-  const setProfilePicture = async () => {}
-  useEffect(async () => {
-    const data = [];
-    for (let i = 0; i < 4; i++) {
-      const image = await axios.get(
-        `${api}/${Math.round(Math.random() * 10000)}`
-      );
-      const buffer = new Buffer(image.data);
-      data.push(buffer.toString("base64"));
-    }
-    setAvatars(data);
-    setIsLoading(false);
+  const setProfilePicture = async () => { }
+  useEffect(() => {
+    (async () => {
+      const data = [];
+      for (let i = 0; i < 6; i++) {
+        const image = await axios.get(
+          `${api}/${Math.round(Math.random() * 1000)}?apikey=${apiKey}`
+        )
+        const buffer = new Buffer(image.data);
+        data.push(buffer.toString("base64"));
+      }
+      setAvatars(data);
+      setIsLoading(false);
+    })();
   }, []);
 
-  return (
-    <>
-      <div className={styles.container}>
-        <div className={styles.title_container}>
-          <h1 className={styles.title}>Pick an Avatar as your profile picture. </h1>
-        </div>
-        <div className={styles.avatar}>
+  const [mousePosition, setMousePosition] = useState({
+    x: 0,
+    y: 0
+  });
+  const [cursorVariant, setCursorVariant] = useState("default");
 
+
+  useEffect(() => {
+    const mouseMove = e => {
+      setMousePosition({
+        x: e.clientX,
+        y: e.clientY
+      })
+    }
+
+    window.addEventListener("mousemove", mouseMove);
+
+    return () => {
+      window.removeEventListener("mousemove", mouseMove);
+    }
+  }, []);
+
+  const variants = {
+    default: {
+      x: mousePosition.x - 16,
+      y: mousePosition.y - 16,
+    },
+    text: {
+      height: 40,
+      width: 40,
+      x: mousePosition.x - 45,
+      y: mousePosition.y - 45,
+      backgroundColor: "yellow",
+      mixBlendMode: "difference"
+    }
+  }
+
+  const textEnter = () => setCursorVariant("text");
+  const textLeave = () => setCursorVariant("default");
+
+  return (
+    <>{
+      isLoading ? (
+        <div className={styles.loader}>
+          <div className={styles.spinnerbox}>
+            <div className={styles.configureborder1}>
+              <div className={styles.configurecore}></div>
+            </div>
+            <div className={styles.configureborder2}>
+              <div className={styles.configurecore}></div>
+            </div>
+          </div>
         </div>
-      </div>
-      <ToastContainer />
+      ) : (
+        <div className={styles.page}>
+          <div className={styles.container}>
+            <div className={styles.smallLight}></div>
+            <motion.div
+              className={styles.cursor1}
+              variants={variants}
+              animate={cursorVariant}
+            />
+            <div onMouseEnter={textEnter} onMouseLeave={textLeave} className={styles.container1}>
+              <div className={styles.title_container}>
+                <h1 className={styles.title}>Pick an avatar as your profile picture. </h1>
+              </div>
+              <div className={styles.avatar}>
+                {avatars.map((avatar, index) => {
+                  return (
+                    <div
+                      className={`avatar ${selectedAvatar === index ? "selected" : ""
+                        }`}
+                    >
+                      <img
+                        className={styles.image}
+                        src={`data:image/svg+xml;base64,${avatar}`}
+                        alt="avatar"
+                        key={avatar}
+                        onClick={() => setSelectedAvatar(index)}
+                      />
+                    </div>
+                  );
+                })}
+              </div>
+              <button onClick={setProfilePicture} className={styles.submit}>
+                Set as Profile Picture
+              </button>
+            </div>
+          </div >
+
+          <ToastContainer />
+        </div>
+      )
+    }
     </>
   )
 }
