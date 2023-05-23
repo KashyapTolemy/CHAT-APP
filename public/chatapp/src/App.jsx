@@ -1,8 +1,8 @@
 import React from 'react'
 import { Route, Routes, Link, BrowserRouter } from 'react-router-dom'
 import Register from "./pages/Register/Register"
-import Login from "../src/pages/Login"
-import Chat from "../src/pages/Chat"
+import Login from "./pages/Login/Login"
+import Chat from "./pages/Chat/Chat"
 
 
 const App = () => {

@@ -10,12 +10,11 @@
             rgb(35, 33, 68) 50%);
     align-items: center;
     overflow: hidden;
-    
+
     border: 0px;
     margin: 0px;
 
     .container {
-
         .smallLight {
             position: absolute;
             top: 0;
@@ -27,6 +26,19 @@
                     transparent 30%);
         }
 
+        .cursor1 {
+            border: 0.1rem solid rgba(255, 255, 255, 0.772);
+            height: 1.2rem;
+            width: 1.2rem;
+            border-radius: 50%;
+            // box-shadow: 120px 80px 40px 20px rgb(23, 207, 207);
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 5;
+        }
+
         display: flex;
         align-items: center;
         justify-content: center;
@@ -34,18 +46,8 @@
         width: auto;
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
-        
-        .cursor1{
-            border:0.1rem solid rgba(255, 255, 255, 0.772);
-            height:1.2rem;
-            width:1.2rem;
-            border-radius: 50%;
-            position: fixed;
-            top:0;
-            left:0;
-            pointer-events: none;
-            z-index: 5;
-        }
+
+        // border-radius: 50%;
         .form {
             color: white;
             border: 1px solid rgba(255, 255, 255, 0.18);
@@ -73,7 +75,8 @@
                     background-color: inherit;
                 }
             }
-            .register{
+
+            .register {
                 font-family: 'Wix Madefor Display', sans-serif;
                 font-weight: 900;
                 font-size: 1.5rem;
@@ -94,38 +97,10 @@
                 }
             }
 
-            .email {
-                height: 2rem;
-                width: 20rem;
-                margin: 0.3rem;
-                font-size: 1rem;
-                outline: none;
-                color: white;
-
-                &:hover {
-                    transition-duration: 0.7s;
-                    border-bottom: 0.03rem solid rgba(241, 242, 250, 0.498);
-                }
-            }
-
             .password {
                 height: 2rem;
                 width: 20rem;
-                margin: 0.3rem;
-                font-size: 1rem;
-                outline: none;
-                color: white;
-
-                &:hover {
-                    transition-duration: 0.7s;
-                    border-bottom: 0.03rem solid rgba(241, 242, 250, 0.498);
-                }
-            }
-
-            .confirmPassword {
-                height: 2rem;
-                width: 20rem;
-                margin: 0.3rem 0rem 1.5rem 0rem;
+                margin: 0.3rem 0rem 1rem 0rem;
                 font-size: 1rem;
                 outline: none;
                 color: white;
@@ -155,7 +130,7 @@
                             rgb(122, 96, 219));
                 }
 
-                margin-bottom: 1rem;
+                margin-bottom: 2rem;
             }
 
             .loginlink {
