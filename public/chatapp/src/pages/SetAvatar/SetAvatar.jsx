@@ -13,8 +13,9 @@ const SetAvatar = () => {
   const apiKey = '4zgBsur12FtEPY'
   const navigate = useNavigate()
   const [avatars, setAvatars] = useState([])
-  const [isLoading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(false)
   const [selectedAvatar, setSelectedAvatar] = useState(undefined)
+  console.log('evffdfv')
   const toastOptions = {
     position: "bottom-right",
     autoClose: 8000,
@@ -22,25 +23,31 @@ const SetAvatar = () => {
     draggable: true,
   };
   const setProfilePicture = async () => {
+    console.log("sfcvvvdfv")
     if (selectedAvatar === undefined) {
-      // console.log("sdds")
-      toast.error("Please select an avatar. ", toastOptions)
+      toast.error("Please select an avatar", toastOptions);
     } else {
-      const user = await JSON.parse(localStorage.getItem("chat-app-user"));
-      const {data} =await axios.post(`${SetAvatarRoute}/${user._id}`,{
-        image: avatars[selectedAvatar]
-      })
+      const user = await JSON.parse(
+        localStorage.getItem("chat-app-user")
+        );
+        
+      const { data } = await axios.post(`${setAvatarRoute}/${user._id}`, {
+        image: avatars[selectedAvatar],
+      });
 
-    if(data.isSet){
-      user.isAvatarImageSet =true;
-      user.AvatarImage =data.image;
-      localStorage.setItem("chat-app-user", JSON.stringify(user));
-      navigate('/');
-    } else {
-      toast.error("Error setting avatar. Please try again.", toastOptions)
+      if (data.isSet) {
+        user.isAvatarImageSet = true;
+        user.avatarImage = data.image;
+        localStorage.setItem(
+          "chat-app-user",
+          JSON.stringify(user)
+        );
+        navigate("/");
+      } else {
+        toast.error("Error setting avatar. Please try again.", toastOptions);
+      }
     }
-    }
-  }
+  };
   useEffect(() => {
     (async () => {
       const data = [];
@@ -122,11 +129,11 @@ const SetAvatar = () => {
               <div className={styles.title_container}>
                 <h1 className={styles.title}>Pick an avatar as your profile picture. </h1>
               </div>
-              <div className={styles.avatar}>
+              <div className={styles.avatars}>
                 {avatars.map((avatar, index) => {
                   return (
                     <div
-                      className={`avatar ${selectedAvatar === index ? "selected" : ""
+                      className={`${styles.avatar} ${selectedAvatar === index ? `${styles.selected}` : ""
                         }`}
                     >
                       <img
@@ -134,7 +141,7 @@ const SetAvatar = () => {
                         src={`data:image/svg+xml;base64,${avatar}`}
                         alt="avatar"
                         key={avatar}
-                        onSelect={() => setSelectedAvatar(index)}
+                        onClick={() => setSelectedAvatar(index)}
                       />
                     </div>
                   );
