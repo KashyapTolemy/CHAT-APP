@@ -21,7 +21,26 @@ const SetAvatar = () => {
     pauseOnHover: true,
     draggable: true,
   };
-  const setProfilePicture = async () => { }
+  const setProfilePicture = async () => {
+    if (selectedAvatar === undefined) {
+      // console.log("sdds")
+      toast.error("Please select an avatar. ", toastOptions)
+    } else {
+      const user = await JSON.parse(localStorage.getItem("chat-app-user"));
+      const {data} =await axios.post(`${SetAvatarRoute}/${user._id}`,{
+        image: avatars[selectedAvatar]
+      })
+
+    if(data.isSet){
+      user.isAvatarImageSet =true;
+      user.AvatarImage =data.image;
+      localStorage.setItem("chat-app-user", JSON.stringify(user));
+      navigate('/');
+    } else {
+      toast.error("Error setting avatar. Please try again.", toastOptions)
+    }
+    }
+  }
   useEffect(() => {
     (async () => {
       const data = [];
@@ -115,7 +134,7 @@ const SetAvatar = () => {
                         src={`data:image/svg+xml;base64,${avatar}`}
                         alt="avatar"
                         key={avatar}
-                        onClick={() => setSelectedAvatar(index)}
+                        onSelect={() => setSelectedAvatar(index)}
                       />
                     </div>
                   );
@@ -126,7 +145,6 @@ const SetAvatar = () => {
               </button>
             </div>
           </div >
-
           <ToastContainer />
         </div>
       )
