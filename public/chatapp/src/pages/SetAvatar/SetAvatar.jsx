@@ -13,9 +13,8 @@ const SetAvatar = () => {
   const apiKey = '4zgBsur12FtEPY'
   const navigate = useNavigate()
   const [avatars, setAvatars] = useState([])
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
   const [selectedAvatar, setSelectedAvatar] = useState(undefined)
-  console.log('evffdfv')
   const toastOptions = {
     position: "bottom-right",
     autoClose: 8000,
@@ -23,14 +22,13 @@ const SetAvatar = () => {
     draggable: true,
   };
   const setProfilePicture = async () => {
-    console.log("sfcvvvdfv")
     if (selectedAvatar === undefined) {
       toast.error("Please select an avatar", toastOptions);
     } else {
       const user = await JSON.parse(
         localStorage.getItem("chat-app-user")
-        );
-        
+      );
+
       const { data } = await axios.post(`${setAvatarRoute}/${user._id}`, {
         image: avatars[selectedAvatar],
       });

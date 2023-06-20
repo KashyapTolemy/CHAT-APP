@@ -12,7 +12,6 @@ const Register = () => {
   const handleSubmit = async(event) => {
     event.preventDefault();
     if(handleValidation()){
-      // console.log("In validation",registerRoute)
       const { username, email, password} = values;
       const {data} =await axios.post(registerRoute,{
         username,
@@ -23,8 +22,11 @@ const Register = () => {
         toast.error(data.msg,toastOptions)
       };
       if(data.status===true){
-        localStorage.setItem("chat-app-user",JSON.stringify(data.user))
-        navigate("/")
+        console.log(data)
+        const str =JSON.stringify(data.username)
+        console.log(str)
+        localStorage.setItem("chat-app-user",str)
+        // navigate("/")
       }
     }
   };
