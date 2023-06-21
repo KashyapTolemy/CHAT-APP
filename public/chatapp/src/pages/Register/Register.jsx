@@ -23,10 +23,10 @@ const Register = () => {
       };
       if(data.status===true){
         console.log(data)
-        const str =JSON.stringify(data.username)
+        const str =JSON.stringify(data.user)
         console.log(str)
         localStorage.setItem("chat-app-user",str)
-        // navigate("/")
+        navigate("/")
       }
     }
   };

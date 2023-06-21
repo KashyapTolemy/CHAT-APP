@@ -21,6 +21,13 @@ const SetAvatar = () => {
     pauseOnHover: true,
     draggable: true,
   };
+  useEffect(() => {
+    (async () => {
+      if (!localStorage.getItem("chat-app-user")) {
+        navigate("/login")
+      }
+    })();
+  }, []);
   const setProfilePicture = async () => {
     if (selectedAvatar === undefined) {
       toast.error("Please select an avatar", toastOptions);
@@ -29,7 +36,7 @@ const SetAvatar = () => {
         localStorage.getItem("chat-app-user")
       );
 
-      const { data } = await axios.post(`${setAvatarRoute}/${user._id}`, {
+      const { data } = await axios.post(`${SetAvatarRoute}/${user._id}`, {
         image: avatars[selectedAvatar],
       });
 
