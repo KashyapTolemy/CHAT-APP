@@ -3,3 +3,139 @@
 
 // font-family: 'Roboto', sans-serif;
 // font-family: 'Wix Madefor Display', sans-serif;
+* {
+    background: #3e3573;
+
+    .container {
+        height: 45rem;
+    }
+
+    .smallLight {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 30rem;
+        width: 30rem;
+        background: radial-gradient(50rem circle at 0vw 10vh,
+                rgb(104, 80, 190),
+                transparent 30%);
+    }
+
+    h1 {
+        background: #000000;
+        margin-left: 4rem;
+    }
+
+    h2 {
+        background: #000000;
+        margin-top: 1rem;
+        color: #000000;
+        font-size:xx-large;
+        text-shadow: 1px 0 #fff, -1px 0 #fff, 0 1px #fff, 0 -1px #fff,
+            1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+    }
+
+    h3 {
+        background: #000000;
+        margin-left: 1rem;
+    }
+
+    .container1 {
+        height: 40rem;
+        width: 20rem;
+        border-top-left-radius: 0.5rem;
+        border-bottom-left-radius: 0.5rem;
+        background: #000000;
+        padding: 1rem 0 3rem 0rem;
+    }
+
+    .contacts {
+        height: 22rem;
+        overflow-y: scroll;
+        border-top: 0.02rem solid rgba(137, 109, 241, 0.322);
+        border-bottom: 0.02rem solid rgba(137, 109, 241, 0.322);
+        // border-top: 0.01rem solid rgba(255, 255, 255, 0.322);
+        // border-bottom: 0.01rem solid rgba(255, 255, 255, 0.322);
+
+        &::-webkit-scrollbar {
+            width: 0.1rem;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: #000000;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: rgb(122, 96, 219);
+        }
+
+        background: #000000;
+    }
+
+    .contact {
+        background: #000000;
+    }
+
+    .usercontact {
+        background: #000000;
+    }
+
+    .current_user {
+        margin-top: 2rem;
+        background: #000000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .brand {
+        height: 8rem;
+        width: auto;
+        margin-bottom: 1rem;
+        display: flex;
+        background: #000000;
+    }
+
+    .logoimage {
+        height: 5rem;
+        width: 5rem;
+        background: #000000;
+    }
+
+    .contact1 {
+        height: 5rem;
+        width: auto;
+        display: flex;
+        align-items: center;
+        margin: 0 0 0 0rem;
+        padding-left: 2rem;
+        background: #000000;
+        border: 0.1rem solid black;
+
+        &:hover {
+            border: 0.1rem solid rgba(108, 216, 128, 0.881);
+        }
+    }
+
+
+    .image {
+        height: 3rem;
+        width: 3rem;
+        background: #000000;
+    }
+
+    .avatar {
+        height: 3rem;
+    }
+    
+    .useravatar {
+        height: 5.5rem;
+    }
+
+    .userimage {
+        height: 5.5rem;
+        width: 5.5rem;
+        background: #000000;
+    }
+}

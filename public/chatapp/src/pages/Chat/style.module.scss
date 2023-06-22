@@ -3,3 +3,23 @@
 
 // font-family: 'Roboto', sans-serif;
 // font-family: 'Wix Madefor Display', sans-serif;
+
+*{
+    color: white;
+    overflow:visible;
+    .container1{
+        margin-top: 2rem;
+        margin-left: 5rem;
+        margin-right: 3rem;
+        border-radius: 0.5rem;
+        height: 44rem;
+        width: 85rem;
+        background: #00000076;
+    }
+    .container{
+        // margin-left: 5rem;
+        // background: #00000076;
+        width:10rem;
+        display: flex;
+    }
+}

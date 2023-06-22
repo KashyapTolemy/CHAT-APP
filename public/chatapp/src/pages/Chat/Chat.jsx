@@ -40,8 +40,12 @@ const Chat = () => {
   }, [currentUser])
   return (
     <>
-      <div className={styles.contacts}>
-        <Contacts />
+      <div className={styles.container1}>
+        <div className={styles.container}>
+          <div className={styles.contacts}>
+            <Contacts className={styles.contacts1} contacts={contacts} currentUser={currentUser} />
+          </div>
+        </div>
       </div>
     </>
   )
