@@ -6,19 +6,24 @@
 * {
     background: #3e3573;
 
+    // backdrop-filter: blur(10px);
+    //     -webkit-backdrop-filter: blur(10px);
+    //     border: 1px solid rgba(255, 255, 255, 0.18);
     .container {
         height: 45rem;
+        box-sizing: border-box;
     }
 
     .smallLight {
         position: absolute;
         top: 0;
         left: 0;
-        height: 30rem;
-        width: 30rem;
-        background: radial-gradient(50rem circle at 0vw 10vh,
+        height: 10rem;
+        width: 10rem;
+        background: radial-gradient(30rem circle at 0vw 0vh,
                 rgb(104, 80, 190),
                 transparent 30%);
+        // z-index: 0;
     }
 
     h1 {
@@ -26,11 +31,11 @@
         margin-left: 4rem;
     }
 
-    h2 {
+    .username {
         background: #000000;
-        margin-top: 1rem;
+        margin-top: 0.5rem;
         color: #000000;
-        font-size:xx-large;
+        font-size: xx-large;
         text-shadow: 1px 0 #fff, -1px 0 #fff, 0 1px #fff, 0 -1px #fff,
             1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
     }
@@ -43,20 +48,20 @@
     .container1 {
         height: 40rem;
         width: 20rem;
-        border-top-left-radius: 0.5rem;
-        border-bottom-left-radius: 0.5rem;
+        border-top-left-radius: 0.7rem;
+        border-bottom-left-radius: 0.7rem;
+        // box-sizing: border-box;
+        border: 0.01rem solid rgba(255, 255, 255, 0.452);
         background: #000000;
-        padding: 1rem 0 3rem 0rem;
+        padding: 0rem 0 3rem 0rem;
     }
-
+    
     .contacts {
         height: 22rem;
         overflow-y: scroll;
         border-top: 0.02rem solid rgba(137, 109, 241, 0.322);
         border-bottom: 0.02rem solid rgba(137, 109, 241, 0.322);
-        // border-top: 0.01rem solid rgba(255, 255, 255, 0.322);
-        // border-bottom: 0.01rem solid rgba(255, 255, 255, 0.322);
-
+        box-sizing: border-box;
         &::-webkit-scrollbar {
             width: 0.1rem;
         }
@@ -87,14 +92,17 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        border-radius: 0.7rem;
     }
 
     .brand {
         height: 8rem;
         width: auto;
+        margin-top: 1rem;
         margin-bottom: 1rem;
         display: flex;
         background: #000000;
+        
     }
 
     .logoimage {
@@ -108,14 +116,18 @@
         width: auto;
         display: flex;
         align-items: center;
-        margin: 0 0 0 0rem;
         padding-left: 2rem;
         background: #000000;
-        border: 0.1rem solid black;
+        border: 0.03rem solid black;
 
         &:hover {
-            border: 0.1rem solid rgba(108, 216, 128, 0.881);
+            border: 0.03rem solid rgba(108, 216, 128, 0.881);
         }
+        
+    }
+    .selected {
+        border: 0.03rem solid rgba(246, 60, 227, 0.881);
+        // background: #0000003b!important;
     }
 
 
@@ -128,7 +140,7 @@
     .avatar {
         height: 3rem;
     }
-    
+
     .useravatar {
         height: 5.5rem;
     }

@@ -11,15 +11,26 @@
         margin-top: 2rem;
         margin-left: 5rem;
         margin-right: 3rem;
-        border-radius: 0.5rem;
-        height: 44rem;
+        border-radius: 0.7rem;
+        box-sizing: border-box;
+        height: 43.15rem;
         width: 85rem;
         background: #00000076;
+        padding: 0;
+        border-right: 0.01rem solid rgba(255, 255, 255, 0.452);
+        border-top: 0.01rem solid rgba(255, 255, 255, 0.452);
+        border-bottom: 0.01rem solid rgba(255, 255, 255, 0.452);
     }
     .container{
-        // margin-left: 5rem;
-        // background: #00000076;
         width:10rem;
         display: flex;
     }
+    .container2{
+        // width: 60rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
 }

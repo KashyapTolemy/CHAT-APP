@@ -1,0 +1,37 @@
+@use "../../styles/mixins.scss";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@100;300;400&family=Wix+Madefor+Display:wght@400;500&display=swap');
+
+// font-family: 'Roboto', sans-serif;
+// font-family: 'Wix Madefor Display', sans-serif;
+*{
+    .container{
+        display: flex;
+        flex-direction: column;
+        width: 60rem;
+        height: 40rem;
+        align-items: center;
+        background: #211c3f;
+    }
+    .imagif{
+        height: 20rem;
+    }
+    .image{
+        height: 20rem;
+        background: #211c3f;
+    }
+    .text{
+        background: #211c3f;
+    }
+    .t1{
+        background: #211c3f;
+        margin-top: 3rem;
+    }
+    .t3{
+        background: #211c3f;
+        margin-top: 1rem;
+    }
+    .t2{
+        background: #211c3f;
+        color: #7225b7;
+    }
+}

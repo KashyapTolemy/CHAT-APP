@@ -1,7 +1,7 @@
 import styles from "../Contacts/style.module.scss";
 import React, { useState, useEffect } from "react";
 
-const Contacts = ({ contacts, currentUser }) => {
+const Contacts = ({ contacts, currentUser, changeChat }) => {
   const [currentUserName, setCurrentUserName] = useState(undefined);
   const [currentUserImage, setCurrentUserImage] = useState(undefined);
   const [currentSelected, setCurrentSelected] = useState(undefined);
@@ -11,7 +11,11 @@ const Contacts = ({ contacts, currentUser }) => {
       setCurrentUserName(currentUser.username);
     }
   }, [currentUser])
-  const changeCurrentChat = (index, contact) => { }
+  const changeCurrentChat = (index, contact) => {
+    setCurrentSelected(index);
+    changeChat(contact);
+    console.log(index);
+   }
   return (
     <>
       <div className={styles.container}>
@@ -27,8 +31,11 @@ const Contacts = ({ contacts, currentUser }) => {
                 {
                   contacts.map((contact, index) => {
                     return (
-                      <div className={`${styles.contact1}${index === currentSelected ? "selected" : ""
-                        }`}>
+                      <div className={`${styles.contact1} ${index === currentSelected ? `${styles.selected}` : ""
+                        }`}
+                        key={index}
+                        onClick={()=>{changeCurrentChat(index,contact)}}
+                        >
                         <div className={styles.avatar}>
                           <img
                             className={styles.image}
@@ -53,7 +60,7 @@ const Contacts = ({ contacts, currentUser }) => {
                   />
                 </div>
                 <div className={styles.usercontact}>
-                  <h2>{currentUserName}</h2>
+                  <h2 className={styles.username}>{currentUserName}</h2>
                 </div>
               </div>
             </>
