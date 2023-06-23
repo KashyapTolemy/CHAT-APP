@@ -130,7 +130,7 @@ const Register = () => {
         <form onMouseEnter={textEnter} onMouseLeave={textLeave} className={styles.form} onSubmit={(event) => handleSubmit(event)}>
           <div className={styles.brand}>
             <img src="/images/2.png" className={styles.image}></img>
-            <h1>Chatify</h1>
+            <h1 className={styles.chatifyreg}>Chatify</h1>
           </div>
           <div className={styles.register}>REGISTER</div>
           <input

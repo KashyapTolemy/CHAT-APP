@@ -3,10 +3,16 @@ import React, { useState, useEffect } from "react";
 import Logout from "../Logout/Logout";
 import ChatInput from "../ChatInput/ChatInput";
 import Messages from "../Messages/Messages";
+import axios from "axios";
+import { sendMessageRoute } from "../../utils/APIRoutes";
 
-const ChatContainer = ({ currentChat }) => {
-    const handleSendMsg= async (msg)=>{
-        alert(msg)
+const ChatContainer = ({ currentChat, currentUser }) => {
+    const handleSendMsg = async (msg) => {
+        await axios.post(sendMessageRoute,{
+            from: currentUser._id,
+            to: currentChat._id,
+            message:msg,
+        })
     }
     return (
         <>{
@@ -29,7 +35,7 @@ const ChatContainer = ({ currentChat }) => {
                     </div>
                     <div className={styles.chatmessages}>
                         <Messages />
-                        <ChatInput handleSendMsg ={handleSendMsg}/>
+                        <ChatInput handleSendMsg={handleSendMsg} />
                     </div>
                 </div>
             )
