@@ -1,0 +1,45 @@
+* {
+    .container3 {
+        height: 43rem;
+        width: 64.7rem;
+        background: #211c3f;
+        border-top-right-radius: 0.7rem;
+        border-bottom-right-radius: 0.7rem;
+    }
+    
+    .navbar{
+        display: flex;
+        background: #211c3f;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 0.01rem solid rgb(122, 96, 219);
+        padding-top: 0;
+        height: 4rem;
+        border-top-right-radius: 0.7rem;
+        padding-right: 1rem;
+    }
+    .chatheader {
+        display: flex;
+        background: #211c3f;
+    }
+
+    .chatavatar {
+        height: 3rem;
+        width: 3rem;
+        margin-left: 2rem;
+        margin-right: 1rem;
+        background: #211c3f;
+    }
+
+    .chatimage {
+        height: 3rem;
+        width: 3rem;
+        background: #211c3f;
+        border: 0.1rem solid rgba(142, 227, 247, 0.92);
+        border-radius: 50%;
+    }
+
+    .chatusername {
+        background: #211c3f;
+    }
+}

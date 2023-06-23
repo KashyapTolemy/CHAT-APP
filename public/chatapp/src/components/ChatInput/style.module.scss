@@ -1,0 +1,57 @@
+* {
+    .chatinputcontainer {
+        display: flex;
+        // justify-content: center;
+        align-items: center;
+        height: 2rem;
+        // margin-left: 1rem;
+        // margin-right: 1rem;
+        background: #211c40;
+    }
+
+    .emojiicon {
+        margin-left: 1rem;
+        margin-right: 1rem;
+        background: #211c40;
+        height: 2rem;
+        width: 2rem;
+    }
+
+    .emojii {
+        // position: relative;
+        // top:-5rem;
+        bottom: 5rem;
+        background: #211c40;
+    }
+
+    .sendbutton {
+        background: #211c40;
+        height: 2rem;
+        width: 2rem;
+    }
+
+    .emojisend {
+        background: #211c40;
+        height: 2rem;
+        width: 2rem;
+    }
+
+    .messageinput {
+        display: flex;
+        font-size: medium;
+        align-items: center;
+        background: rgba(128, 128, 128, 0.432);
+        width: 54rem;
+        height: 2rem;
+        border-radius: 0.7rem;
+        margin-right: 0.5rem;
+    }
+
+    .inputcontainer {
+        display: flex;
+        align-items: center;
+        width: 57rem;
+        height: 3rem;
+        background: #211c40;
+    }
+}

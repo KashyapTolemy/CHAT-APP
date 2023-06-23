@@ -18,16 +18,11 @@ export default function Login() {
     draggable: true,
     theme: "dark",
   };
-  // useEffect(() => {
-  //   if (localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)) {
-  //     navigate("/");
-  //   }
-  // }, []);
   useEffect(()=>{
     if(localStorage.getItem("chat-app-user")){
       navigate("/")
     }
-  })
+  },[])
 
   const handleChange = (event) => {
     setValues({ ...values, [event.target.name]: event.target.value });
@@ -117,7 +112,7 @@ export default function Login() {
         <form onMouseEnter={textEnter} onMouseLeave={textLeave} className={styles.form} onSubmit={(event) => handleSubmit(event)}>
           <div className={styles.brand}>
             <img src="/images/2.png" className={styles.image}></img>
-            <h1>Chatify</h1>
+            <h1 className={styles.chatify}>Chatify</h1>
           </div>
           <div className={styles.register}>LOGIN</div>
           <input

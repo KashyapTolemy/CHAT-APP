@@ -1,0 +1,27 @@
+* {
+    .button {
+        height: 2.2rem;
+        background: #211c40;
+        border-radius: 0.3rem;
+        // &:hover{
+        //     background: rgba(123, 96, 219, 0.486)
+        // }
+    }
+
+    .buttonicon {
+        height: 1.5rem;
+        width: 1.5rem;
+        padding: 0.3rem;
+        background:rgb(122, 96, 219);
+        border-radius: 0.3rem;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        color: white;
+
+        &:hover {
+            background: radial-gradient(2rem circle at top right,
+                    rgb(35, 33, 68),
+                    rgb(122, 96, 219));
+        }
+    }
+}

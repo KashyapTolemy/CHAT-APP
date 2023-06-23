@@ -7,8 +7,10 @@
     .container{
         display: flex;
         flex-direction: column;
-        width: 60rem;
-        height: 40rem;
+        width: 64.6rem;
+        height: 43rem;
+        border-top-right-radius: 0.7rem;
+        border-bottom-right-radius: 0.7rem;
         align-items: center;
         background: #211c3f;
     }
