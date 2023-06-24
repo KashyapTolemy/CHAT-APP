@@ -39,6 +39,9 @@ const Chat = () => {
   const handleChatChange = (chat) => {
     setCurrentChat(chat);
   }
+  console.log("yes");
+  console.log(currentChat)
+  console.log(currentUser)
   return (
     <>
       <div className={styles.container1}>
