@@ -1,18 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import styles from "../Chat/style.module.scss";
 import { Link, useNavigate } from "react-router-dom";
-import { allUsersRoute } from "../../utils/APIRoutes";
+import { allUsersRoute, host } from "../../utils/APIRoutes";
 import Contacts from "../../components/Contacts/Contacts";
 import Welcome from "../../components/Welcome/Welcome";
 import ChatContainer from "../../components/ChatContainer/ChatContainer";
+import { io } from "socket.io-client"
+
 
 const Chat = () => {
+  const socket =useRef()
   const navigate = useNavigate();
   const [contacts, setContacts] = useState([])
   const [currentUser, setCurrentUser] = useState(undefined)
   const [currentChat, setCurrentChat] = useState(undefined)
-  const [isLoaded, setIsLoaded] =useState(false)
+  const [isLoaded, setIsLoaded] = useState(false)
+
   useEffect(() => {
     (async () => {
       if (!localStorage.getItem("chat-app-user")) {
@@ -23,6 +27,14 @@ const Chat = () => {
       }
     })();
   }, [])
+
+  useEffect(() => {
+    if (currentUser) {
+      socket.current = io(host);
+      socket.current.emit("add-user", currentUser._id)
+    }
+  }, [currentUser])
+
   useEffect(() => {
     (async () => {
       if (currentUser) {
@@ -39,9 +51,6 @@ const Chat = () => {
   const handleChatChange = (chat) => {
     setCurrentChat(chat);
   }
-  console.log("yes");
-  console.log(currentChat)
-  console.log(currentUser)
   return (
     <>
       <div className={styles.container1}>
@@ -51,10 +60,10 @@ const Chat = () => {
           </div>
           <div className={styles.container2}>
             {
-              isLoaded && currentChat===undefined?(
-                <Welcome className={styles.welcome} currentUser={currentUser}/>
-              ):(
-                <ChatContainer currentChat={currentChat} currentUser={currentUser}/>
+              isLoaded && currentChat === undefined ? (
+                <Welcome className={styles.welcome} currentUser={currentUser} />
+              ) : (
+                <ChatContainer currentChat={currentChat} currentUser={currentUser} socket={socket} />
               )
             }
           </div>
