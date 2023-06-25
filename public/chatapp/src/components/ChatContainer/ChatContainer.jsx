@@ -27,13 +27,12 @@ const ChatContainer = ({ currentChat, currentUser, socket }) => {
             from: currentUser._id,
             to: currentChat._id,
             message: msg,
-        })
+        });
         socket.current.emit("send-msg", {
             to: currentChat._id,
             from: currentUser._id,
             message: msg,
         });
-        console.log(msg)
         const msgs = [...messages];
         msgs.push({ fromSelf: true, message: msg });
         setMessages(msgs);

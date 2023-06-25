@@ -12,14 +12,14 @@ app.use(express.json());
 
 app.use("/api/auth", userRoutes);
 app.use("/api/messages", messagesRoutes);
-// app.use((req, res, next) => {
-//   res.header("Access-Control-Allow-Origin", "http://127.0.0.1:5173");
-//   res.header(
-//     "Access-Control-Allow-Headers",
-//     "Origin, X-Requested-With, Content-Type, Accept"
-//   );
-//   next();
-// });
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "http://127.0.0.1:5173");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
 
 const connectToMongo = async () => {
   try {
@@ -32,7 +32,6 @@ const connectToMongo = async () => {
 };
 
 connectToMongo();
-
 
 const server = app.listen(process.env.PORT, () => {
   console.log(`Server running on PORT ${process.env.PORT}`);
@@ -53,8 +52,9 @@ io.on("connection", (socket) => {
   socket.on("add-user", (userId) => {
     onlineUsers.set(userId, socket.id);
   });
-
+  
   socket.on("send-msg", (data) => {
+    console.log(data);
     const sendUserSocket = onlineUsers.get(data.to);
     if (sendUserSocket) {
       socket.to(sendUserSocket).emit("msg-receive", data.msg);

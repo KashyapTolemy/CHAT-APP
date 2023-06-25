@@ -1,4 +1,5 @@
 * {
+    overflow: hidden;
     .container3 {
         height: 43rem;
         width: 64.7rem;
@@ -25,8 +26,8 @@
     }
 
     .chatavatar {
-        height: 3rem;
-        width: 3rem;
+        height: auto;
+        width: auto;
         margin-left: 2rem;
         margin-right: 1rem;
         background: #211c3f;
@@ -45,17 +46,36 @@
     .chatusername {
         background: #211c3f;
     }
+    .chatuser {
+        height: auto;
+    }
+    .messageinout{
+        height: auto;
+    }
 
     .chatmessages {
-        height: 36rem;
+        height: 34rem;
         background: #211c3f;
+        overflow-y: scroll;
+        margin-bottom: 2rem;
+        padding-right: 0.2rem;
+        padding-left: 0.2rem;
+        &::-webkit-scrollbar {
+            width: 0.3rem;
+        }
+        
+        &::-webkit-scrollbar-thumb {
+            border-radius: 0.3rem;
+            background: linear-gradient(rgb(122, 96, 219),rgb(21, 0, 255));
+        }
     }
 
     .message1 {
         display: flex;
         align-items: center;
         background: #211c3f;
-
+        // height: auto;
+        // margin-top: 0.1rem;
         .content {
             max-width: 40%;
             overflow-wrap: break-word;
@@ -64,6 +84,7 @@
             border-radius: 1rem;
             color: #d1d1d1;
         }
+        height: auto;
     }
 
 
@@ -78,11 +99,13 @@
         .mainmessage {
             background: #7b61be;
         }
-
+        
+        height: auto;
     }
-
+    
     .received {
         justify-content: flex-start;
+        height: auto;
 
         .content {
             background: #4e0de598;
@@ -90,6 +113,7 @@
 
         .mainmessage {
             background: #3b13a2;
+            height: auto;
         }
     }
 
