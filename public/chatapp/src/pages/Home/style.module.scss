@@ -30,22 +30,57 @@
         pointer-events: none;
         z-index: 7;
     }
-    .contactbutton{
+
+    .contactbutton {
         height: 2rem;
         width: auto;
         padding-left: 0.5rem;
         padding-right: 0.5rem;
         font-size: 1.4rem;
         align-items: center;
-        background: linear-gradient(to right, #5607d4e0,rgba(57, 33, 244, 0.153));
+        background: linear-gradient(to right, #5607d4e0, rgba(57, 33, 244, 0.153));
         border: 0.001rem solid rgba(255, 255, 255, 0.26);
         border-top-right-radius: 0.6rem;
         border-bottom-right-radius: 0.3rem;
         border-bottom-left-radius: 0.6rem;
         position: absolute;
-        top:3%;
-        left:89%;
+        top: 3%;
+        left: 89%;
         z-index: 5;
+        &:hover{
+            border: 0.001rem solid rgba(255, 255, 255, 0.888);
+            transition: border 1s ease-in-out;
+        }
+    }
+
+    .contactbox {
+        height: 5rem;
+        width: 8rem;
+        position: absolute;
+        top: 8%;
+        left: 90%;
+        z-index: 5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 0.01rem solid rgba(255, 255, 255, 0.89);
+        border-color: #269ebf;
+        box-shadow: 0 0 0.5rem #2684bf;
+        border-radius: 0.5rem;
+        background: inherit;
+        
+        .smcontainer{
+            height: max-content;
+            width: max-content;
+            background: inherit;
+            animation: slideInLeft 1s ease-out;
+            .socialmedia {
+                height: 2rem;
+                width: 2rem;
+                padding: 0.5rem;
+                background: inherit;
+            }
+        }
     }
 
     .navbarbuttons {
@@ -53,14 +88,15 @@
         display: flex;
         align-items: center;
         top: 3%;
-        left: 35%;
-        height: 3rem;
+        left: 32%;
+        height: 1.5rem;
         width: auto;
         background: inherit;
         z-index: 5;
         font-family: 'Gruppo', sans-serif;
         font-weight: bolder;
 
+        
         .homelogin {
             margin-right: 1.5rem;
             font-size: 1.4rem;
@@ -89,6 +125,7 @@
         background: linear-gradient(to right, white 50%, #020513 50%) right;
         transition: .5s ease-out;
         background-size: 200%;
+        animation: slideInRight 1s ease-out;
 
         .arrowlink {
             background: inherit;
@@ -116,7 +153,7 @@
         top: 70%;
         left: 70%;
         font-size: 1.2rem;
-
+        animation: slideInLeft 1s ease-out;
         .para {
             border-left: 0.2rem solid white;
             padding-left: 0.5rem;
@@ -136,7 +173,17 @@
         background: inherit;
         z-index: 5;
     }
-
+    .cross{
+        height: 2rem;
+        width: max-content;
+        .audio{
+            z-index: 5;
+            height: 2rem;
+            position: absolute;
+            top:86%;
+            left:5%;
+        }
+    }
     .smallLight {
         position: absolute;
         top: 0;
@@ -230,3 +277,20 @@
         }
     }
 }
+
+@keyframes slideInLeft {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+@keyframes slideInRight {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }

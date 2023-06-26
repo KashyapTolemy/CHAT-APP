@@ -2,13 +2,22 @@ import React, { useState, useEffect } from "react";
 import styles from "../Home/style.module.scss";
 import { Link, useNavigate } from "react-router-dom";
 import { FaUsers } from "react-icons/fa"
-import { AiFillMessage } from "react-icons/ai"
+import { AiFillMessage, AiFillInstagram, AiFillLinkedin, AiFillGithub } from "react-icons/ai"
 import { motion } from 'framer-motion';
-import logo from "../../../public/images/2.png"
+import logo from "/images/2.png"
+import ReactAudioPlayer from "react-audio-player"
+import audio from "../../assets/audio1.mp3"
+// import axios from "axios";
+// import { allUsersRoute, getAllMessageRoute } from "../../utils/APIRoutes";
 
 const Home = () => {
     const navigate = useNavigate();
-    const [hovered,setHovered] =useState(false)
+    const [clicked, setClicked] = useState(false);
+
+    const helper = () => {
+        setClicked(!clicked);
+    }
+
     const [mousePosition, setMousePosition] = useState({
         x: 0,
         y: 0
@@ -51,19 +60,36 @@ const Home = () => {
     return (
         <>
             <div className={styles.homepage}>
-                <img src={logo} className={styles.imagelogo}/>
+                <img src={logo} className={styles.imagelogo} />
                 <div className={styles.navbarbuttons}>
                     <Link to="/login" className={styles.homelogin}>LOGIN</Link>
                     <Link to="/register" className={styles.homeregister}>REGISTER</Link>
                 </div>
-                <div className={styles.contactbutton}>
+                <div className={styles.contactbutton} onClick={helper}>
                     Let's connect.
                 </div>
-                {/* <motion.div
+                <div className={styles.cross}>
+                    {/* <ReactAudioPlayer
+                        src={audio}
+                        className={styles.audio}
+                        autoPlay
+                        controls
+                    /> */}
+                </div>
+                {
+                    clicked && (
+                        <div className={styles.contactbox}>
+                            <a href="https://www.instagram.com/tolemy_kashyap/" className={styles.smcontainer}><AiFillInstagram className={styles.socialmedia} /></a>
+                            <a href="https://www.linkedin.com/in/tolemy-kashyap/" className={styles.smcontainer}><AiFillLinkedin className={styles.socialmedia} /></a>
+                            <a href="https://github.com/KashyapTolemy" className={styles.smcontainer}><AiFillGithub className={styles.socialmedia} /></a>
+                        </div>
+                    )
+                }
+                <motion.div
                     className={styles.cursor1}
                     variants={variants}
                     animate={cursorVariant}
-                /> */}
+                />
                 <span className={styles.getstarted} onMouseEnter={textEnter} onMouseLeave={textLeave} >
                     <Link to="/chat" className={styles.arrowlink} >Get Started &nbsp;&#10230;  </Link>
                 </span>
