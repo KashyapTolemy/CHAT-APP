@@ -26,7 +26,7 @@ const Register = () => {
         const str =JSON.stringify(data.user)
         console.log(str)
         localStorage.setItem("chat-app-user",str)
-        navigate("/")
+        navigate("/chat")
       }
     }
   };
@@ -70,7 +70,7 @@ const Register = () => {
 
   useEffect(()=>{
     if(localStorage.getItem("chat-app-user")){
-      navigate("/")
+      navigate("/chat")
     }
   })
   

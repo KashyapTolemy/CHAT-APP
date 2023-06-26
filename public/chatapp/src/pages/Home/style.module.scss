@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Audiowide&family=Gruppo&family=Lexend+Peta:wght@500;600;700&family=Rajdhani:wght@300;400&family=Roboto:wght@400;500&family=Sora:wght@500;600&display=swap');
+// font-family: 'Arvo', serif;
+// font-family: 'Audiowide', cursive;
+// font-family: 'Gruppo', sans-serif;
+// font-family: 'Lexend Peta', sans-serif;
+// font-family: 'Rajdhani', sans-serif;
+// font-family: 'Sora', sans-serif;
+// font-family: 'Roboto', sans-serif;
+
+.homepage {
+    background: #020513;
+    height: 100vh;
+    overflow: hidden;
+
+    .imagelogo {
+        height: 6rem;
+        width: 6rem;
+        background: inherit;
+    }
+
+    .cursor1 {
+        border: 0.1rem solid rgba(255, 255, 255, 0.772);
+        height: 1.2rem;
+        width: 1.2rem;
+        border-radius: 50%;
+        // box-shadow: 120px 80px 40px 20px rgb(23, 207, 207);
+        position: fixed;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        z-index: 7;
+    }
+    .contactbutton{
+        height: 2rem;
+        width: auto;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        font-size: 1.4rem;
+        align-items: center;
+        background: linear-gradient(to right, #5607d4e0,rgba(57, 33, 244, 0.153));
+        border: 0.001rem solid rgba(255, 255, 255, 0.26);
+        border-top-right-radius: 0.6rem;
+        border-bottom-right-radius: 0.3rem;
+        border-bottom-left-radius: 0.6rem;
+        position: absolute;
+        top:3%;
+        left:89%;
+        z-index: 5;
+    }
+
+    .navbarbuttons {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        top: 3%;
+        left: 35%;
+        height: 3rem;
+        width: auto;
+        background: inherit;
+        z-index: 5;
+        font-family: 'Gruppo', sans-serif;
+        font-weight: bolder;
+
+        .homelogin {
+            margin-right: 1.5rem;
+            font-size: 1.4rem;
+            background: inherit;
+            text-decoration: none;
+        }
+
+        .homeregister {
+            margin-left: 1.5rem;
+            font-size: 1.4rem;
+            background: inherit;
+            text-decoration: none;
+        }
+    }
+
+    .getstarted {
+        position: absolute;
+        top: 60%;
+        left: 30%;
+        height: auto;
+        font-size: 1.3rem;
+        font-family: 'Gruppo', sans-serif;
+        // background: inherit;
+        border: 0.1rem solid #020513;
+        padding: 0.4rem;
+        background: linear-gradient(to right, white 50%, #020513 50%) right;
+        transition: .5s ease-out;
+        background-size: 200%;
+
+        .arrowlink {
+            background: inherit;
+            text-decoration: none;
+        }
+
+        &:hover {
+            color: #020513;
+            transition: border 2s;
+            border: 0.1rem solid white;
+            background-position: left;
+
+            .arrowlink {
+                color: #020513;
+            }
+        }
+
+        z-index: 5;
+    }
+
+    .intro {
+        height: max-content;
+        z-index: 5;
+        position: absolute;
+        top: 70%;
+        left: 70%;
+        font-size: 1.2rem;
+
+        .para {
+            border-left: 0.2rem solid white;
+            padding-left: 0.5rem;
+            padding-right: 4rem;
+            background: #020513;
+            font-family: 'Rajdhani', sans-serif;
+        }
+    }
+
+    .line {
+        position: absolute;
+        top: 47%;
+        left: 33%;
+        width: 7rem;
+        height: 1rem;
+        border-top: 0.1rem solid white;
+        background: inherit;
+        z-index: 5;
+    }
+
+    .smallLight {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 50rem;
+        width: 50rem;
+        background: radial-gradient(50rem circle at 5vw 45vh,
+                rgba(12, 136, 152, 0.306),
+                transparent 30%);
+        z-index: -1;
+
+        @media screen and (max-width: 900px) {
+            height: auto;
+            width: auto;
+        }
+
+        z-index: 2;
+    }
+
+    .homeusers {
+        position: absolute;
+        top: 60%;
+        left: -2%;
+        height: auto;
+        background: inherit;
+        display: flex;
+        transform: rotate(-90deg);
+        font-family: 'Gruppo', sans-serif;
+
+        .usericon {
+            background: inherit;
+            margin-right: 0.5rem;
+            height: 1.2rem;
+            width: 1.2rem;
+        }
+
+        .totalusers {
+            background: inherit;
+            font-size: 1.2rem;
+        }
+    }
+
+    .homemessages {
+        position: absolute;
+        top: 35%;
+        left: -3.5%;
+        height: auto;
+        background: inherit;
+        display: flex;
+        transform: rotate(-90deg);
+        font-family: 'Gruppo', sans-serif;
+
+        .messageicon {
+            background: inherit;
+            margin-right: 0.5rem;
+            height: 1.2rem;
+            width: 1.2rem;
+        }
+
+        .totalmessages {
+            background: inherit;
+            font-size: 1.2rem;
+        }
+    }
+
+    .homeherosection {
+        display: flex;
+        justify-content: center;
+        background: #020513;
+
+        .overlaytext {
+            background-image: url(../../assets/sphere2.gif);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 30%;
+            left: 60%;
+            transform: translate(-50%, -50%);
+            padding-top: 15rem;
+            padding-left: 10rem;
+            height: 30rem;
+            width: 60rem;
+        }
+
+        .webname {
+            font-size: 7rem;
+            font-family: 'Gruppo', sans-serif;
+            font-weight: bolder;
+            background: none;
+            height: auto;
+        }
+    }
+}

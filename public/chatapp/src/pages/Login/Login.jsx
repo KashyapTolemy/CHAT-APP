@@ -20,7 +20,7 @@ export default function Login() {
   };
   useEffect(()=>{
     if(localStorage.getItem("chat-app-user")){
-      navigate("/")
+      navigate("/chat")
       console.log("ba")
     }
   },[])
@@ -59,7 +59,7 @@ export default function Login() {
         // );
         const str =JSON.stringify(data.user)
         localStorage.setItem("chat-app-user",str)
-        navigate("/");
+        navigate("/chat");
       }
     }
   };
