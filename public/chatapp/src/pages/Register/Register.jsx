@@ -22,9 +22,7 @@ const Register = () => {
         toast.error(data.msg,toastOptions)
       };
       if(data.status===true){
-        console.log(data)
         const str =JSON.stringify(data.user)
-        console.log(str)
         localStorage.setItem("chat-app-user",str)
         navigate("/chat")
       }
@@ -167,7 +165,7 @@ const Register = () => {
           </span>
         </form>
       </div>
-      <ToastContainer />
+      <ToastContainer className={styles.toastcontainer}/>
     </>
   );
 };

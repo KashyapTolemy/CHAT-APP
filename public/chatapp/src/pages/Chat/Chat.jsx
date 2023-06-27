@@ -7,15 +7,24 @@ import Contacts from "../../components/Contacts/Contacts";
 import Welcome from "../../components/Welcome/Welcome";
 import ChatContainer from "../../components/ChatContainer/ChatContainer";
 import { io } from "socket.io-client"
+import Loader from "../../components/Loader/Loader";
 
 
 const Chat = () => {
-  const socket =useRef()
+  const socket = useRef()
   const navigate = useNavigate();
   const [contacts, setContacts] = useState([])
   const [currentUser, setCurrentUser] = useState(undefined)
   const [currentChat, setCurrentChat] = useState(undefined)
   const [isLoaded, setIsLoaded] = useState(false)
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+  }, []);
+
 
   useEffect(() => {
     (async () => {
@@ -32,7 +41,6 @@ const Chat = () => {
     if (currentUser) {
       socket.current = io(host);
       socket.current.emit("add-user", currentUser._id)
-      console.log("bbb")
     }
   }, [currentUser])
 
@@ -53,7 +61,11 @@ const Chat = () => {
     setCurrentChat(chat);
   }
   return (
-    <>
+    <>{
+      isLoading ? (
+        <Loader />
+      ):(
+
       <div className={styles.container1}>
         <div className={styles.container}>
           <div className={styles.contacts}>
@@ -70,6 +82,8 @@ const Chat = () => {
           </div>
         </div>
       </div>
+      )
+    }
     </>
   )
 }

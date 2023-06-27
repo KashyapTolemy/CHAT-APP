@@ -1,0 +1,29 @@
+.loadercontainer {
+   height: 100vh;
+   width: auto;
+   display: flex;
+   justify-content: center;
+   background: black;
+
+   .loader1 {
+      height: 40rem;
+      width: auto;
+   }
+
+   .smallLight1 {
+      position: absolute;
+      top: 10;
+      left: 0;
+      height: 40rem;
+      width: 30rem;
+      background: radial-gradient(50rem circle at 0vw 45vh,
+            rgba(12, 136, 152, 0.342),
+            transparent 30%);
+      z-index: 2;
+
+      @media screen and (max-width: 900px) {
+         height: auto;
+         width: auto;
+      }
+   }
+}

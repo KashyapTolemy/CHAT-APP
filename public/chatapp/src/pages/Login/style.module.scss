@@ -3,10 +3,18 @@
 
 // font-family: 'Roboto', sans-serif;
 // font-family: 'Wix Madefor Display', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Audiowide&family=Gruppo&family=Lexend+Peta:wght@500;600;700&family=Rajdhani:wght@300;400&family=Roboto:wght@400;500&family=Sora:wght@500;600&display=swap');
+// font-family: 'Arvo', serif;
+// font-family: 'Audiowide', cursive;
+// font-family: 'Gruppo', sans-serif;
+// font-family: 'Lexend Peta', sans-serif;
+// font-family: 'Rajdhani', sans-serif;
+// font-family: 'Sora', sans-serif;
+// font-family: 'Roboto', sans-serif;
 
 * {
     background: radial-gradient(circle at 90vw 0vh,
-            rgba(117, 25, 203, 0.537),
+            rgba(69, 25, 203, 0.317),
             #07021397 50%);
     align-items: center;
     overflow: hidden;
@@ -22,7 +30,7 @@
             height: 30rem;
             width: 30rem;
             background: radial-gradient(50rem circle at 0vw 25vh,
-            rgba(12, 136, 152, 0.306),
+                    rgba(12, 136, 152, 0.306),
                     transparent 30%);
             z-index: -1;
 
@@ -62,9 +70,9 @@
             width: 50rem;
             @include mixins.flexCenter;
             flex-direction: column;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.18);
+            border: 0.01rem solid rgba(255, 255, 255, 0.386);
+            border-color: #269ebf;
+            box-shadow: 0 0 0.5rem #2684bf;
             background: inherit;
             font-family: 'Wix Madefor Display', sans-serif;
 
@@ -93,6 +101,8 @@
                 }
 
                 .chatify {
+                    font-family: 'Gruppo', sans-serif;
+                    // animation: slideInLeft 1s ease-in-out;
                     background: inherit;
 
                     @media screen and (max-width: 500px) {
@@ -102,12 +112,12 @@
             }
 
             .register {
-                font-family: 'Wix Madefor Display', sans-serif;
+                font-family: 'Gruppo', sans-serif;
                 font-weight: 900;
                 font-size: 1.5rem;
                 margin-bottom: 0.5rem;
                 background: inherit;
-                height: max-content
+                height: max-content;
             }
 
             .username {
@@ -119,10 +129,15 @@
                 color: white;
                 background: inherit;
 
+                @media screen and (max-width: 350px) {
+                    width: 15rem;
+                }
+
                 &:hover {
                     transition-duration: 0.8s;
                     border-bottom: 0.03rem solid rgba(241, 242, 250, 0.498);
                 }
+
             }
 
             .password {
@@ -138,6 +153,10 @@
                     transition-duration: 0.7s;
                     border-bottom: 0.03rem solid rgba(241, 242, 250, 0.498);
                 }
+
+                @media screen and (max-width: 350px) {
+                    width: 15rem;
+                }
             }
 
             .submit {
@@ -147,16 +166,17 @@
                 padding: 0.3rem 1rem;
                 background: radial-gradient(10rem circle at bottom right,
                         rgb(35, 33, 68),
-                        rgb(122, 96, 219));
+                        rgb(98, 65, 215));
                 border-radius: 0.3rem;
                 cursor: pointer;
                 transition: all 0.3s ease-in-out;
                 color: white;
+                border: 0.001rem solid rgba(255, 255, 255, 0.114);
 
                 &:hover {
                     background: radial-gradient(circle at top right,
                             rgb(35, 33, 68),
-                            rgb(122, 96, 219));
+                            rgb(98, 65, 215));
                 }
 
                 margin-bottom: 2rem;
@@ -173,5 +193,30 @@
             }
 
         }
+    }
+
+    .toastcontainer {
+        height: max-content;
+        margin-bottom: 2rem;
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
     }
 }

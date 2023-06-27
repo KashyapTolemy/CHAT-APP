@@ -7,6 +7,7 @@ import axios from "axios"
 import { SetAvatarRoute } from "../../utils/APIRoutes";
 import { motion } from 'framer-motion';
 import { Buffer } from "buffer";
+import Loader from "../../components/Loader/Loader";
 
 const SetAvatar = () => {
   const api = 'https://api.multiavatar.com/4645646'
@@ -47,7 +48,7 @@ const SetAvatar = () => {
           "chat-app-user",
           JSON.stringify(user)
         );
-        navigate("/");
+        navigate("/chat");
       } else {
         toast.error("Error setting avatar. Please try again.", toastOptions);
       }
@@ -111,16 +112,7 @@ const SetAvatar = () => {
   return (
     <>{
       isLoading ? (
-        <div className={styles.loader}>
-          <div className={styles.spinnerbox}>
-            <div className={styles.configureborder1}>
-              <div className={styles.configurecore}></div>
-            </div>
-            <div className={styles.configureborder2}>
-              <div className={styles.configurecore}></div>
-            </div>
-          </div>
-        </div>
+        <Loader />
       ) : (
         <div className={styles.page}>
           <div className={styles.container}>
@@ -157,7 +149,7 @@ const SetAvatar = () => {
               </button>
             </div>
           </div >
-          <ToastContainer />
+          <ToastContainer className={styles.toastcontainer} />
         </div>
       )
     }

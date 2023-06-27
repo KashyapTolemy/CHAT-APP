@@ -1,7 +1,7 @@
 import styles from "../ChatInput/style.module.scss";
 import "../ChatInput/emoji-picker.scss";
 import React, { useState, useEffect } from "react";
-import Picker from "emoji-picker-react"
+import Picker from "emoji-picker-react";
 import { BsEmojiSmile, BsEmojiSmileFill } from 'react-icons/bs'
 import { IoMdSend } from 'react-icons/io'
 

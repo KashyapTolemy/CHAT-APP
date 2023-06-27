@@ -139,7 +139,7 @@ export default function Login() {
           </span>
         </form>
       </div>
-      <ToastContainer />
+      <ToastContainer className={styles.toastcontainer}/>
     </>
   );
 }

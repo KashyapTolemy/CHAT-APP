@@ -4,15 +4,21 @@ import { Link, useNavigate } from "react-router-dom";
 import { FaUsers } from "react-icons/fa"
 import { AiFillMessage, AiFillInstagram, AiFillLinkedin, AiFillGithub } from "react-icons/ai"
 import { motion } from 'framer-motion';
-import logo from "/images/2.png"
-import ReactAudioPlayer from "react-audio-player"
-import audio from "../../assets/audio1.mp3"
+import logo from "/images/2.png";
+import Loader from "../../components/Loader/Loader";
 // import axios from "axios";
 // import { allUsersRoute, getAllMessageRoute } from "../../utils/APIRoutes";
 
 const Home = () => {
     const navigate = useNavigate();
     const [clicked, setClicked] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setIsLoading(false);
+        }, 3000);
+    }, []);
 
     const helper = () => {
         setClicked(!clicked);
@@ -58,64 +64,69 @@ const Home = () => {
     const textEnter = () => setCursorVariant("text");
     const textLeave = () => setCursorVariant("default");
     return (
-        <>
-            <div className={styles.homepage}>
-                <img src={logo} className={styles.imagelogo} />
-                <div className={styles.navbarbuttons}>
-                    <Link to="/login" className={styles.homelogin}>LOGIN</Link>
-                    <Link to="/register" className={styles.homeregister}>REGISTER</Link>
-                </div>
-                <div className={styles.contactbutton} onClick={helper}>
-                    Let's connect.
-                </div>
-                <div className={styles.cross}>
-                    {/* <ReactAudioPlayer
+        <>{
+            isLoading ? (
+                <Loader />
+            ) : (
+                <div className={styles.homepage}>
+                    <img src={logo} className={styles.imagelogo} />
+                    <div className={styles.navbarbuttons}>
+                        <Link to="/login" className={styles.homelogin}>LOGIN</Link>
+                        <Link to="/register" className={styles.homeregister}>REGISTER</Link>
+                    </div>
+                    <div className={styles.contactbutton} onClick={helper}>
+                        Let's connect.
+                    </div>
+                    <div className={styles.cross}>
+                        {/* <ReactAudioPlayer
                         src={audio}
                         className={styles.audio}
                         autoPlay
                         controls
                     /> */}
-                </div>
-                {
-                    clicked && (
-                        <div className={styles.contactbox}>
-                            <a href="https://www.instagram.com/tolemy_kashyap/" className={styles.smcontainer}><AiFillInstagram className={styles.socialmedia} /></a>
-                            <a href="https://www.linkedin.com/in/tolemy-kashyap/" className={styles.smcontainer}><AiFillLinkedin className={styles.socialmedia} /></a>
-                            <a href="https://github.com/KashyapTolemy" className={styles.smcontainer}><AiFillGithub className={styles.socialmedia} /></a>
+                    </div>
+                    {
+                        clicked && (
+                            <div className={styles.contactbox}>
+                                <a href="https://www.instagram.com/tolemy_kashyap/" className={styles.smcontainer}><AiFillInstagram className={styles.socialmedia} /></a>
+                                <a href="https://www.linkedin.com/in/tolemy-kashyap/" className={styles.smcontainer}><AiFillLinkedin className={styles.socialmedia} /></a>
+                                <a href="https://github.com/KashyapTolemy" className={styles.smcontainer}><AiFillGithub className={styles.socialmedia} /></a>
+                            </div>
+                        )
+                    }
+                    <motion.div
+                        className={styles.cursor1}
+                        variants={variants}
+                        animate={cursorVariant}
+                    />
+                    <span className={styles.getstarted} onMouseEnter={textEnter} onMouseLeave={textLeave} >
+                        <Link to="/chat" className={styles.arrowlink} >Get Started &nbsp;&#10230;  </Link>
+                    </span>
+                    <div className={styles.intro} onMouseEnter={textEnter} onMouseLeave={textLeave} >
+                        <p className={styles.para}>Chatify: Where Communication Comes Alive. Connect Seamlessly and Explore the Dynamics of Conversation!<br />Join the Chatify community today.</p>
+                    </div>
+                    <div className={styles.homeusers} onMouseEnter={textEnter} onMouseLeave={textLeave} >
+                        <FaUsers className={styles.usericon} />
+                        <div className={styles.totalusers}>
+                            6K+&nbsp;Users
                         </div>
-                    )
-                }
-                <motion.div
-                    className={styles.cursor1}
-                    variants={variants}
-                    animate={cursorVariant}
-                />
-                <span className={styles.getstarted} onMouseEnter={textEnter} onMouseLeave={textLeave} >
-                    <Link to="/chat" className={styles.arrowlink} >Get Started &nbsp;&#10230;  </Link>
-                </span>
-                <div className={styles.intro} onMouseEnter={textEnter} onMouseLeave={textLeave} >
-                    <p className={styles.para}>Chatify: Where Communication Comes Alive. Connect Seamlessly and Explore the Dynamics of Conversation!<br />Join the Chatify community today.</p>
-                </div>
-                <div className={styles.homeusers} onMouseEnter={textEnter} onMouseLeave={textLeave} >
-                    <FaUsers className={styles.usericon} />
-                    <div className={styles.totalusers}>
-                        6K+&nbsp;Users
+                    </div>
+                    <div className={styles.homemessages}>
+                        <AiFillMessage className={styles.messageicon} />
+                        <div className={styles.totalmessages}>
+                            42K+&nbsp;Messages
+                        </div>
+                    </div>
+                    <div className={styles.line}></div>
+                    <div className={styles.smallLight} onMouseEnter={textEnter} onMouseLeave={textLeave} ></div>
+                    <div className={styles.homeherosection}>
+                        <div className={styles.overlaytext}>
+                            <div className={styles.webname}>PROJECT <br />&nbsp;CHATIFY</div>
+                        </div>
                     </div>
                 </div>
-                <div className={styles.homemessages}>
-                    <AiFillMessage className={styles.messageicon} />
-                    <div className={styles.totalmessages}>
-                        42K+&nbsp;Messages
-                    </div>
-                </div>
-                <div className={styles.line}></div>
-                <div className={styles.smallLight} onMouseEnter={textEnter} onMouseLeave={textLeave} ></div>
-                <div className={styles.homeherosection}>
-                    <div className={styles.overlaytext}>
-                        <div className={styles.webname}>PROJECT <br />&nbsp;CHATIFY</div>
-                    </div>
-                </div>
-            </div>
+            )
+        }
         </>
     )
 }
