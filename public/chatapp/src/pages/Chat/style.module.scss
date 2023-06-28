@@ -4,11 +4,13 @@
 // font-family: 'Roboto', sans-serif;
 // font-family: 'Wix Madefor Display', sans-serif;
 
-*{
+* {
     color: white;
-    overflow:visible;
+    overflow: visible;
     height: 100%;
-    .container1{
+
+
+    .container1 {
         margin-top: 2rem;
         margin-left: 5rem;
         margin-right: 3rem;
@@ -16,25 +18,26 @@
         height: max-content;
         width: 85rem;
         border-radius: 0.7rem;
-        // background: #00000076;
         padding: 0;
-        // border: 0.01rem solid rgba(255, 255, 255, 0.386);
-        //     border-color: #269ebf;
-        //     box-shadow: 0 0 0.5rem #2684bf;
-        // z-index: 7;
-        
+        border: 0.01rem solid rgba(255, 255, 255, 0.386);
+        border-color: #269ebf7c;
+        box-shadow: 0 0 0.5rem #2684bf5d;
+        background: none !important;
+
     }
-    .container{
-        width:fit-content;
-        height: max-content;
+
+    .container {
+        width: fit-content;
+        height: 43.1rem;
         // border-radius: 0.7rem;
         display: flex;
-        
+
     }
-    .container2{
+
+    .container2 {
         position: absolute;
-        top:2rem;
-        left:25.19rem;
+        top: 2rem;
+        left: 25.19rem;
         border-top-right-radius: 0.7rem;
         border-bottom-right-radius: 0.7rem;
         border-right: 0.01rem solid rgba(255, 255, 255, 0.452);
@@ -42,6 +45,13 @@
         border-bottom: 0.01rem solid rgba(255, 255, 255, 0.452);
         height: auto;
     }
-    
-    
+
+    .logoutcontainer {
+        position: absolute;
+        height: max-content;
+        z-index: 7;
+        background: inherit;
+    }
+
+
 }

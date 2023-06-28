@@ -1,27 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Audiowide&family=Gruppo&family=Lexend+Peta:wght@500;600;700&family=Rajdhani:wght@300;400&family=Roboto:wght@400;500&family=Sora:wght@500;600&display=swap');
+// font-family: 'Arvo', serif;
+// font-family: 'Audiowide', cursive;
+// font-family: 'Gruppo', sans-serif;
+// font-family: 'Lexend Peta', sans-serif;
+// font-family: 'Rajdhani', sans-serif;
+// font-family: 'Sora', sans-serif;
+// font-family: 'Roboto', sans-serif;
+
+
 * {
     .button {
         height: 2.2rem;
-        background: #211c40;
+        background: inherit;
         border-radius: 0.3rem;
-        // &:hover{
-        //     background: rgba(123, 96, 219, 0.486)
-        // }
     }
 
     .buttonicon {
-        height: 1.5rem;
-        width: 1.5rem;
+        height: 2rem;
+        width: 2rem;
         padding: 0.3rem;
-        background:rgb(98, 65, 215);
+        // background:rgb(98, 65, 215);
+        font-size: 1.3rem;
+        font-family: 'Gruppo',sans-serif;
         border-radius: 0.3rem;
         cursor: pointer;
         transition: all 0.3s ease-in-out;
         color: white;
-
-        &:hover {
-            background: radial-gradient(2rem circle at top right,
-                    rgb(35, 33, 68),
-                    rgb(98, 65, 215));
-        }
+        background: inherit;
     }
 }

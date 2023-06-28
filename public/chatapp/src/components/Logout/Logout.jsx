@@ -12,9 +12,10 @@ const Logout = () => {
   }
   return (
     <>
-    <button className={styles.button}>
+    <div className={styles.buttonicon} onClick={handleClick}>
       <AiOutlineLogout className={styles.buttonicon} onClick={handleClick}/>
-    </button>
+      {/* Log Out */}
+    </div>
     </>
   )
 }

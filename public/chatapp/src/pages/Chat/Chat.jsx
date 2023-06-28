@@ -8,6 +8,7 @@ import Welcome from "../../components/Welcome/Welcome";
 import ChatContainer from "../../components/ChatContainer/ChatContainer";
 import { io } from "socket.io-client"
 import Loader from "../../components/Loader/Loader";
+import Logout from "../../components/Logout/Logout";
 
 
 const Chat = () => {
@@ -22,7 +23,7 @@ const Chat = () => {
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 3000);
+    }, 5000);
   }, []);
 
 
@@ -49,7 +50,6 @@ const Chat = () => {
       if (currentUser) {
         if (currentUser.isAvatarImageSet) {
           const data = await axios.get(`${allUsersRoute}/${currentUser._id}`);
-          // console.log(data);
           setContacts(data.data)
         } else {
           navigate("/setavatar")

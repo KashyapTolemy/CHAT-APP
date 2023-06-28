@@ -2,66 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@100;300;400&family=Wix+Madefor+Display:wght@400;500&display=swap');
 
 
-.loader {
-    background: rgb(35, 33, 68) !important;
-    display: flex;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
-    top: 50vh;
-    left: 50vw;
-    @include mixins.flexCenter;
-
-    .spinnerbox {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: transparent;
-        position: fixed;
-        top: 0;
-        left: 0;
-    }
-
-    .configureborder1 {
-        width: 10rem;
-        height: 10rem;
-        padding: 3px;
-        position: fixed;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: rgb(35, 33, 68);
-        border-color: #85c2d3;
-        box-shadow: 0 0 1.7rem #15c4e3;
-        top: 40vh;
-        left: 45vw;
-        animation: configure-clockwise 3s ease-in-out 0s infinite alternate;
-    }
-
-    .configureborder2 {
-        width: 10rem;
-        height: 10rem;
-        position: fixed;
-        padding: 3px;
-        top: 40vh;
-        left: 45vw;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: rgb(35, 33, 68);
-        border-color: #263dbf;
-        box-shadow: 0 0 1.7rem #2b26bf;
-        transform: rotate(45deg);
-        animation: configure-xclockwise 3s ease-in-out 0s infinite alternate;
-    }
-
-    .configurecore {
-        width: fit-content;
-        height: fit-content;
-        background-color: #020116;
-    }
-}
-
 
 .page {
     background: radial-gradient(circle at 100vw 5vh,

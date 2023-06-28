@@ -1,6 +1,6 @@
 import styles from "../Welcome/style.module.scss";
 import React, { useState, useEffect } from "react";
-import Robot from '../../assets/bot9.gif'
+import Robot from '../../assets/1bot.gif'
 
 const Welcome = ({ currentUser }) => {
   return (

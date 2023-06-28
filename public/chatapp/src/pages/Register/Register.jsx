@@ -1,29 +1,40 @@
 import React, { useState, useEffect } from "react";
-import { Link ,useNavigate} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "../Register/style.module.scss";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"
 import axios from "axios"
 import { registerRoute } from "../../utils/APIRoutes";
 import { motion } from 'framer-motion';
+import noot from '../../assets/nootnoot.gif'
 
 const Register = () => {
-  const navigate =useNavigate()
-  const handleSubmit = async(event) => {
+
+  const [errorShows, setErrorShows] = useState(false);
+  const navigate = useNavigate()
+
+  const helper = () => {
+    setTimeout(() => {
+      setErrorShows(false);
+    }, 4000)
+  }
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    if(handleValidation()){
-      const { username, email, password} = values;
-      const {data} =await axios.post(registerRoute,{
+    if (handleValidation()) {
+      const { username, email, password } = values;
+      const { data } = await axios.post(registerRoute, {
         username,
         email,
         password
       });
-      if(data.status===false){
-        toast.error(data.msg,toastOptions)
+      if (data.status === false) {
+        toast.error(data.msg, toastOptions)
+        setErrorShows(true);
+        helper();
       };
-      if(data.status===true){
-        const str =JSON.stringify(data.user)
-        localStorage.setItem("chat-app-user",str)
+      if (data.status === true) {
+        const str = JSON.stringify(data.user)
+        localStorage.setItem("chat-app-user", str)
         navigate("/chat")
       }
     }
@@ -40,21 +51,29 @@ const Register = () => {
       toast.error(
         "Password and Confirm Password should be the same. ", toastOptions
       );
+      setErrorShows(true);
+      helper();
       return false;
     } else if (username.length < 4) {
       toast.error(
         "Username should be greater than 3 characters. ", toastOptions
       );
+      setErrorShows(true);
+      helper();
       return false;
     } else if (password.length < 8) {
       toast.error(
         "Password should be greater than or equal to 8 characters. ", toastOptions
       );
+      setErrorShows(true);
+      helper();
       return false;
     } else if (email === "") {
       toast.error(
         "Email is required. ", toastOptions
       );
+      setErrorShows(true);
+      helper();
       return false;
     }
     return true;
@@ -66,12 +85,12 @@ const Register = () => {
     confirmPassword: "",
   });
 
-  useEffect(()=>{
-    if(localStorage.getItem("chat-app-user")){
+  useEffect(() => {
+    if (localStorage.getItem("chat-app-user")) {
       navigate("/chat")
     }
   })
-  
+
   const handleChange = (event) => {
     setValues({ ...values, [event.target.name]: event.target.value });
   };
@@ -121,10 +140,10 @@ const Register = () => {
       <div className={styles.container}>
         <div className={styles.smallLight}></div>
         <motion.div
-        className={styles.cursor1}
-        variants={variants}
-        animate={cursorVariant}
-      />
+          className={styles.cursor1}
+          variants={variants}
+          animate={cursorVariant}
+        />
         <form onMouseEnter={textEnter} onMouseLeave={textLeave} className={styles.form} onSubmit={(event) => handleSubmit(event)}>
           <div className={styles.brand}>
             <img src="/images/2.png" className={styles.image}></img>
@@ -164,8 +183,17 @@ const Register = () => {
             Already have an account? <Link to="/login" className={styles.login}>Login.</Link>
           </span>
         </form>
+      {
+          errorShows && (
+            <>
+              <div className={styles.nootbox}>
+                <img src={noot} ></img>
+              </div>
+            </>
+          )
+        }
       </div>
-      <ToastContainer className={styles.toastcontainer}/>
+      <ToastContainer className={styles.toastcontainer} />
     </>
   );
 };

@@ -1,14 +1,13 @@
 @use "../../styles/mixins.scss";
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@100;300;400&family=Wix+Madefor+Display:wght@400;500&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Audiowide&family=Gruppo&family=Lexend+Peta:wght@500;600;700&family=Rajdhani:wght@300;400&family=Roboto:wght@400;500&family=Sora:wght@500;600&display=swap');
+// font-family: 'Arvo', serif;
+// font-family: 'Audiowide', cursive;
+// font-family: 'Gruppo', sans-serif;
+// font-family: 'Lexend Peta', sans-serif;
+// font-family: 'Rajdhani', sans-serif;
+// font-family: 'Sora', sans-serif;
 // font-family: 'Roboto', sans-serif;
-// font-family: 'Wix Madefor Display', sans-serif;
 * {
-    // background: #3e3573;
-
-    // backdrop-filter: blur(10px);
-    //     -webkit-backdrop-filter: blur(10px);
-    //     border: 1px solid rgba(255, 255, 255, 0.18);
     .container {
         height: 45rem;
         box-sizing: border-box;
@@ -26,17 +25,20 @@
         z-index:0;
     }
 
-    h1 {
+    .chatifyname {
         background: #000000;
         margin-left: 4rem;
         height: auto;
+        font-family: 'Gruppo', sans-serif;
+        font-size: 2.5rem;
     }
 
     .username {
         background: #000000;
         margin-top: 0.5rem;
         color: #000000;
-        font-size: xx-large;
+        font-size: 2rem;
+        // font-family: 'Poppins', cursive;
         text-shadow: 1px 0 #fff, -1px 0 #fff, 0 1px #fff, 0 -1px #fff,
             1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
     }

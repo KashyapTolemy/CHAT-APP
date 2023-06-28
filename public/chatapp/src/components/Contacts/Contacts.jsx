@@ -24,7 +24,7 @@ const Contacts = ({ contacts, currentUser, changeChat }) => {
           {currentUserImage && currentUserName && (
             <>
               <div className={styles.brand}>
-                <h1>Chatify</h1>
+                <h1 className={styles.chatifyname}>Chatify</h1>
                 <img src="/images/2.png" className={styles.logoimage}></img>
               </div>
               <div className={styles.contacts}>

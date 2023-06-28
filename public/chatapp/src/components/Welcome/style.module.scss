@@ -1,10 +1,15 @@
 @use "../../styles/mixins.scss";
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@100;300;400&family=Wix+Madefor+Display:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Audiowide&family=Gruppo&family=Lexend+Peta:wght@500;600;700&family=Rajdhani:wght@300;400&family=Roboto:wght@400;500&family=Sora:wght@500;600&display=swap');
 
+// font-family: 'Arvo', serif;
+// font-family: 'Audiowide', cursive;
+// font-family: 'Gruppo', sans-serif;
+// font-family: 'Lexend Peta', sans-serif;
+// font-family: 'Rajdhani', sans-serif;
+// font-family: 'Sora', sans-serif;
 // font-family: 'Roboto', sans-serif;
-// font-family: 'Wix Madefor Display', sans-serif;
-*{
-    .container{
+* {
+    .container {
         display: flex;
         flex-direction: column;
         width: 64.6rem;
@@ -12,32 +17,42 @@
         border-top-right-radius: 0.7rem;
         border-bottom-right-radius: 0.7rem;
         align-items: center;
-        background: #211c3f;
+        background: black;
     }
-    .imagif{
-        height: 20rem;
+
+    .imagif {
+        height: 30rem;
     }
-    .image{
-        height: 20rem;
-        background: #211c3f;
+
+    .image {
+        height: 40rem;
+        background: black;
     }
-    .text{
-        background: #211c3f;
+
+    .text {
+        background: black;
         height: auto;
     }
-    .t1{
-        background: #211c3f;
-        margin-top: 3rem;
+
+    .t1 {
+        background: black;
+        // margin-top: 3rem;
         height: auto;
+        font-size: 3.5rem;
     }
-    .t3{
-        background: #211c3f;
+
+    .t3 {
+        background: black;
         margin-top: 1rem;
+        padding-left: 4rem;
         height: auto;
+        font-size: 1.5rem;
+        color: rgba(111, 230, 239, 0.783);
     }
-    .t2{
-        background: #211c3f;
-        color: #7225b7;
+
+    .t2 {
+        background: black;
+        color: #b72584;
         height: auto;
     }
 }

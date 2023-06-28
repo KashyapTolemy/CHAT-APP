@@ -1,4 +1,5 @@
 * {
+    
     .chatinputcontainer {
         display: flex;
         // justify-content: center;
@@ -6,13 +7,13 @@
         height: 2rem;
         // margin-left: 1rem;
         // margin-right: 1rem;
-        background: #211c40;
+        background: #090527;
     }
 
     .emojiicon {
         margin-left: 1rem;
         margin-right: 1rem;
-        background: #211c40;
+        background: #090527;
         height: 2rem;
         width: 2rem;
     }
@@ -21,17 +22,17 @@
         // position: relative;
         // top:-5rem;
         bottom: 5rem;
-        background: #211c40;
+        background: #090527;
     }
 
     .sendbutton {
-        background: #211c40;
+        background: #090527;
         height: 2rem;
         width: 2rem;
     }
 
     .emojisend {
-        background: #211c40;
+        background: #090527;
         height: 2rem;
         width: 2rem;
     }
@@ -52,6 +53,6 @@
         align-items: center;
         width: 57rem;
         height: 3rem;
-        background: #211c40;
+        background: #090527;
     }
 }

@@ -6,11 +6,13 @@ import "react-toastify/dist/ReactToastify.css"
 import axios from "axios"
 import { loginRoute } from "../../utils/APIRoutes";
 import { motion } from 'framer-motion';
+import noot from '../../assets/nootnoot.gif'
 
 export default function Login() {
   // console.log("aaaa")
   const navigate = useNavigate();
   const [values, setValues] = useState({ username: "", password: "" });
+  const [errorShows, setErrorShows] = useState(false);
   const toastOptions = {
     position: "bottom-right",
     autoClose: 8000,
@@ -18,24 +20,33 @@ export default function Login() {
     draggable: true,
     theme: "dark",
   };
-  useEffect(()=>{
-    if(localStorage.getItem("chat-app-user")){
+  useEffect(() => {
+    if (localStorage.getItem("chat-app-user")) {
       navigate("/chat")
-      console.log("ba")
     }
-  },[])
+  }, [])
 
   const handleChange = (event) => {
     setValues({ ...values, [event.target.name]: event.target.value });
   };
 
+  const helper = () => {
+    setTimeout(() => {
+      setErrorShows(false);
+    }, 4000)
+  }
+
   const validateForm = () => {
     const { username, password } = values;
     if (username === "") {
       toast.error("Username and Password is required.", toastOptions);
+      setErrorShows(true);
+      helper();
       return false;
     } else if (password === "") {
       toast.error("Username and Password is required.", toastOptions);
+      setErrorShows(true);
+      helper();
       return false;
     }
     return true;
@@ -50,6 +61,8 @@ export default function Login() {
         password,
       });
       if (data.status === false) {
+        setErrorShows(true);
+        helper();
         toast.error(data.msg, toastOptions);
       }
       if (data.status === true) {
@@ -57,8 +70,8 @@ export default function Login() {
         //   process.env.REACT_APP_LOCALHOST_KEY,
         //   JSON.stringify(data.user)
         // );
-        const str =JSON.stringify(data.user)
-        localStorage.setItem("chat-app-user",str)
+        const str = JSON.stringify(data.user)
+        localStorage.setItem("chat-app-user", str)
         navigate("/chat");
       }
     }
@@ -108,10 +121,10 @@ export default function Login() {
       <div className={styles.container}>
         <div className={styles.smallLight}></div>
         <motion.div
-        className={styles.cursor1}
-        variants={variants}
-        animate={cursorVariant}
-      />
+          className={styles.cursor1}
+          variants={variants}
+          animate={cursorVariant}
+        />
         <form onMouseEnter={textEnter} onMouseLeave={textLeave} className={styles.form} onSubmit={(event) => handleSubmit(event)}>
           <div className={styles.brand}>
             <img src="/images/2.png" className={styles.image}></img>
@@ -138,8 +151,17 @@ export default function Login() {
             Don't have an account ? <Link to="/register" className={styles.login}>Create One.</Link>
           </span>
         </form>
+        {
+          errorShows && (
+            <>
+              <div className={styles.nootbox}>
+                <img src={noot} ></img>
+              </div>
+            </>
+          )
+        }
       </div>
-      <ToastContainer className={styles.toastcontainer}/>
+      <ToastContainer className={styles.toastcontainer} />
     </>
   );
 }
