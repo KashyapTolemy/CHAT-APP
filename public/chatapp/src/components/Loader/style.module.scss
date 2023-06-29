@@ -6,8 +6,9 @@
    background: black;
 
    .loader1 {
-      height: 40rem;
+      height: 20rem;
       width: auto;
+      margin-bottom: 2rem;
    }
 
    .smallLight1 {
@@ -16,8 +17,8 @@
       left: 0;
       height: 40rem;
       width: 30rem;
-      background: radial-gradient(50rem circle at 0vw 45vh,
-            rgba(12, 136, 152, 0.342),
+      background: radial-gradient(60rem circle at 0vw 45vh,
+            rgba(12, 26, 152, 0.678),
             transparent 30%);
       z-index: 2;
 
