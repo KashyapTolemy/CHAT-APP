@@ -183,15 +183,6 @@ const Register = () => {
             Already have an account? <Link to="/login" className={styles.login}>Login.</Link>
           </span>
         </form>
-      {
-          errorShows && (
-            <>
-              <div className={styles.nootbox}>
-                <img src={noot} ></img>
-              </div>
-            </>
-          )
-        }
       </div>
       <ToastContainer className={styles.toastcontainer} />
     </>

@@ -3,17 +3,19 @@ import React, { useState, useEffect, useRef } from "react";
 import Logout from "../Logout/Logout";
 import ChatInput from "../ChatInput/ChatInput";
 import axios from "axios";
+import { AiOutlineHome } from 'react-icons/ai'
 import { getAllMessageRoute, sendMessageRoute } from "../../utils/APIRoutes";
-import {v4 as uuidv4} from "uuid"
+import { v4 as uuidv4 } from "uuid"
+import { Link, useNavigate } from "react-router-dom";
 
 const ChatContainer = ({ currentChat, currentUser, socket }) => {
     const [messages, setMessages] = useState([])
     const [arrivalMessage, setArrivalMessage] = useState(null)
     const scrollRef = useRef();
-
+    const navigate = useNavigate();
     useEffect(() => {
         (async () => {
-            if(currentChat){
+            if (currentChat) {
                 const response = await axios.post(getAllMessageRoute, {
                     from: currentUser._id,
                     to: currentChat._id,
@@ -23,14 +25,14 @@ const ChatContainer = ({ currentChat, currentUser, socket }) => {
         })()
     }, [currentChat])
     const handleSendMsg = async (msg) => {
+        socket.emit("send-msg", {
+            to: currentChat._id,
+            from: currentUser._id,
+            message: msg,
+        });
         await axios.post(sendMessageRoute, {
             from: currentUser._id,
             to: currentChat._id,
-            message: msg,
-        });
-        socket.current.emit("send-msg", {
-            to: currentChat._id,
-            from: currentUser._id,
             message: msg,
         });
         const msgs = [...messages];
@@ -38,13 +40,22 @@ const ChatContainer = ({ currentChat, currentUser, socket }) => {
         setMessages(msgs);
     };
 
+    const handleBack = () => {
+        navigate("/");
+    }
+
     useEffect(() => {
-        if (socket.current) {
-            socket.current.on("msg-receive", (msg) => {
-                setArrivalMessage({ fromSelf: false, message: msg })
+        if (socket) {
+            socket.on("msg-receive", ({ message, from }) => {
+                console.log(message)
+                console.log(from)
+                console.log(currentChat._id)
+                if (from !== currentChat._id) return;
+                setArrivalMessage({ fromSelf: false, message: message })
             })
         }
-    }, []);
+    }, [socket]);
+
     useEffect(() => {
         arrivalMessage && setMessages((prev) => [...prev, arrivalMessage]);
     }, [arrivalMessage]);
@@ -70,7 +81,10 @@ const ChatContainer = ({ currentChat, currentUser, socket }) => {
                                 <h2 className={styles.chatusername}>{currentChat.username}</h2>
                             </div>
                         </div>
-                        <Logout />
+                        <div className={styles.changebuttons}>
+                            <AiOutlineHome onClick={handleBack} className={styles.homebutton} />
+                            <Logout />
+                        </div>
                     </div>
                     <div className={styles.chatmessages}>{
                         messages.map((message) => {

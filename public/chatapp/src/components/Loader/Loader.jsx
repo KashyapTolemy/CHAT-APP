@@ -1,6 +1,6 @@
 import styles from "../Loader/style.module.scss";
 import React, { useState, useEffect } from "react";
-import loader1 from "../../assets/loader3.gif"
+import loader1 from "../../assets/botnew2.gif"
 
 const Loader = () => {
     return (

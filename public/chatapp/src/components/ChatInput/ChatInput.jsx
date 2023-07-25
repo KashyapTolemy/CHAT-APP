@@ -1,19 +1,22 @@
 import styles from "../ChatInput/style.module.scss";
 import "../ChatInput/emoji-picker.scss";
 import React, { useState, useEffect } from "react";
-import Picker from "emoji-picker-react";
+import EmojiPicker from "emoji-picker-react";
+// import "emoji-picker-element";
 import { BsEmojiSmile, BsEmojiSmileFill } from 'react-icons/bs'
 import { IoMdSend } from 'react-icons/io'
 
-const ChatInput = ({handleSendMsg}) => {
+
+const ChatInput = ({ handleSendMsg }) => {
     const [showEmojiPicker, setShowEmojiPicker] = useState(false);
-    const [msg,setMsg]=useState("")
+    const [msg, setMsg] = useState("")
     const handleEmojiPickerHideShow = () => {
         setShowEmojiPicker(!showEmojiPicker);
+
     }
-    const sendChat =(event) =>{
+    const sendChat = (event) => {
         event.preventDefault();
-        if(msg.length>0){
+        if (msg.length > 0) {
             handleSendMsg(msg);
             setMsg("")
         }
@@ -25,12 +28,17 @@ const ChatInput = ({handleSendMsg}) => {
                     <div className={styles.emojii}>
                         <BsEmojiSmile className={styles.emojiicon} onClick={handleEmojiPickerHideShow} />
                         {
-                            showEmojiPicker && (<Picker onEmojiClick={(emojiObject)=> setMsg((msg)=>msg+emojiObject.emoji)}/>)
+                            showEmojiPicker && (<EmojiPicker onClick={(emojiObject) => {
+                                setMsg((msg) => msg + emojiObject)
+                                console.log("a");
+                                console.log(emojiObject);
+                            }
+                            } />)
                         }
                     </div>
                 </div>
-                <form className={styles.inputcontainer} onSubmit={(e)=>sendChat(e)}>
-                    <input className={styles.messageinput} value={msg} onChange={(e)=>setMsg(e.target.value)} type="text" placeholder=" Type your message" />
+                <form className={styles.inputcontainer} onSubmit={(e) => sendChat(e)}>
+                    <input className={styles.messageinput} value={msg} onChange={(e) => setMsg(e.target.value)} type="text" placeholder=" Type your message" />
                     <button className={styles.sendbutton}>
                         <IoMdSend className={styles.emojisend} />
                     </button>

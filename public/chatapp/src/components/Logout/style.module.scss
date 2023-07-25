@@ -16,16 +16,11 @@
     }
 
     .buttonicon {
-        height: 2rem;
-        width: 2rem;
-        padding: 0.3rem;
-        // background:rgb(98, 65, 215);
-        font-size: 1.3rem;
-        font-family: 'Gruppo',sans-serif;
+        height: 2.2rem;
+        width: 2.2rem;
         border-radius: 0.3rem;
         cursor: pointer;
-        transition: all 0.3s ease-in-out;
         color: white;
-        background: inherit;
+        background:inherit;
     }
 }

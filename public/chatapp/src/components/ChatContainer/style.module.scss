@@ -11,14 +11,14 @@
 
 * {
     overflow: hidden;
-    
+
     .container3 {
         height: 43rem;
-        width: 64.7rem;
+        width: 100%;
         background: #090527;
         border-top-right-radius: 0.7rem;
         border-bottom-right-radius: 0.7rem;
-        
+
     }
 
     .navbar {
@@ -34,9 +34,23 @@
         font-family: 'Supermercado One', cursive !important;
     }
 
+
+    .changebuttons {
+        display: flex;
+
+        .homebutton {
+            height: 2.2rem;
+            width: 2.2rem;
+            background: inherit;
+            border-radius: 0.3rem;
+            margin-right: 1rem;
+        }
+    }
+
     .chatheader {
         display: flex;
-        background: #090527;;
+        background: #090527;
+        ;
     }
 
     .chatavatar {
@@ -44,13 +58,15 @@
         width: auto;
         margin-left: 2rem;
         margin-right: 1rem;
-        background: #090527;;
+        background: #090527;
+        ;
     }
 
     .chatimage {
         height: 3rem;
         width: 3rem;
-        background: #090527;;
+        background: #090527;
+        ;
         border: 0.1rem solid rgba(161, 247, 142, 0.92);
         outline: none;
         box-shadow: 0 0 0.3rem #2684bf;
@@ -60,13 +76,15 @@
     .chatusername {
         background: #090527;
         font-size: 2rem;
-        font-family: 'Arvo',sans-serif;
+        font-family: 'Arvo', sans-serif;
         color: #e2c7eceb;
     }
+
     .chatuser {
         height: auto;
     }
-    .messageinout{
+
+    .messageinout {
         height: auto;
     }
 
@@ -77,30 +95,34 @@
         margin-bottom: 2rem;
         padding-right: 0.2rem;
         padding-left: 0.2rem;
+
         &::-webkit-scrollbar {
             width: 0.3rem;
         }
-        
+
         &::-webkit-scrollbar-thumb {
             border-radius: 0.3rem;
-            background: linear-gradient(rgb(122, 96, 219),rgb(21, 0, 255));
+            background: linear-gradient(rgb(122, 96, 219), rgb(21, 0, 255));
         }
     }
 
     .message1 {
         display: flex;
         align-items: center;
-        background: #090527;;
+        background: #090527;
+
+        // margin:0.1rem;
         // height: auto;
         // margin-top: 0.1rem;
         .content {
-            max-width: 40%;
+            max-width: 50%;
             overflow-wrap: break-word;
             padding: 0.8rem;
             font-size: 1.1rem;
-            border-radius: 1rem;
+            border-radius: 0.6rem;
             color: #d1d1d1;
         }
+
         height: auto;
     }
 
@@ -111,15 +133,18 @@
 
         .content {
             background: #9a77edba;
+            // border-top-left-radius: 1rem;
+            // border-bottom-right-radius: 0.5rem;
+            // border-bottom-left-radius: 0.8rem;
         }
 
         .mainmessage {
-            background: #7b61be;
+            background: #7258b8;
         }
-        
+
         height: auto;
     }
-    
+
     .received {
         justify-content: flex-start;
         height: auto;
@@ -129,7 +154,7 @@
         }
 
         .mainmessage {
-            background: #3b13a2;
+            background: #320a99;
             height: auto;
         }
     }

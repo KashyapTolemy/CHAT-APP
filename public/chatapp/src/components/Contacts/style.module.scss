@@ -58,10 +58,12 @@
         border: 0.01rem solid rgba(255, 255, 255, 0.452);
         background: #000000;
         padding: 0rem 0 3rem 0rem;
-        // z-index: 2;
+        z-index: 2;
     }
 
     .contacts {
+        position: relative;
+        z-index:5;
         height: 22rem;
         overflow-y: scroll;
         border-top: 0.02rem solid rgba(137, 109, 241, 0.322);
@@ -91,6 +93,9 @@
     .usercontact {
         background: #000000;
         height: auto;
+    }
+    .contact1{
+        z-index: 2;
     }
 
     .current_user {

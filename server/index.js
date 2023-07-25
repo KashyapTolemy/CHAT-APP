@@ -47,17 +47,22 @@ const io = socket(server, {
 global.onlineUsers = new Map();
 
 io.on("connection", async (socket) => {
+  // console.log("connected");
   global.chatSocket = socket;
   socket.on("add-user", (userId) => {
+    console.log(`User with ID ${socket.id} connected.`);
     onlineUsers.set(userId, socket.id);
   });
-  
+
   socket.on("send-msg", (data) => {
-    console.log(data);
+    console.log({ data });
     const sendUserSocket = onlineUsers.get(data.to);
+    console.log(sendUserSocket);
     if (sendUserSocket) {
-      console.log(data);
-      socket.to(sendUserSocket).emit("msg-receive", data.msg);
+      socket.to(sendUserSocket).emit("msg-receive", {
+        message: data.message,
+        from: data.from,
+      });
     }
   });
 });

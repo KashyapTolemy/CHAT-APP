@@ -151,15 +151,6 @@ export default function Login() {
             Don't have an account ? <Link to="/register" className={styles.login}>Create One.</Link>
           </span>
         </form>
-        {
-          errorShows && (
-            <>
-              <div className={styles.nootbox}>
-                <img src={noot} ></img>
-              </div>
-            </>
-          )
-        }
       </div>
       <ToastContainer className={styles.toastcontainer} />
     </>

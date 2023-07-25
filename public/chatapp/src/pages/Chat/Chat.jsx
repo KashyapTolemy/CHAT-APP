@@ -12,7 +12,7 @@ import Logout from "../../components/Logout/Logout";
 
 
 const Chat = () => {
-  const socket = useRef()
+  const [socket, setSocket] = useState();
   const navigate = useNavigate();
   const [contacts, setContacts] = useState([])
   const [currentUser, setCurrentUser] = useState(undefined)
@@ -40,8 +40,11 @@ const Chat = () => {
 
   useEffect(() => {
     if (currentUser) {
-      socket.current = io(host);
-      socket.current.emit("add-user", currentUser._id)
+      setSocket(() => {
+        const socket = io(host);
+        socket.emit("add-user", currentUser._id);
+        return socket;
+      });
     }
   }, [currentUser])
 
@@ -64,24 +67,24 @@ const Chat = () => {
     <>{
       isLoading ? (
         <Loader />
-      ):(
+      ) : (
 
-      <div className={styles.container1}>
-        <div className={styles.container}>
-          <div className={styles.contacts}>
-            <Contacts className={styles.contacts1} contacts={contacts} currentUser={currentUser} changeChat={handleChatChange} />
-          </div>
-          <div className={styles.container2}>
-            {
-              isLoaded && currentChat === undefined ? (
-                <Welcome className={styles.welcome} currentUser={currentUser} />
-              ) : (
-                <ChatContainer currentChat={currentChat} currentUser={currentUser} socket={socket} />
-              )
-            }
+        <div className={styles.container1}>
+          <div className={styles.container}>
+            <div className={styles.contacts}>
+              <Contacts className={styles.contacts1} contacts={contacts} currentUser={currentUser} changeChat={handleChatChange} />
+            </div>
+            <div className={styles.container2}>
+              {
+                isLoaded && currentChat === undefined ? (
+                  <Welcome className={styles.welcome} currentUser={currentUser} />
+                ) : (
+                  <ChatContainer currentChat={currentChat} currentUser={currentUser} socket={socket} />
+                )
+              }
+            </div>
           </div>
         </div>
-      </div>
       )
     }
     </>

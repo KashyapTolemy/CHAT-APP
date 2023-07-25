@@ -1,7 +1,10 @@
 .EmojiPickerReact {
-    position: fixed!important;
-    bottom:8rem!important;
-    width: 20rem!important;
-    background: #211c40!important;
-  }
-  
+  z-index: 10;
+  position: fixed !important;
+  top: 12rem !important;
+  width: 20rem !important;
+  // background: #211c40 !important;\
+  // .epr-search-container{
+  //   // background: white!important;
+  // }
+}
