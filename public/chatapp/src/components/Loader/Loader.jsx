@@ -1,6 +1,5 @@
 import styles from "../Loader/style.module.scss";
 import React, { useState, useEffect } from "react";
-import loader1 from "../../assets/loaderc.gif"
 
 const Loader = () => {
     const [name, setName] = useState("CHATIFY");
