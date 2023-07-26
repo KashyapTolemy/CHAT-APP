@@ -6,10 +6,19 @@
    background: black;
 
    .loader1 {
-      height: 30rem;
-      width: auto;
-      margin-bottom: 2rem;
-      margin-left: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: max-content;
+      width: 40rem;
+      background: #000000;
+      font-size: 7rem;
+      .project {
+         color: black;
+         text-shadow: 1px 0 #fff, -1px 0 #fff, 0 1px #fff, 0 -1px #fff,
+            1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+         font-size: 9rem;
+      }
    }
 
    .smallLight1 {

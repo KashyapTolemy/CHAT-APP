@@ -12,8 +12,8 @@
     .container {
         display: flex;
         flex-direction: column;
-        width: 64.6rem;
         height: 43rem;
+        width: 100%;
         border-top-right-radius: 0.7rem;
         border-bottom-right-radius: 0.7rem;
         align-items: center;
@@ -33,26 +33,30 @@
         background: black;
         height: auto;
     }
-
+    
     .t1 {
         background: black;
         // margin-top: 3rem;
+        color:#8947bf;
         height: auto;
         font-size: 3.5rem;
+        font-family: 'Arvo', serif;
     }
-
+    
     .t3 {
+        font-family: 'Audiowide', cursive;
         background: black;
         margin-top: 1rem;
-        padding-left: 4rem;
+        padding-left: 2rem;
         height: auto;
-        font-size: 1.5rem;
-        color: rgba(111, 230, 239, 0.783);
+        font-size: 1.4rem;
     }
-
+    
     .t2 {
         background: black;
-        color: #b72584;
+        color: #6320b3;
+        // color: #9b148b;
         height: auto;
+        // font-size: 3.5rem;
     }
 }

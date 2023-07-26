@@ -47,15 +47,12 @@ const io = socket(server, {
 global.onlineUsers = new Map();
 
 io.on("connection", async (socket) => {
-  // console.log("connected");
   global.chatSocket = socket;
-  socket.on("add-user", (userId) => {
-    console.log(`User with ID ${socket.id} connected.`);
+  socket.on("add-user", (userId) => {;
     onlineUsers.set(userId, socket.id);
   });
 
   socket.on("send-msg", (data) => {
-    console.log({ data });
     const sendUserSocket = onlineUsers.get(data.to);
     console.log(sendUserSocket);
     if (sendUserSocket) {

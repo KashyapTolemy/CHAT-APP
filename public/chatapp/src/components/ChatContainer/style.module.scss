@@ -14,14 +14,14 @@
 
     .container3 {
         height: 43rem;
-        width: 100%;
+        width: 100%!important;
         background: #090527;
         border-top-right-radius: 0.7rem;
         border-bottom-right-radius: 0.7rem;
-
     }
 
     .navbar {
+        width: 100%;
         display: flex;
         background: #090527;
         justify-content: space-between;
@@ -59,14 +59,12 @@
         margin-left: 2rem;
         margin-right: 1rem;
         background: #090527;
-        ;
     }
 
     .chatimage {
         height: 3rem;
         width: 3rem;
         background: #090527;
-        ;
         border: 0.1rem solid rgba(161, 247, 142, 0.92);
         outline: none;
         box-shadow: 0 0 0.3rem #2684bf;
@@ -76,7 +74,7 @@
     .chatusername {
         background: #090527;
         font-size: 2rem;
-        font-family: 'Arvo', sans-serif;
+        font-family: 'Rajdhani', sans-serif;
         color: #e2c7eceb;
     }
 
@@ -90,6 +88,7 @@
 
     .chatmessages {
         height: 33rem;
+        width: 100%;
         background: #090527;
         overflow-y: scroll;
         margin-bottom: 2rem;
@@ -119,7 +118,7 @@
             overflow-wrap: break-word;
             padding: 0.8rem;
             font-size: 1.1rem;
-            border-radius: 0.6rem;
+            border-radius: 0.8rem;
             color: #d1d1d1;
         }
 
@@ -133,9 +132,14 @@
 
         .content {
             background: #9a77edba;
+            margin-right: 0.5rem;
+            min-width: 2rem;
+            display: flex;
+            justify-content: center;
             // border-top-left-radius: 1rem;
             // border-bottom-right-radius: 0.5rem;
             // border-bottom-left-radius: 0.8rem;
+            margin-bottom: 0.1rem;
         }
 
         .mainmessage {
@@ -151,6 +155,10 @@
 
         .content {
             background: #4e0de598;
+            margin-left: 0.5rem;
+            min-width: 2rem;
+            display: flex;
+            justify-content: center;
         }
 
         .mainmessage {

@@ -6,7 +6,6 @@ import "react-toastify/dist/ReactToastify.css"
 import axios from "axios"
 import { loginRoute } from "../../utils/APIRoutes";
 import { motion } from 'framer-motion';
-import noot from '../../assets/nootnoot.gif'
 
 export default function Login() {
   // console.log("aaaa")

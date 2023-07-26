@@ -13,6 +13,12 @@ const ChatContainer = ({ currentChat, currentUser, socket }) => {
     const [arrivalMessage, setArrivalMessage] = useState(null)
     const scrollRef = useRef();
     const navigate = useNavigate();
+    const [str, setStr] = useState("");
+    useEffect(() => {
+        const stringa = currentChat.username;
+        setStr(stringa.charAt(0).toUpperCase() + stringa.slice(1));
+        console.log(str);
+    })
     useEffect(() => {
         (async () => {
             if (currentChat) {
@@ -25,6 +31,9 @@ const ChatContainer = ({ currentChat, currentUser, socket }) => {
         })()
     }, [currentChat])
     const handleSendMsg = async (msg) => {
+        const msgs = [...messages];
+        msgs.push({ fromSelf: true, message: msg });
+        setMessages(msgs);
         socket.emit("send-msg", {
             to: currentChat._id,
             from: currentUser._id,
@@ -35,9 +44,7 @@ const ChatContainer = ({ currentChat, currentUser, socket }) => {
             to: currentChat._id,
             message: msg,
         });
-        const msgs = [...messages];
-        msgs.push({ fromSelf: true, message: msg });
-        setMessages(msgs);
+        console.log(msg);
     };
 
     const handleBack = () => {
@@ -78,7 +85,7 @@ const ChatContainer = ({ currentChat, currentUser, socket }) => {
                                 />
                             </div>
                             <div className={styles.chatuser}>
-                                <h2 className={styles.chatusername}>{currentChat.username}</h2>
+                                <h2 className={styles.chatusername}>{str}</h2>
                             </div>
                         </div>
                         <div className={styles.changebuttons}>

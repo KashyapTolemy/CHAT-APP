@@ -16,26 +16,24 @@
         margin-right: 3rem;
         box-sizing: border-box;
         height: max-content;
-        width: 85rem;
+        width: 84.5%;
         border-radius: 0.7rem;
         padding: 0;
         border: 0.01rem solid rgba(255, 255, 255, 0.386);
         border-color: #269ebf7c;
         box-shadow: 0 0 0.5rem #2684bf5d;
         background: none !important;
-
     }
 
     .container {
-        width: fit-content;
+        width: 100%;
         height: 43.1rem;
-        // border-radius: 0.7rem;
         display: flex;
-
     }
 
     .container2 {
         position: absolute;
+        width:65%;
         top: 2rem;
         left: 25.19rem;
         border-top-right-radius: 0.7rem;
