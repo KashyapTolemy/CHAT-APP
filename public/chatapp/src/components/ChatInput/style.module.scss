@@ -67,3 +67,11 @@
         bottom: 8rem !important;
     }
 }
+@media screen and (max-width:1000px) {
+    .chatinputcontainer{
+        width: 70vw;
+    }
+    .inputcontainer{
+        width: 70vw;
+    }
+}

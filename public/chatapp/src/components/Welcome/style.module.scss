@@ -63,7 +63,15 @@
     }
 }
 
+@media screen and (min-width: 651px) and ( max-width: 1000px) {
+    .container{
+        width: 75vw;
+    }
+}
 @media screen and (max-width:650px) {
+    .container{
+        width: 75vw;
+    }
     .image {
         margin-top: 5rem;
         width: 70vw;

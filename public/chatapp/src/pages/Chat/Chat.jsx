@@ -85,37 +85,42 @@ const Chat = () => {
       isLoading ? (
         <Loader />
       ) : (
-        <div className={styles.container1}>
-          <div className={styles.container}>
-            <div className={styles.contacts}>
-              {
-                !showButton || (showButton && showContactSection) ?
-                  <Contacts className={styles.contacts1} contacts={contacts} currentUser={currentUser} changeChat={handleChatChange} /> : null
-              }
-            </div>
-            <div className={styles.container2}>
-              {
-                isLoaded && currentChat === undefined ? (
-                  <Welcome className={styles.welcome} currentUser={currentUser} />
-                ) : (
-                  <ChatContainer currentChat={currentChat} currentUser={currentUser} socket={socket} />
-                )
-              }
-            </div>
-            <div >
-              {
-                showButton ?
-                  (!showContactSection ?
-                    <button className={styles.resbutton} onClick={handleContact}>CHAT</button>
-                    :
-                    <button className={styles.crossbutton} onClick={handleContact}>X</button>
+        <>
+          {
+            showContactSection ? <div className={styles.forblur}></div> : null
+          }
+          <div className={styles.container1}>
+            <div className={styles.container}>
+              <div className={styles.contacts} style={{ display: showButton && showContactSection ? 'block' : '' }}>
+                {
+                  !showButton || (showButton && showContactSection) ?
+                    <Contacts className={styles.contacts1} contacts={contacts} currentUser={currentUser} changeChat={handleChatChange} /> : null
+                }
+              </div>
+              <div className={styles.container2}>
+                {
+                  isLoaded && currentChat === undefined ? (
+                    <Welcome className={styles.welcome} currentUser={currentUser} />
+                  ) : (
+                    <ChatContainer currentChat={currentChat} currentUser={currentUser} socket={socket} />
                   )
-                  :
-                  null
-              }
+                }
+              </div>
+              <div >
+                {
+                  showButton ?
+                    (!showContactSection ?
+                      <button className={styles.resbutton} onClick={handleContact}>CHAT</button>
+                      :
+                      <button className={styles.crossbutton} onClick={handleContact}>X</button>
+                    )
+                    :
+                    null
+                }
+              </div>
             </div>
           </div>
-        </div>
+        </>
       )
     }
     </>

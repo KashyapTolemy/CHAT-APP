@@ -10,15 +10,15 @@
       flex-direction: column;
       justify-content: center;
       height: max-content;
-      width: 40rem;
+      width: 50vw;
       background: #000000;
-      font-size: 7rem;
+      font-size: 10vw;
       .project {
          background: #000000;
          color: black;
          text-shadow: 1px 0 #fff, -1px 0 #fff, 0 1px #fff, 0 -1px #fff,
             1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
-         font-size: 9rem;
+         font-size: 12vw;
       }
       .chatifyname{
          background: #000000;
@@ -29,9 +29,9 @@
       position: absolute;
       top: 0vh;
       left: 0;
-      height: 80rem;
-      width: 30rem;
-      background: radial-gradient(60rem circle at 0vw 45vh,
+      height: 40rem;
+      width: 60vw;
+      background: radial-gradient(60vw circle at 0vw 45vh,
             rgba(12, 136, 152, 0.306),
             transparent 30%);
       z-index: 2;

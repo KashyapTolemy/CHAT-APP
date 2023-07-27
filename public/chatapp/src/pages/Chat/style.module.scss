@@ -53,7 +53,7 @@
 
     .resbutton {
         position: absolute;
-        right: 5vw;
+        right: 45vw;
         top: 41rem;
         z-index: 10 !important;
         display: block;
@@ -81,7 +81,7 @@
 
     .crossbutton {
         position: absolute;
-        right: 30vw;
+        right: 40vw;
         top: 41rem;
         z-index: 10 !important;
         display: block;
@@ -107,14 +107,25 @@
         }
 
     }
+    .forblur{
+        content: '';
+        position: absolute;
+        height: 100vh;
+        width: 100vw;
+        backdrop-filter: blur(1rem);
+    }
 }
 
 @media screen and (min-width: 551px) and ( max-width: 1000px) {
     .container1 {
-        width: 65vw;
+        width: 75vw;
+    }
+    .container2 {
+        width: 75vw;
     }
 
     .contacts {
+        display: none;
         z-index: 2;
         height: 43.1rem;
         width: 40vw;
@@ -124,14 +135,26 @@
         right: 0vw;
         border-left: white;
     }
+    .resbutton{
+        position: absolute;
+        top: 45rem;
+    }
+    .crossbutton{
+        position: absolute;
+        top: 45rem;
+    }
 }
 
 @media screen and (max-width: 550px) {
     .container1 {
-        width: 65vw;
+        width: 75vw;
+    }
+    .container2 {
+        width: 75vw;
     }
 
     .contacts {
+        display: none;
         z-index: 2;
         height: 43.1rem;
         width: 40vw;
@@ -144,12 +167,11 @@
 
     .resbutton{
         position: absolute;
-        right: 40vw;
         top: 45rem;
     }
     .crossbutton{
         position: absolute;
-        right: 43vw;
         top: 45rem;
+        right:50vw
     }
 }
