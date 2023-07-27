@@ -11,6 +11,7 @@
 .homepage {
     background: #020513;
     height: 100vh;
+    width: 100vw;
     overflow: hidden;
 
     .imagelogo {
@@ -46,8 +47,8 @@
         border-bottom-right-radius: 0.3rem;
         border-bottom-left-radius: 0.6rem;
         position: absolute;
-        top: 3%;
-        left: 89%;
+        top: 1.5rem;
+        right: 5vw;
         z-index: 5;
         &:hover{
             border: 0.001rem solid rgba(255, 255, 255, 0.888);
@@ -59,8 +60,8 @@
         height: 3rem;
         width: 8rem;
         position: absolute;
-        top: 8%;
-        left: 90%;
+        top: 4rem;
+        right: 5vw;
         z-index: 5;
         display: flex;
         align-items: center;
@@ -97,20 +98,22 @@
         z-index: 5;
         font-family: 'Gruppo', sans-serif;
         font-weight: bolder;
-
+        background: transparent;
         
         .homelogin {
             margin-right: 1.5rem;
             font-size: 1.4rem;
             background: inherit;
             text-decoration: none;
+            background: transparent;
         }
-
+        
         .homeregister {
             margin-left: 1.5rem;
             font-size: 1.4rem;
             background: inherit;
             text-decoration: none;
+            background: transparent;
         }
     }
 
@@ -121,7 +124,6 @@
         height: auto;
         font-size: 1.3rem;
         font-family: 'Gruppo', sans-serif;
-        // background: inherit;
         border: 0.1rem solid #020513;
         padding: 0.4rem;
         background: linear-gradient(to right, white 50%, #020513 50%) right;
@@ -132,6 +134,7 @@
         .arrowlink {
             background: inherit;
             text-decoration: none;
+            background: transparent;
         }
 
         &:hover {
@@ -153,13 +156,15 @@
         z-index: 5;
         position: absolute;
         top: 70%;
-        left: 70%;
+        margin-left:40rem ;
+        right: 0vw;
         font-size: 1.2rem;
         animation: slideInLeft 1s ease-out;
         .para {
             border-left: 0.2rem solid white;
             padding-left: 0.5rem;
-            padding-right: 4rem;
+            padding-right: 6vw;
+            width:22rem;
             background: #020513;
             font-family: 'Rajdhani', sans-serif;
         }
@@ -167,9 +172,9 @@
 
     .line {
         position: absolute;
-        top: 47%;
+        top: 41%;
         left: 33%;
-        width: 7rem;
+        width: 7vw;
         height: auto;
         border-top: 0.1rem solid white;
         background: inherit;
@@ -188,33 +193,27 @@
     }
     .smallLight {
         position: absolute;
-        top: 0;
         left: 0;
         height: 50rem;
-        width: 50rem;
-        background: radial-gradient(50rem circle at 5vw 45vh,
+        width: 50vw;
+        background: radial-gradient(40vw circle at 5vw 35vh,
                 rgba(12, 136, 152, 0.306),
                 transparent 30%);
-        z-index: -1;
-
-        @media screen and (max-width: 900px) {
-            height: auto;
-            width: auto;
-        }
-
-        z-index: 2;
+        z-index: 0;
     }
 
     .homeusers {
         position: absolute;
         top: 60%;
-        left: -2%;
+        left: -1vw;
         height: auto;
         background: inherit;
         display: flex;
         transform: rotate(-90deg);
         font-family: 'Gruppo', sans-serif;
-
+        z-index: 2;
+        background: transparent;
+        
         .usericon {
             background: inherit;
             margin-right: 0.5rem;
@@ -231,12 +230,14 @@
     .homemessages {
         position: absolute;
         top: 35%;
-        left: -3.5%;
+        left: -2.5vw;
         height: auto;
         background: inherit;
         display: flex;
         transform: rotate(-90deg);
         font-family: 'Gruppo', sans-serif;
+        z-index: 2;
+        background: transparent;
 
         .messageicon {
             background: inherit;
@@ -264,20 +265,44 @@
             top: 30%;
             left: 60%;
             transform: translate(-50%, -50%);
-            padding-top: 15rem;
-            padding-left: 10rem;
-            height: 30rem;
-            width: 60rem;
+            padding-top: 15vw;
+            padding-left: 10vw;
+            height: 30vw;
+            width: 60vw;
         }
 
         .webname {
-            font-size: 7rem;
+            font-size: 7vw;
             font-family: 'Gruppo', sans-serif;
             font-weight: bolder;
             background: none;
-            height: auto;
+            height: 20vw;
             animation: slideInLeft 1s ease-in-out;
         }
+    }
+}
+@media screen  and (min-width:651px) and (max-width:900px) {
+    .overlaytext {
+        position: absolute;
+        top: 70rem;
+        left: 60%;
+    }
+}
+@media screen  and (max-width:650px) {
+    .overlaytext {
+        position: absolute;
+        top: 70rem;
+        left: 60%;
+    }
+    .contactbutton{
+        position: absolute;
+        top: 10rem!important;
+        right: 10vw!important;
+    }
+    .contactbox{
+        position: absolute;
+        top: 13rem!important;
+        right: 10vw!important;
     }
 }
 

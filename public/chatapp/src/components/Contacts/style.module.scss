@@ -10,7 +10,7 @@
 * {
     .container {
         
-        width: 100%;
+        width: 18vw;
         height: 45rem;
         box-sizing: border-box;
     }
@@ -29,10 +29,10 @@
 
     .chatifyname {
         background: #000000;
-        margin-left: 4rem;
+        margin-left: 2vw;
         height: auto;
         font-family: 'Gruppo', sans-serif;
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
     .username {
@@ -53,10 +53,9 @@
 
     .container1 {
         height: 40rem;
-        width: 20rem;
+        width: 20vw;
         border-top-left-radius: 0.7rem;
         border-bottom-left-radius: 0.7rem;
-        // box-sizing: border-box;
         border: 0.01rem solid rgba(255, 255, 255, 0.452);
         background: #000000;
         padding: 0rem 0 3rem 0rem;
@@ -68,6 +67,7 @@
         position: relative;
         z-index:5;
         height: 22rem;
+        width: inherit;
         overflow-y: scroll;
         border-top: 0.02rem solid rgba(137, 109, 241, 0.322);
         border-bottom: 0.02rem solid rgba(137, 109, 241, 0.322);
@@ -123,8 +123,8 @@
     }
 
     .logoimage {
-        height: 5rem;
-        width: 5rem;
+        height: auto;
+        width: 3rem;
         background: #000000;
     }
 
@@ -145,7 +145,6 @@
 
     .selected {
         border: 0.03rem solid rgba(246, 60, 227, 0.881);
-        // background: #0000003b!important;
     }
 
 
@@ -167,5 +166,24 @@
         height: 5.5rem;
         width: 5.5rem;
         background: #000000;
+    }
+}
+@media screen and (max-width:1000px) {
+    .container1 {
+        position: absolute;
+        top:0rem;
+        height: 40rem;
+        width: 40vw;
+        z-index: 2;
+    }
+
+    .contact1 {
+        height: 5rem;
+        width: 40vw;
+
+        &:hover {
+            border: 0.03rem solid rgba(108, 216, 128, 0.881);
+        }
+
     }
 }

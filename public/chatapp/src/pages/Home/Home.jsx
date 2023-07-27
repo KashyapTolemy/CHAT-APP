@@ -78,12 +78,6 @@ const Home = () => {
                         Let's connect.
                     </div>
                     <div className={styles.cross}>
-                        {/* <ReactAudioPlayer
-                        src={audio}
-                        className={styles.audio}
-                        autoPlay
-                        controls
-                    /> */}
                     </div>
                     {
                         clicked && (
@@ -117,12 +111,12 @@ const Home = () => {
                             42K+&nbsp;Messages
                         </div>
                     </div>
-                    <div className={styles.line}></div>
                     <div className={styles.smallLight} onMouseEnter={textEnter} onMouseLeave={textLeave} ></div>
                     <div className={styles.homeherosection}>
                         <div className={styles.overlaytext}>
                             <div className={styles.webname}>PROJECT <br />&nbsp;CHATIFY</div>
                         </div>
+                        <div className={styles.line}></div>
                     </div>
                 </div>
             )

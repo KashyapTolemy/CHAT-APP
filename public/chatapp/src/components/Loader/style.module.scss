@@ -14,18 +14,22 @@
       background: #000000;
       font-size: 7rem;
       .project {
+         background: #000000;
          color: black;
          text-shadow: 1px 0 #fff, -1px 0 #fff, 0 1px #fff, 0 -1px #fff,
             1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
          font-size: 9rem;
       }
+      .chatifyname{
+         background: #000000;
+      }
    }
 
    .smallLight1 {
       position: absolute;
-      top: 10;
+      top: 0vh;
       left: 0;
-      height: 40rem;
+      height: 80rem;
       width: 30rem;
       background: radial-gradient(60rem circle at 0vw 45vh,
             rgba(12, 136, 152, 0.306),

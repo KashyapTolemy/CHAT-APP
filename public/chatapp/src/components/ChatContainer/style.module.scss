@@ -14,14 +14,15 @@
 
     .container3 {
         height: 43rem;
-        width: 100%!important;
+        width: 65vw !important;
         background: #090527;
+        border-left: 0.001rem solid white;
         border-top-right-radius: 0.7rem;
         border-bottom-right-radius: 0.7rem;
     }
 
     .navbar {
-        width: 100%;
+        width: 65vw;
         display: flex;
         background: #090527;
         justify-content: space-between;
@@ -37,6 +38,7 @@
 
     .changebuttons {
         display: flex;
+        background: #090527;
 
         .homebutton {
             height: 2.2rem;
@@ -88,7 +90,7 @@
 
     .chatmessages {
         height: 33rem;
-        width: 100%;
+        width: 65vw;
         background: #090527;
         overflow-y: scroll;
         margin-bottom: 2rem;
@@ -109,20 +111,21 @@
         display: flex;
         align-items: center;
         background: #090527;
-
-        // margin:0.1rem;
-        // height: auto;
-        // margin-top: 0.1rem;
+        position: relative;
+        font-size: large;
         .content {
-            max-width: 50%;
+            height: auto;
+            max-width: 40%;
             overflow-wrap: break-word;
             padding: 0.8rem;
-            font-size: 1.1rem;
-            border-radius: 0.8rem;
+            font-size: 1.3rem;
             color: #d1d1d1;
+            display: flex;
+            justify-content: center;
         }
 
-        height: auto;
+        // height: 1rem;
+        // height: auto;
     }
 
 
@@ -131,34 +134,38 @@
         justify-content: flex-end;
 
         .content {
+            position: relative;
             background: #9a77edba;
-            margin-right: 0.5rem;
+            margin-right: 1.5rem;
             min-width: 2rem;
-            display: flex;
-            justify-content: center;
-            // border-top-left-radius: 1rem;
-            // border-bottom-right-radius: 0.5rem;
-            // border-bottom-left-radius: 0.8rem;
+            
             margin-bottom: 0.1rem;
+            // padding: 0.5rem;
+            border-top-left-radius: 0.8rem;
+            border-bottom-left-radius: 0.8rem;
+            border-top-right-radius: 0.8rem;
         }
 
         .mainmessage {
+            position: relative;
             background: #7258b8;
         }
-
-        height: auto;
     }
 
     .received {
         justify-content: flex-start;
-        height: auto;
+        // height: auto;
 
         .content {
             background: #4e0de598;
-            margin-left: 0.5rem;
+            margin-left: 1.5rem;
             min-width: 2rem;
             display: flex;
             justify-content: center;
+            margin-bottom: 0.1rem;
+            border-top-left-radius: 0.8rem;
+            border-bottom-right-radius: 0.8rem;
+            border-top-right-radius: 0.8rem;
         }
 
         .mainmessage {
@@ -167,4 +174,10 @@
         }
     }
 
+}
+@media screen and (max-width:450px) {
+    .chatavatar{
+        height: 0;
+        width: 0;
+    }
 }

@@ -24,7 +24,7 @@ const Loader = () => {
                 {/* <img src={loader1} className={styles.loader1}/> */}
                 <div className={styles.loader1}>
                     <p className={styles.project}>PROJECT</p>
-                    <p>{name}</p>
+                    <p className={styles.chatifyname}>{name}</p>
                 </div>
             </div>
         </>

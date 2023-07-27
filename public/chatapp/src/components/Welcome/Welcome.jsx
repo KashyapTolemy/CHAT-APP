@@ -7,7 +7,6 @@ const Welcome = ({ currentUser }) => {
   useEffect(()=>{
     const stringa =currentUser.username;
     setStr(stringa.charAt(0).toUpperCase()+stringa.slice(1));
-    console.log(str);
   })
   return (
     <>

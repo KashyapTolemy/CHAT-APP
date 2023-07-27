@@ -46,8 +46,7 @@ const ChatInput = ({ handleSendMsg }) => {
                     if (audioRef.current) {
                         audioRef.current.play();
                     }
-                }
-                }>
+                }}>
                     <audio ref={audioRef} src={audio1} />
                     <input className={styles.messageinput} value={msg} onChange={(e) => setMsg(e.target.value)} type="text" placeholder=" Type your message" />
                     <button className={styles.sendbutton}>

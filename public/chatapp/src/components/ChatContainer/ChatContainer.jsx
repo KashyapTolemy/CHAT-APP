@@ -101,7 +101,7 @@ const ChatContainer = ({ currentChat, currentUser, socket }) => {
                                         ${message.fromSelf ? styles.sent : styles.received}
                                     `}>
                                         <div className={styles.content}>
-                                            <p className={styles.mainmessage}>{message.message}</p>
+                                            <div className={styles.mainmessage}>{message.message}</div>
                                         </div>
                                     </div>
                                 </div>

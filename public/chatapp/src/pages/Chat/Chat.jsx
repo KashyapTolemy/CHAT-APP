@@ -19,6 +19,8 @@ const Chat = () => {
   const [currentChat, setCurrentChat] = useState(undefined)
   const [isLoaded, setIsLoaded] = useState(false)
   const [isLoading, setIsLoading] = useState(true);
+  const [showButton, setShowButton] = useState(false);
+  const [showContactSection, setShowContactSection] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
@@ -26,6 +28,21 @@ const Chat = () => {
     }, 5000);
   }, []);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setShowButton(window.innerWidth < 1000);
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [])
+  const handleContact = () => {
+    setShowContactSection(!showContactSection);
+    console.log(showContactSection);
+  }
 
   useEffect(() => {
     (async () => {
@@ -68,11 +85,13 @@ const Chat = () => {
       isLoading ? (
         <Loader />
       ) : (
-
         <div className={styles.container1}>
           <div className={styles.container}>
             <div className={styles.contacts}>
-              <Contacts className={styles.contacts1} contacts={contacts} currentUser={currentUser} changeChat={handleChatChange} />
+              {
+                !showButton || (showButton && showContactSection) ?
+                  <Contacts className={styles.contacts1} contacts={contacts} currentUser={currentUser} changeChat={handleChatChange} /> : null
+              }
             </div>
             <div className={styles.container2}>
               {
@@ -81,6 +100,18 @@ const Chat = () => {
                 ) : (
                   <ChatContainer currentChat={currentChat} currentUser={currentUser} socket={socket} />
                 )
+              }
+            </div>
+            <div >
+              {
+                showButton ?
+                  (!showContactSection ?
+                    <button className={styles.resbutton} onClick={handleContact}>CHAT</button>
+                    :
+                    <button className={styles.crossbutton} onClick={handleContact}>X</button>
+                  )
+                  :
+                  null
               }
             </div>
           </div>
