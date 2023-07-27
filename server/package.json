@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "esbuild ./index.js --bundle --platform=node --target=node14 --outfile=dist/main.js --minify --external:mock-aws-s3 --external:nock --external:aws-sdk",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js"
   },
@@ -13,6 +14,7 @@
     "bcrypt": "^5.1.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
+    "esbuild": "^0.18.17",
     "express": "^4.18.2",
     "mongoose": "^7.2.0",
     "nodemon": "^2.0.22",
