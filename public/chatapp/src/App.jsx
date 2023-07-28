@@ -6,7 +6,6 @@ import Chat from "./pages/Chat/Chat"
 import SetAvatar from './pages/SetAvatar/SetAvatar'
 import Home from './pages/Home/Home'
 
-
 const App = () => {
   return (
     <BrowserRouter>

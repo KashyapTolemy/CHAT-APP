@@ -7,13 +7,12 @@ const Loader = () => {
     useEffect(() => {
         let count = 0;
         const interval = setInterval(() => {
-            let value = ["C", "H", "A", "T", "I", "F","Y"];
+            let value = ["C", "H", "A", "T", "I", "F", "Y"];
             for (var i = Math.floor(count); i < 7; i++) {
                 value[i] = alphas[Math.floor(Math.random() * 26)];
             }
             setName(value.join(""));
             count += 1 / 30;
-            console.log("lol");
         }, 10);
         return () => clearInterval(interval);
     }, []);
