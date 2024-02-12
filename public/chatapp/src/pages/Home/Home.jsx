@@ -56,7 +56,7 @@ const Home = () => {
             width: 40,
             x: mousePosition.x - 45,
             y: mousePosition.y - 45,
-            backgroundColor: "yellow",
+            backgroundColor: "transparent",
             mixBlendMode: "difference"
         }
     }

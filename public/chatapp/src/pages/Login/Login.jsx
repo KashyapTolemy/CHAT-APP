@@ -8,7 +8,6 @@ import { loginRoute } from "../../utils/APIRoutes";
 import { motion } from 'framer-motion';
 
 export default function Login() {
-  // console.log("aaaa")
   const navigate = useNavigate();
   const [values, setValues] = useState({ username: "", password: "" });
   const [errorShows, setErrorShows] = useState(false);
