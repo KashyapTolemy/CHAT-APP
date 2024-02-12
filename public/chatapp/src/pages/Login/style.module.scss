@@ -1,222 +1,114 @@
-@use "../../styles/mixins.scss";
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@100;300;400&family=Wix+Madefor+Display:wght@400;500&display=swap');
+.login_container {
+    color: black;
+    // display: grid;
+    // place-items: center;
+    height: 100vh;
+    width: 100vw;
 
-// font-family: 'Roboto', sans-serif;
-// font-family: 'Wix Madefor Display', sans-serif;
-@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Audiowide&family=Gruppo&family=Lexend+Peta:wght@500;600;700&family=Rajdhani:wght@300;400&family=Roboto:wght@400;500&family=Sora:wght@500;600&display=swap');
-// font-family: 'Arvo', serif;
-// font-family: 'Audiowide', cursive;
-// font-family: 'Gruppo', sans-serif;
-// font-family: 'Lexend Peta', sans-serif;
-// font-family: 'Rajdhani', sans-serif;
-// font-family: 'Sora', sans-serif;
-// font-family: 'Roboto', sans-serif;
-
-* {
-    background: radial-gradient(circle at 90vw 0vh,
-            rgba(69, 25, 203, 0.317),
-            #07021397 50%);
-    align-items: center;
-    overflow: hidden;
-
-    border: 0px;
-    margin: 0px;
-
-    .container {
-        .smallLight {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 30rem;
-            width: 30rem;
-            background: radial-gradient(50rem circle at 0vw 25vh,
-                    rgba(12, 136, 152, 0.306),
-                    transparent 30%);
-            z-index: -1;
-
-            @media screen and (max-width: 900px) {
-                height: auto;
-                width: auto;
-            }
-        }
-
-        .cursor1 {
-            border: 0.1rem solid rgba(255, 255, 255, 0.772);
-            height: 1.2rem;
-            width: 1.2rem;
-            border-radius: 50%;
-            // box-shadow: 120px 80px 40px 20px rgb(23, 207, 207);
-            position: fixed;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            z-index: 5;
-        }
-
+    .brand {
+        position: relative;
+        top: 0;
+        left: 0;
         display: flex;
-        align-items: center;
+        flex-direction: row;
+        height: max-content;
+
+        .brand_img {
+            height: 5rem;
+            width: 5rem;
+        }
+
+        .brand_title {
+            font-size: 2rem;
+            color: rgb(139, 90, 199);
+            -webkit-text-stroke: 0.05rem rgba(6, 5, 5, 0.662);
+        }
+    }
+
+    .form {
+        background: white;
+        position: relative;
+        left: 10%;
+        top: 10%;
+        display: flex;
         justify-content: center;
-        height: 100vh;
-        width: auto;
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
+        align-items: center;
+        flex-direction: column;
+        border: 0.1rem solid black;
+        height: 70%;
+        width: 80%;
+        box-shadow: rgb(139, 90, 199) 5px 5px, rgb(139, 90, 199 ,0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+        &::before {
+            content: counter(item);
+            display: block;
+            -webkit-background-clip: text;
+            color: transparent;
+            font-weight: 700;
+            font-size: clamp(1.2rem, 2rem + 2vw, 3rem);
+          }
+        .login {
+            background: transparent;
+            color: black;
+            height: max-content;
+            width: max-content;
+            padding-bottom: 3rem;
+            font-size: 2.5rem;
+            font-weight: 700;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+        }
 
-        // border-radius: 50%;
-        .form {
-            z-index: 4;
+        .username {
+            background: transparent;
+            height: 2rem;
+            margin-bottom: 0.5rem;
+            width: 15rem;
+            font-size: 1rem;
+            color: black;
+            &::placeholder {
+                padding: 0.1rem;
+            }
+        }
+        
+        .password {
+            background: transparent;
+            height: 2rem;
+            margin-bottom: 2rem;
+            width: 15rem;
+            font-size: 1rem;
+            color: black;
+
+            &::placeholder {
+                padding: 0.1rem;
+            }
+        }
+
+        .submit {
+            background: transparent;
+            height: 2.5rem;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
             color: white;
-            border-radius: 3rem;
-            height: 30rem;
-            width: 50rem;
-            @include mixins.flexCenter;
-            flex-direction: column;
-            border: 0.01rem solid rgba(255, 255, 255, 0.386);
-            border-color: #269ebf;
-            box-shadow: 0 0 0.5rem #2684bf;
-            background: inherit;
-            font-family: 'Wix Madefor Display', sans-serif;
+            background: rgb(139, 90, 199);
+            border-bottom: 0.2rem solid black;
+            border-right: 0.2rem solid black;
+            border-radius: 0.2rem;
+        }
 
-            @media screen and (min-width:501px) and (max-width: 900px) {
-                height: 50rem;
-                width: 30rem;
-            }
-
-            @media screen and (max-width: 500px) {
-                height: 40rem;
-                width: 25rem;
-            }
-
-            .brand {
-                @include mixins.flexCenter;
-                font-family: 'Poppins', sans-serif;
-                font-size: 1.5rem;
-                height: 5rem;
-                margin-bottom: 1.8rem;
-                background: initial;
-
-                .image {
-                    height: 7rem;
-                    width: 7rem;
-                    background: inherit;
-                }
-
-                .chatify {
-                    font-family: 'Gruppo', sans-serif;
-                    // animation: slideInLeft 1s ease-in-out;
-                    background: inherit;
-
-                    @media screen and (max-width: 500px) {
-                        margin-left: 0.3rem;
-                    }
-                }
-            }
+        .login_link {
+            background: transparent;
+            height: 4rem;
+            color: black;
+            font-size: 1.1rem;
+            padding: 5%;
+            padding-top: 1rem;
+            line-break: loose;
 
             .register {
-                font-family: 'Gruppo', sans-serif;
-                font-weight: 900;
-                font-size: 1.5rem;
-                margin-bottom: 0.5rem;
-                background: inherit;
-                height: max-content;
+                background: transparent;
+                height: 4rem;
+                color: rgb(240, 46, 170);
+                font-weight: 700;
             }
-
-            .username {
-                height: 2rem;
-                width: 20rem;
-                margin: 0.3rem;
-                font-size: 1rem;
-                outline: none;
-                color: white;
-                background: inherit;
-
-                @media screen and (max-width: 350px) {
-                    width: 15rem;
-                }
-
-                &:hover {
-                    transition-duration: 0.8s;
-                    border-bottom: 0.03rem solid rgba(241, 242, 250, 0.498);
-                }
-
-            }
-
-            .password {
-                height: 2rem;
-                width: 20rem;
-                margin: 0.3rem 0rem 1rem 0rem;
-                font-size: 1rem;
-                outline: none;
-                color: white;
-                background: inherit;
-
-                &:hover {
-                    transition-duration: 0.7s;
-                    border-bottom: 0.03rem solid rgba(241, 242, 250, 0.498);
-                }
-
-                @media screen and (max-width: 350px) {
-                    width: 15rem;
-                }
-            }
-
-            .submit {
-                height: 2rem;
-                font-size: 1rem;
-
-                padding: 0.3rem 1rem;
-                background: radial-gradient(10rem circle at bottom right,
-                        rgb(35, 33, 68),
-                        rgb(98, 65, 215));
-                border-radius: 0.3rem;
-                cursor: pointer;
-                transition: all 0.3s ease-in-out;
-                color: white;
-                border: 0.001rem solid rgba(255, 255, 255, 0.114);
-
-                &:hover {
-                    background: radial-gradient(circle at top right,
-                            rgb(35, 33, 68),
-                            rgb(98, 65, 215));
-                }
-
-                margin-bottom: 2rem;
-            }
-
-            .loginlink {
-                height: 2rem;
-                background: inherit;
-
-                .login {
-                    font-weight: 600;
-                    color: rgb(122, 96, 219);
-                }
-            }
-
         }
-    }
-
-    .toastcontainer {
-        height: max-content;
-        margin-bottom: 2rem;
-    }
-}
-
-@keyframes slideInLeft {
-    0% {
-        transform: translateX(100%);
-    }
-
-    100% {
-        transform: translateX(0);
-    }
-}
-
-@keyframes slideInRight {
-    0% {
-        transform: translateX(-100%);
-    }
-
-    100% {
-        transform: translateX(0);
     }
 }

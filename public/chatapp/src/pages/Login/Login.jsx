@@ -116,19 +116,19 @@ export default function Login() {
 
   return (
     <>
-      <div className={styles.container}>
-        <div className={styles.smallLight}></div>
+      <div className={styles.login_container}>
+        {/* <div className={styles.smallLight}></div>
         <motion.div
           className={styles.cursor1}
           variants={variants}
           animate={cursorVariant}
-        />
-        <form onMouseEnter={textEnter} onMouseLeave={textLeave} className={styles.form} onSubmit={(event) => handleSubmit(event)}>
+        /> */}
           <div className={styles.brand}>
-            <img src="/images/2.png" className={styles.image}></img>
-            <h1 className={styles.chatify}>Chatify</h1>
+            <img src="/images/logo1.png" className={styles.brand_img}></img>
+            <h1 className={styles.brand_title}>Chatify</h1>
           </div>
-          <div className={styles.register}>LOGIN</div>
+        <form onMouseEnter={textEnter} onMouseLeave={textLeave} className={styles.form} onSubmit={(event) => handleSubmit(event)}>
+          <div className={styles.login}>Welcome!</div>
           <input
             type="text"
             placeholder="Username"
@@ -144,9 +144,9 @@ export default function Login() {
             className={styles.password}
             onChange={(e) => handleChange(e)}
           />
-          <button type="submit" className={styles.submit}>Log In</button>
-          <span className={styles.loginlink}>
-            Don't have an account ? <Link to="/register" className={styles.login}>Create One.</Link>
+          <button type="submit" className={styles.submit}>Sign In</button>
+          <span className={styles.login_link}>
+            Don't have an account? <Link to="/register" className={styles.register}>Create One.</Link>
           </span>
         </form>
       </div>
