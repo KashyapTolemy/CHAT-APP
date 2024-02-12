@@ -46,24 +46,25 @@
             font-weight: 700;
             font-size: clamp(1.2rem, 2rem + 2vw, 3rem);
           }
-        .login {
+        .welcome_text {
             background: transparent;
             color: black;
             height: max-content;
             width: max-content;
             padding-bottom: 3rem;
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: 700;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+            font-family: "Lora", serif;
         }
 
         .username {
             background: transparent;
             height: 2rem;
             margin-bottom: 0.5rem;
-            width: 15rem;
+            width: 17rem;
             font-size: 1rem;
             color: black;
+            border:0.1rem solid black;
             &::placeholder {
                 padding: 0.1rem;
             }
@@ -73,10 +74,10 @@
             background: transparent;
             height: 2rem;
             margin-bottom: 2rem;
-            width: 15rem;
+            width: 17rem;
             font-size: 1rem;
             color: black;
-
+            border:0.1rem solid black;
             &::placeholder {
                 padding: 0.1rem;
             }
@@ -92,6 +93,11 @@
             border-bottom: 0.2rem solid black;
             border-right: 0.2rem solid black;
             border-radius: 0.2rem;
+            transition: transform 0.3s;
+
+            &:hover{
+                transform: scale(1.05);
+            }
         }
 
         .login_link {
@@ -108,6 +114,17 @@
                 height: 4rem;
                 color: rgb(240, 46, 170);
                 font-weight: 700;
+            }
+        }
+    }
+}
+
+@media (max-width: 390px) {
+    .login_container {
+        .form {
+            .username,
+            .password{
+                width: 14rem;
             }
         }
     }

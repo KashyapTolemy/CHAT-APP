@@ -136,49 +136,49 @@ const Register = () => {
 
   return (
     <>
-      <div className={styles.container}>
-        <div className={styles.smallLight}></div>
+      <div className={styles.register_container}>
+        {/* <div className={styles.smallLight}></div>
         <motion.div
           className={styles.cursor1}
           variants={variants}
           animate={cursorVariant}
-        />
-        <form onMouseEnter={textEnter} onMouseLeave={textLeave} className={styles.form} onSubmit={(event) => handleSubmit(event)}>
+        /> */}
           <div className={styles.brand}>
-            <img src="/images/2.png" className={styles.image}></img>
-            <h1 className={styles.chatifyreg}>Chatify</h1>
+            <img src="/images/logo1.png" className={styles.brand_img}></img>
+            <h1 className={styles.brand_title}>Chatify</h1>
           </div>
-          <div className={styles.register}>REGISTER</div>
+        <form onMouseEnter={textEnter} onMouseLeave={textLeave} className={styles.form} onSubmit={(event) => handleSubmit(event)}>
+          <div className={styles.welcome_text}>Welcome!</div>
           <input
             type="text"
-            placeholder="Username"
+            placeholder="username"
             name="username"
             className={styles.username}
             onChange={(e) => handleChange(e)}
           />
           <input
             type="email"
-            placeholder="Email"
+            placeholder="email"
             name="email"
             className={styles.email}
             onChange={(e) => handleChange(e)}
           />
           <input
             type="password"
-            placeholder="Password"
+            placeholder="password"
             name="password"
             className={styles.password}
             onChange={(e) => handleChange(e)}
           />
           <input
             type="password"
-            placeholder="Confirm Password"
+            placeholder="confirm password"
             name="confirmPassword"
-            className={styles.confirmPassword}
+            className={styles.confirm_password}
             onChange={(e) => handleChange(e)}
           />
           <button className={styles.submit} type="submit">Create User</button>
-          <span className={styles.loginlink}>
+          <span className={styles.register_link}>
             Already have an account? <Link to="/login" className={styles.login}>Login.</Link>
           </span>
         </form>

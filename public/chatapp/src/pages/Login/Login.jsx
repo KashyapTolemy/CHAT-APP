@@ -128,10 +128,10 @@ export default function Login() {
             <h1 className={styles.brand_title}>Chatify</h1>
           </div>
         <form onMouseEnter={textEnter} onMouseLeave={textLeave} className={styles.form} onSubmit={(event) => handleSubmit(event)}>
-          <div className={styles.login}>Welcome!</div>
+          <div className={styles.welcome_text}>Welcome!</div>
           <input
             type="text"
-            placeholder="Username"
+            placeholder="username"
             name="username"
             min="4"
             className={styles.username}
@@ -139,7 +139,7 @@ export default function Login() {
           />
           <input
             type="password"
-            placeholder="Password"
+            placeholder="password"
             name="password"
             className={styles.password}
             onChange={(e) => handleChange(e)}
