@@ -10,16 +10,21 @@
         display: flex;
         flex-direction: row;
         height: max-content;
-
+        width: max-content;
+        text-decoration: none;
+        background: transparent;
         .brand_img {
-            height: 6rem;
-            width: 6rem;
+            height: 7rem;
+            width: 7rem;
+            background: transparent;
         }
 
         .brand_title {
-            font-size: 2.5rem;
+            background: transparent;
+            font-size: 3rem;
             color: rgb(139, 90, 199);
             -webkit-text-stroke: 0.05rem rgba(6, 5, 5, 0.662);
+            
         }
     }
 
@@ -54,7 +59,7 @@
             padding-bottom: 3rem;
             font-size: 2.2rem;
             font-weight: 700;
-            font-family: "Lora", serif;
+            font-family: "Rock Salt", cursive;
         }
 
         .username {
@@ -65,7 +70,7 @@
             font-size: 1rem;
             color: black;
             border: 0.1rem solid black;
-
+            font-family: "Dekko", cursive;
             &::placeholder {
                 padding: 0.1rem;
             }
@@ -79,7 +84,7 @@
             font-size: 1rem;
             color: black;
             border: 0.1rem solid black;
-
+            font-family: "Dekko", cursive;
             &::placeholder {
                 padding: 0.1rem;
             }
@@ -93,7 +98,7 @@
             font-size: 1rem;
             color: black;
             border: 0.1rem solid black;
-
+            font-family: "Dekko", cursive;
             &::placeholder {
                 padding: 0.1rem;
             }
@@ -107,7 +112,7 @@
             font-size: 1rem;
             color: black;
             border: 0.1rem solid black;
-
+            font-family: "Dekko", cursive;
             &::placeholder {
                 padding: 0.1rem;
             }
@@ -124,7 +129,7 @@
             border-right: 0.2rem solid black;
             border-radius: 0.2rem;
             transition: transform 0.3s;
-
+            font-family: "Dekko", cursive;
             &:hover {
                 transform: scale(1.05);
             }
@@ -138,7 +143,7 @@
             padding: 5%;
             padding-top: 1rem;
             line-break: loose;
-
+            font-family: "Rock Salt", cursive;
             .login {
                 background: transparent;
                 height: 4rem;

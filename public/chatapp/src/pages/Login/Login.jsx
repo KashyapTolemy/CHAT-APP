@@ -123,12 +123,12 @@ export default function Login() {
           variants={variants}
           animate={cursorVariant}
         /> */}
-          <div className={styles.brand}>
+          <a href= "./" className={styles.brand}>
             <img src="/images/logo1.png" className={styles.brand_img}></img>
             <h1 className={styles.brand_title}>Chatify</h1>
-          </div>
+          </a>
         <form onMouseEnter={textEnter} onMouseLeave={textLeave} className={styles.form} onSubmit={(event) => handleSubmit(event)}>
-          <div className={styles.welcome_text}>Welcome!</div>
+          <div className={styles.welcome_text}>WELCOME!</div>
           <input
             type="text"
             placeholder="username"
