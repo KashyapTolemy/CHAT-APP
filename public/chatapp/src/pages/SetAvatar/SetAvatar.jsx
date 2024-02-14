@@ -14,7 +14,7 @@ const SetAvatar = () => {
   const apiKey = '4zgBsur12FtEPY'
   const navigate = useNavigate()
   const [avatars, setAvatars] = useState([])
-  const [isLoading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(false)
   const [selectedAvatar, setSelectedAvatar] = useState(undefined)
   const toastOptions = {
     position: "bottom-right",
@@ -114,15 +114,14 @@ const SetAvatar = () => {
       isLoading ? (
         <Loader />
       ) : (
-        <div className={styles.page}>
-          <div className={styles.container}>
-            <div className={styles.smallLight}></div>
+        <div className={styles.set_avatar_container}>
+            {/* <div className={styles.smallLight}></div>
             <motion.div
               className={styles.cursor1}
               variants={variants}
               animate={cursorVariant}
-            />
-            <div onMouseEnter={textEnter} onMouseLeave={textLeave} className={styles.container1}>
+            /> */}
+            <div onMouseEnter={textEnter} onMouseLeave={textLeave} className={styles.select_avatar_container}>
               <div className={styles.title_container}>
                 <h1 className={styles.title}>Pick an avatar as your profile picture. </h1>
               </div>
@@ -134,7 +133,7 @@ const SetAvatar = () => {
                         }`}
                     >
                       <img
-                        className={styles.image}
+                        className={styles.avatar_img}
                         src={`data:image/svg+xml;base64,${avatar}`}
                         alt="avatar"
                         key={avatar}
@@ -148,7 +147,6 @@ const SetAvatar = () => {
                 Set as Profile Picture
               </button>
             </div>
-          </div >
           <ToastContainer className={styles.toastcontainer} />
         </div>
       )

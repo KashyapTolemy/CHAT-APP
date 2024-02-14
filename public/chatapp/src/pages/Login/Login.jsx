@@ -13,10 +13,10 @@ export default function Login() {
   const [errorShows, setErrorShows] = useState(false);
   const toastOptions = {
     position: "bottom-right",
-    autoClose: 8000,
+    autoClose: 5000,
     pauseOnHover: true,
     draggable: true,
-    theme: "dark",
+    theme: "light",
   };
   useEffect(() => {
     if (localStorage.getItem("chat-app-user")) {
@@ -128,7 +128,7 @@ export default function Login() {
             <h1 className={styles.brand_title}>Chatify</h1>
           </a>
         <form onMouseEnter={textEnter} onMouseLeave={textLeave} className={styles.form} onSubmit={(event) => handleSubmit(event)}>
-          <div className={styles.welcome_text}>WELCOME!</div>
+          <div className={styles.welcome_text}>Welcome!</div>
           <input
             type="text"
             placeholder="username"
@@ -150,7 +150,7 @@ export default function Login() {
           </span>
         </form>
       </div>
-      <ToastContainer className={styles.toastcontainer} />
+      <ToastContainer className={styles.toast_container} />
     </>
   );
 }

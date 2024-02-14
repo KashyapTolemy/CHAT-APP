@@ -1,8 +1,9 @@
 .register_container {
-    color: black;
+    color: var(--white);
     height: 100vh;
     width: 100vw;
-    overflow-y: scroll;
+    overflow-y: hidden;
+
     .brand {
         position: relative;
         top: 0;
@@ -13,6 +14,7 @@
         width: max-content;
         text-decoration: none;
         background: transparent;
+
         .brand_img {
             height: 7rem;
             width: 7rem;
@@ -22,9 +24,10 @@
         .brand_title {
             background: transparent;
             font-size: 3rem;
-            color: rgb(139, 90, 199);
-            -webkit-text-stroke: 0.05rem rgba(6, 5, 5, 0.662);
-            
+            color: var(--title-color);
+            font-family: "Protest Strike", sans-serif;
+            -webkit-text-stroke: 0.01rem var(--text-stroke-color);
+
         }
     }
 
@@ -37,10 +40,10 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        border: 0.1rem solid black;
+        border: 0.1rem solid var(--white);
         height: 70%;
         width: 80%;
-        box-shadow: rgb(139, 90, 199) 5px 5px, rgb(139, 90, 199, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+        box-shadow: var(--white) 7px 7px;
 
         &::before {
             content: counter(item);
@@ -53,13 +56,14 @@
 
         .welcome_text {
             background: transparent;
-            color: black;
+            color: var(--white);
             height: max-content;
             width: max-content;
             padding-bottom: 3rem;
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             font-weight: 700;
-            font-family: "Rock Salt", cursive;
+            font-family: "Lexend Mega", sans-serif;
+            letter-spacing: -0.3rem;
         }
 
         .username {
@@ -68,11 +72,12 @@
             margin-bottom: 0.5rem;
             width: 17rem;
             font-size: 1rem;
-            color: black;
-            border: 0.1rem solid black;
-            font-family: "Dekko", cursive;
+            color: var(--white);
+            border: 0.1rem solid var(--white);
+            font-family: "Archivo", sans-serif;
+
             &::placeholder {
-                padding: 0.1rem;
+                padding: 0.2rem;
             }
         }
 
@@ -82,11 +87,12 @@
             margin-bottom: 0.5rem;
             width: 17rem;
             font-size: 1rem;
-            color: black;
-            border: 0.1rem solid black;
-            font-family: "Dekko", cursive;
+            color: var(--white);
+            border: 0.1rem solid var(--white);
+            font-family: "Archivo", sans-serif;
+
             &::placeholder {
-                padding: 0.1rem;
+                padding: 0.2rem;
             }
         }
 
@@ -96,11 +102,12 @@
             margin-bottom: 0.5rem;
             width: 17rem;
             font-size: 1rem;
-            color: black;
-            border: 0.1rem solid black;
-            font-family: "Dekko", cursive;
+            color: var(--white);
+            border: 0.1rem solid var(--white);
+            font-family: "Archivo", sans-serif;
+
             &::placeholder {
-                padding: 0.1rem;
+                padding: 0.2rem;
             }
         }
 
@@ -110,11 +117,12 @@
             margin-bottom: 2rem;
             width: 17rem;
             font-size: 1rem;
-            color: black;
-            border: 0.1rem solid black;
-            font-family: "Dekko", cursive;
+            color: var(--white);
+            border: 0.1rem solid var(--white);
+            font-family: "Archivo", sans-serif;
+
             &::placeholder {
-                padding: 0.1rem;
+                padding: 0.2rem;
             }
         }
 
@@ -124,12 +132,13 @@
             font-size: 1.2rem;
             margin-bottom: 1rem;
             color: white;
-            background: rgb(139, 90, 199);
-            border-bottom: 0.2rem solid black;
-            border-right: 0.2rem solid black;
-            border-radius: 0.2rem;
+            background: var(--title-color);
             transition: transform 0.3s;
-            font-family: "Dekko", cursive;
+            // font-family: "Archivo", sans-serif;
+            font-family: "Lexend Mega", sans-serif;
+            letter-spacing: -0.1rem;
+            box-shadow: var(--white) 2px 2px;
+
             &:hover {
                 transform: scale(1.05);
             }
@@ -138,21 +147,25 @@
         .register_link {
             background: transparent;
             height: 4rem;
-            color: black;
-            font-size: 1.1rem;
+            color: var(--white);
+            font-size: 1.2rem;
             padding: 5%;
             padding-top: 1rem;
             line-break: loose;
-            font-family: "Rock Salt", cursive;
+            font-family: "Archivo", sans-serif;
+
+            // font-family: "Lato", sans-serif;
             .login {
                 background: transparent;
                 height: 4rem;
-                color: rgb(240, 46, 170);
+                color: var(--link-color);
                 font-weight: 700;
+                text-decoration: none;
             }
         }
     }
 }
+
 
 @media (max-width: 500px) and (min-width: 390px) {
     .register_container {

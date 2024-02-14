@@ -4,13 +4,28 @@
 // font-family: "Dekko", cursive;
 // font-family: "Lato", sans-serif;
 // font-family: "Rock Salt", cursive;
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Mega:wght@100..900&display=swap');
+// font-family: "Lexend Mega", sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap');
+// font-family: "Archivo", sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap');
+// font-family: "Protest Strike", sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+// font-family: "Anton", sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+// font-family: "Archivo Black", sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+// font-family: "Lilita One", sans-serif;
 
+:root {
+    --white: black;
+    --title-color: #9723C9;
+    --text-stroke-color: rgba(6, 5, 5, 0.662);
+    --link-color: #FF69B4;
+    --navbar-color: rgb(243, 232, 223);
+}
 
 .dark {
-    --heroSection-bg1: rgb(23, 23, 23);
-    --heroSection-bg2: rgb(32, 135, 44);
-}
-.light{
-    --heroSection-bg1: rgb(23, 23, 23);
-    --heroSection-bg2: rgb(32, 135, 44);
+    --white: white;
+    --title-color: rgb(139, 90, 199);
 }

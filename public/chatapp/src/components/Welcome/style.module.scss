@@ -8,7 +8,7 @@
 // font-family: 'Rajdhani', sans-serif;
 // font-family: 'Sora', sans-serif;
 // font-family: 'Roboto', sans-serif;
-* {
+
     .container {
         display: flex;
         flex-direction: column;
@@ -61,7 +61,7 @@
         color: #6320b3;
         height: auto;
     }
-}
+
 
 @media screen and (min-width: 651px) and ( max-width: 1000px) {
     .container{

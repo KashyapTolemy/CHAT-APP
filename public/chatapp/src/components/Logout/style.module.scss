@@ -8,21 +8,20 @@
 // font-family: 'Roboto', sans-serif;
 
 
-* {
-    .button {
-        height: 2.2rem;
-        background: inherit;
-        border-radius: 0.3rem;
-    }
-    
-    .buttonicon {
-        height: 2.2rem;
-        width: 2.2rem;
-        border-radius: 0.3rem;
-        cursor: pointer;
-        color: white;
-        background:inherit;
-        margin-right: 0.5rem;
-        // z-index: 3;
-    }
+
+.button {
+    height: 2.2rem;
+    background: inherit;
+    border-radius: 0.3rem;
+}
+
+.buttonicon {
+    height: 2.2rem;
+    width: 2.2rem;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    color: white;
+    background: inherit;
+    margin-right: 0.5rem;
+    // z-index: 3;
 }

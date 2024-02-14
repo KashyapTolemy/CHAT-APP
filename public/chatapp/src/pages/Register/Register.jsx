@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "../Register/style.module.scss";
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css"
+// import "react-toastify/dist/ReactToastify.css"
 import axios from "axios"
 import { registerRoute } from "../../utils/APIRoutes";
 import { motion } from 'framer-motion';
@@ -40,9 +40,10 @@ const Register = () => {
   };
   const toastOptions = {
     position: "bottom-right",
-    autoClose: 8000,
+    autoClose: 5000,
     pauseOnHover: true,
     draggable: true,
+    theme:'light',
   };
   const handleValidation = () => {
     const { username, email, password, confirmPassword } = values;
@@ -148,7 +149,7 @@ const Register = () => {
             <h1 className={styles.brand_title}>Chatify</h1>
           </a>
         <form onMouseEnter={textEnter} onMouseLeave={textLeave} className={styles.form} onSubmit={(event) => handleSubmit(event)}>
-          <div className={styles.welcome_text}>WELCOME!</div>
+          <div className={styles.welcome_text}>Welcome!</div>
           <input
             type="text"
             placeholder="username"
@@ -183,7 +184,7 @@ const Register = () => {
           </span>
         </form>
       </div>
-      <ToastContainer />
+      <ToastContainer className={styles.toast_container}/>
     </>
   );
 };

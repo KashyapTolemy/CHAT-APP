@@ -1,8 +1,8 @@
 .login_container {
-    color: black;
+    color: var(--white);
     height: 100vh;
     width: 100vw;
-    overflow-y: scroll;
+    overflow-y: hidden;
 
     .brand {
         position: relative;
@@ -15,25 +15,28 @@
         text-decoration: none;
 
         background: transparent;
+
         .brand_img {
             background: transparent;
             height: 7rem;
             width: 7rem;
         }
-        
+
         .brand_title {
             font-size: 3rem;
             background: transparent;
             // font-family: "Rock Salt", cursive;
-            color: rgb(139, 90, 199);
-            -webkit-text-stroke: 0.05rem rgba(6, 5, 5, 0.662);
+            font-family: "Protest Strike", sans-serif;
+            color: var(--title-color);
+            -webkit-text-stroke: 0.01rem rgba(6, 5, 5, 0.662);
         }
     }
 
     .form {
         // background:  url('data:image/svg+xml;utf8,<svg width="100" height="100" transform="rotate(25)" opacity="0.8" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g  fill="%23d68810"><circle cx="25" cy="25" r="12.5"/><circle cx="75" cy="75" r="12.5"/><circle cx="75" cy="25" r="12.5"/><circle cx="25" cy="75" r="12.5"/></g></svg>'),white;
         // background-size: 10px;
-        background: url('data:image/svg+xml;utf8,<svg width="100" height="100" transform="rotate(0)" opacity="0.2" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g  fill="%23250E17"><circle cx="25" cy="25" r="12.5"/><circle cx="75" cy="75" r="12.5"/><circle cx="75" cy="25" r="12.5"/><circle cx="25" cy="75" r="12.5"/></g></svg>'), white;
+        // background: url('data:image/svg+xml;utf8,<svg width="100" height="100" transform="rotate(0)" opacity="0.2" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g  fill="%23250E17"><circle cx="25" cy="25" r="12.5"/><circle cx="75" cy="75" r="12.5"/><circle cx="75" cy="25" r="12.5"/><circle cx="25" cy="75" r="12.5"/></g></svg>'), white;
+        background: white;
         background-size: 10px;
         position: relative;
         left: 10%;
@@ -42,10 +45,11 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        border: 0.1rem solid black;
+        border: 0.1rem solid var(--white);
         height: 70%;
         width: 80%;
-        box-shadow: rgb(139, 90, 199) 5px 5px, rgb(139, 90, 199, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+        // box-shadow: var(--title-color) 7px 7px, rgb(139, 90, 199, 0.3) 12px 12px, rgba(240, 46, 170, 0.2) 17px 17px, rgba(240, 46, 170, 0.1) 22px 22px, rgba(240, 46, 170, 0.05) 2px 27px;
+        box-shadow: var(--white) 7px 7px;
 
         &::before {
             content: counter(item);
@@ -58,13 +62,14 @@
 
         .welcome_text {
             background: transparent;
-            color: black;
+            color: var(--white);
             height: max-content;
             width: max-content;
             padding-bottom: 3rem;
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             font-weight: 700;
-            font-family: "Rock Salt", cursive;
+            font-family: "Lexend Mega", sans-serif;
+            letter-spacing: -0.3rem;
         }
 
         .username {
@@ -73,12 +78,13 @@
             margin-bottom: 0.5rem;
             width: 17rem;
             font-size: 1rem;
-            color: black;
-            border: 0.1rem solid black;
-            font-family: "Dekko", cursive;
+            color: var(--white);
+            border: 0.1rem solid var(--white);
+            font-family: "Archivo", sans-serif;
             background: white;
+
             &::placeholder {
-                padding: 0.1rem;
+                padding: 0.2rem;
             }
         }
 
@@ -88,12 +94,13 @@
             margin-bottom: 2rem;
             width: 17rem;
             font-size: 1rem;
-            color: black;
-            border: 0.1rem solid black;
-            font-family: "Dekko", cursive;
+            color: var(--white);
+            border: 0.1rem solid var(--white);
+            font-family: "Archivo", sans-serif;
             background: white;
+
             &::placeholder {
-                padding: 0.1rem;
+                padding: 0.2rem;
             }
         }
 
@@ -103,12 +110,13 @@
             font-size: 1.2rem;
             margin-bottom: 1rem;
             color: white;
-            background: rgb(139, 90, 199);
-            border-bottom: 0.2rem solid black;
-            border-right: 0.2rem solid black;
-            border-radius: 0.2rem;
+            background: var(--title-color);
+            // border-radius: 0.2rem;
             transition: transform 0.3s;
-            font-family: "Dekko", cursive;
+            // font-family: "Archivo", sans-serif;
+            font-family: "Lexend Mega", sans-serif;
+            letter-spacing: -0.1rem;
+            box-shadow: var(--white) 2px 2px;
 
             &:hover {
                 transform: scale(1.05);
@@ -118,21 +126,24 @@
         .login_link {
             background: transparent;
             height: 4rem;
-            color: black;
-            font-size: 1.1rem;
+            color: var(--white);
+            font-size: 1.2rem;
             padding: 5%;
             padding-top: 1rem;
             line-break: loose;
-            font-family: "Rock Salt", cursive;
-
+            // font-family: "Rock Salt", cursive;
+            font-family: "Archivo", sans-serif;
+            
             .register {
                 background: transparent;
                 height: 4rem;
-                color: rgb(240, 46, 170);
+                color: var(--link-color);
                 font-weight: 700;
+                text-decoration: none;
             }
         }
     }
+    
 }
 
 @media (max-width: 500px) and (min-width: 389px) {

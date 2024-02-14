@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { FaUsers } from "react-icons/fa"
 import { AiFillMessage, AiFillInstagram, AiFillLinkedin, AiFillGithub } from "react-icons/ai"
 import { motion } from 'framer-motion';
-import logo from "/images/2.png";
+import logo from "/images/logo1.png";
 import Loader from "../../components/Loader/Loader";
 // import axios from "axios";
 // import { allUsersRoute, getAllMessageRoute } from "../../utils/APIRoutes";
@@ -12,13 +12,13 @@ import Loader from "../../components/Loader/Loader";
 const Home = () => {
     const navigate = useNavigate();
     const [clicked, setClicked] = useState(false);
-    const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(false);
 
-    useEffect(() => {
-        setTimeout(() => {
-            setIsLoading(false);
-        }, 4000);
-    }, []);
+    // useEffect(() => {
+    //     setTimeout(() => {
+    //         setIsLoading(false);
+    //     }, 4000);
+    // }, []);
 
     const helper = () => {
         setClicked(!clicked);
@@ -61,6 +61,8 @@ const Home = () => {
         }
     }
 
+
+
     const textEnter = () => setCursorVariant("text");
     const textLeave = () => setCursorVariant("default");
     return (
@@ -68,55 +70,52 @@ const Home = () => {
             isLoading ? (
                 <Loader />
             ) : (
-                <div className={styles.homepage}>
-                    <img src={logo} className={styles.imagelogo} />
-                    <div className={styles.navbarbuttons}>
-                        <Link to="/login" className={styles.homelogin}>LOGIN</Link>
-                        <Link to="/register" className={styles.homeregister}>REGISTER</Link>
-                    </div>
-                    <div className={styles.contactbutton} onClick={helper}>
-                        Let's connect.
-                    </div>
-                    <div className={styles.cross}>
-                    </div>
-                    {
-                        clicked && (
-                            <div className={styles.contactbox}>
-                                <a href="https://www.instagram.com/tolemy_kashyap/" className={styles.smcontainer}><AiFillInstagram className={styles.socialmedia} /></a>
-                                <a href="https://www.linkedin.com/in/tolemy-kashyap/" className={styles.smcontainer}><AiFillLinkedin className={styles.socialmedia} /></a>
-                                <a href="https://github.com/KashyapTolemy" className={styles.smcontainer}><AiFillGithub className={styles.socialmedia} /></a>
+                <div className={styles.home_container}>
+                    <div className={styles.home_page1}>
+                        <div className={styles.navbar}>
+                            <div className={styles.brand}>
+                                <img src="/images/logo1.png" className={styles.brand_img}></img>
+                                <h1 className={styles.brand_title}>Chatify</h1>
                             </div>
-                        )
-                    }
-                    <motion.div
-                        className={styles.cursor1}
-                        variants={variants}
-                        animate={cursorVariant}
-                    />
-                    <span className={styles.getstarted} onMouseEnter={textEnter} onMouseLeave={textLeave} >
-                        <Link to="/chat" className={styles.arrowlink} >Get Started &nbsp;&#10230;  </Link>
-                    </span>
-                    <div className={styles.intro} onMouseEnter={textEnter} onMouseLeave={textLeave} >
-                        <p className={styles.para}>Chatify: Where Communication Comes Alive. Connect Seamlessly and Explore the Dynamics of Conversation!<br />Join the Chatify community today.</p>
-                    </div>
-                    <div className={styles.homeusers} onMouseEnter={textEnter} onMouseLeave={textLeave} >
-                        <FaUsers className={styles.usericon} />
-                        <div className={styles.totalusers}>
-                            6K+&nbsp;Users
+                            <div className={styles.navbar_btn}>
+                                <Link to="/login" className={styles.navbar_login}>LOGIN</Link>
+                                <Link to="/register" className={styles.navbar_register}>REGISTER</Link>
+                            </div>
+                        </div>
+                        <div className={styles.home_taglinecontainer}>
+                            <p className={styles.home_tagline}>
+                                CONVERSATIONS & COMMUNITY<br />IN <span className={styles.home_oneplace}>ONE PLACE</span>
+                            </p>
+                            <img src="./stickers/nbsticker1.png" alt="" className={styles.home_sticker1} />
+                            <img src="./stickers/nbsticker5.png" alt="" className={styles.home_sticker2} />
+                        </div>
+                        <div className={styles.home_subtagline_container}>
+
+                            <p className={styles.home_subtagline}>Where Communication Comes Alive. Connect Seamlessly and Explore the Dynamics of Conversation!<br />Join the Chatify community today.</p>
+                            <Link to="/chat" className={styles.home_getstarted} >Get Started</Link>
                         </div>
                     </div>
-                    <div className={styles.homemessages}>
-                        <AiFillMessage className={styles.messageicon} />
-                        <div className={styles.totalmessages}>
-                            42K+&nbsp;Messages
+                    <div className={styles.home_page2}>
+                        <div className={styles.home_welcome}>
+                            <p>WELCOME TO PROJECT <br /><span className={styles.home_brandname}>CHATIFY</span></p>
                         </div>
-                    </div>
-                    <div className={styles.smallLight} onMouseEnter={textEnter} onMouseLeave={textLeave} ></div>
-                    <div className={styles.homeherosection}>
-                        <div className={styles.overlaytext}>
-                            <div className={styles.webname}>PROJECT <br />&nbsp;CHATIFY</div>
+                        <div className={styles.home_twoparas}>
+                            <div className={styles.home_paracontainer}>
+                                <div className={styles.home_problempara}>
+                                    <div className={styles.para_title}>PROBLEM</div>
+                                    In the world of online communication, finding a centralized space to connect with friends, family, and colleagues without the hassle of juggling between apps poses a significant challenge.
+                                </div>
+                                <img src="./stickers/nbsticker2.png" alt="" className={styles.home_sticker3} />
+                            </div>
+                            <div className={styles.home_paracontainer}>
+
+                                <img src="./stickers/nbsticker4.png" alt="" className={styles.home_sticker4} />
+                                <div className={styles.home_taskpara}>
+                                    <div className={styles.para_title}>TASK</div>
+                                    With our chat website, we bring all your conversations together under one roof, offering a seamless experience . Say goodbye to the clutter and hello to simplicity – it's time to connect in style.
+                                </div>
+                            </div>
                         </div>
-                        <div className={styles.line}></div>
                     </div>
                 </div>
             )

@@ -1,179 +1,116 @@
-@use "../../styles/mixins.scss";
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@100;300;400&family=Wix+Madefor+Display:wght@400;500&display=swap');
-
-
-
-.page {
-    background: radial-gradient(circle at 100vw 5vh,
-            rgba(25, 25, 203, 0.014),
-            black 50%);
+.set_avatar_container {
+    height: 100vh;
+    width: 100vw;
+    overflow-y: hidden;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    overflow: hidden;
 
-    border: 0px;
-    margin: 0px;
-
-
-
-    .container {
-
-
-        .smallLight {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 30rem;
-            width: 30rem;
-            background: radial-gradient(50rem circle at 0vw 25vh,
-                    rgba(12, 136, 152, 0.306),
-                    transparent 30%);
-        }
-
-        .cursor1 {
-            border: 0.1rem solid rgba(255, 255, 255, 0.772);
-            height: 1.2rem;
-            width: 1.2rem;
-            border-radius: 50%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            z-index: 5;
-        }
-
+    .select_avatar_container {
+        background: white;
         display: flex;
-        align-items: center;
         justify-content: center;
-        height: 100vh;
-        width: auto;
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-
-        .container1 {
-            border-radius: 3rem;
-            height: 25rem;
-            width: 50rem;
-            @include mixins.flexCenter;
-            flex-direction: column;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 0.01rem solid rgba(255, 255, 255, 0.386);
-            border-color: #269ebf;
-            box-shadow: 0 0 0.5rem #2684bf;
-            background: #020116;
-        }
+        align-items: center;
+        flex-direction: column;
+        border: 0.2rem dashed var(--white);
+        border-radius: 0.5rem;
+        height: max-content;
+        width: 65%;
 
         .title_container {
+            margin-bottom: 3rem;
+            padding: 3%;
+
             .title {
-                font-family: 'Arvo', sans-serif;
-                color: antiquewhite;
-                font-size: 2rem;
-                margin: 3rem;
-                background: #020116;
+                font-size: 2.5rem;
+                text-wrap: wrap;
+                font-family: 'Legend Mega',sans-serif;
+                letter-spacing: -0.1rem;
             }
         }
 
         .avatars {
-            @include mixins.flexCenter;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            flex-wrap: wrap;
 
-
-            .image {
+            .avatar_img {
                 height: 5rem;
                 width: 5rem;
-                z-index: 5;
-                margin: 1rem 0.7rem 3rem 0.7rem;
-                border: 0.1rem solid rgba(255, 255, 255, 0.18);
+                border: 0.1rem solid black;
                 border-radius: 50%;
-
+                margin-left: 1rem;
+                transition: transform 0.3s ease;
+                // opacity: 0.7;
+                filter:contrast(70%);
                 &:hover {
-                    outline: none;
-                    border-color: #269ebf;
-                    box-shadow: 0 0 10px #2684bf;
+                    transform: scale(1.1);
                 }
 
             }
 
             .selected {
-                .image {
-                    outline: none;
-                    border-color: #bf6126;
-                    box-shadow: 0 0 10px #bf3a26;
+                .avatar_img {
+                    filter: contrast(110%);
+                    height: 5rem;
+                    width: 5rem;
+                    // border: 0.2rem solid var(--title-color);
+                    border-radius: 50%;
+                    margin-left: 1rem;
+                    transform: scale(1.1);
                 }
             }
 
+            margin-bottom: 5%;
         }
 
         .submit {
-            height: 4rem;
+            background: transparent;
+            height: max-content;
+            padding: 1%;
             font-size: 1.2rem;
-
-            padding: 0.3rem 1rem;
-            background: radial-gradient(10rem circle at bottom right,
-                    rgb(35, 33, 68),
-                    rgb(98, 65, 215));
-            border: 0.01rem solid rgba(255, 255, 255, 0.281);
-            border-radius: 0.3rem;
-            cursor: pointer;
-            transition: all 0.3s ease-in-out;
+            margin-bottom: 1rem;
             color: white;
+            background: var(--title-color);
+            transition: transform 0.3s;
+            font-family: "Lexend Mega", sans-serif;
+            letter-spacing: -0.1rem;
+            box-shadow: var(--white) 2px 2px;
+            margin-bottom: 5rem;
+            text-wrap: wrap;
 
             &:hover {
-                background: radial-gradient(circle at top right,
-                        rgb(35, 33, 68),
-                        rgb(98, 65, 215));
+                transform: scale(1.05);
             }
-
-            margin-bottom: 2rem;
         }
     }
-
-    .toastcontainer {
-        height: max-content;
-        margin-bottom: 2rem;
-    }
 }
 
+@media screen and (max-width: 450px) {
+    .set_avatar_container {
+        .select_avatar_container {
+            .title_container {
+                padding-bottom: 3%;
 
-@keyframes configure-clockwise {
-    0% {
-        transform: rotate(0);
-    }
+                .title {
+                    font-size: 1.5rem;
+                }
+            }
 
-    25% {
-        transform: rotate(90deg);
-    }
+            .avatars {
+                .avatar_img {
+                    height: 3rem;
+                    width: 3rem;
+                }
+            }
 
-    50% {
-        transform: rotate(180deg);
-    }
-
-    75% {
-        transform: rotate(270deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes configure-xclockwise {
-    0% {
-        transform: rotate(45deg);
-    }
-
-    25% {
-        transform: rotate(-45deg);
-    }
-
-    50% {
-        transform: rotate(-135deg);
-    }
-
-    75% {
-        transform: rotate(-225deg);
-    }
-
-    100% {
-        transform: rotate(-315deg);
+            .submit {
+                font-size: 1rem;
+                margin: 5%;
+                margin-bottom: 2rem;
+            }
+        }
     }
 }
