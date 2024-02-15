@@ -75,7 +75,7 @@ const Home = () => {
                         <div className={styles.navbar}>
                             <div className={styles.brand}>
                                 <img src="/images/logo1.png" className={styles.brand_img}></img>
-                                <h1 className={styles.brand_title}>Chatify</h1>
+                                <div className={styles.brand_title}>Chatify</div>
                             </div>
                             <div className={styles.navbar_btn}>
                                 <Link to="/login" className={styles.navbar_login}>LOGIN</Link>
@@ -151,7 +151,7 @@ const Home = () => {
                     </div>
                     <div className={styles.footer}>
                         <div className={styles.footer_para}>
-                        <div>&copy;2023 Chatify &#8212;&nbsp;</div><div>Deployed on Vercel &#8212;&nbsp;</div><div>Design and Dev by Tolemy Kashyap &#8212;&nbsp; </div><a href="https://github.com/KashyapTolemy/CHAT-APP" target="_blank" rel="noopener noreferrer">Source Code&nbsp; </a> &#8212; <a href="mailto:kashyaptolemy@gmail.com" target="_blank" rel="noopener noreferrer">&nbsp;Contact</a>
+                        <div>&copy;2023 Chatify &#8212;&nbsp;</div><div>Deployed on Render &#8212;&nbsp;</div><div>Design and Dev by Tolemy Kashyap &#8212;&nbsp; </div><a href="https://github.com/KashyapTolemy/CHAT-APP" target="_blank" rel="noopener noreferrer">Source Code&nbsp; </a> &#8212; <a href="mailto:kashyaptolemy@gmail.com" target="_blank" rel="noopener noreferrer">&nbsp;Contact</a>
                         </div>
                         {/* <div className={styles.footerlogo_container}>
                         <img src="images/logo1.png" alt ="" className={styles.footerlogo}/>

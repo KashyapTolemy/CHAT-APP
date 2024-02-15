@@ -39,7 +39,7 @@
                     font-size: 2.5rem;
                     font-weight: 500;
                     color: var(--title-color);
-                    -webkit-text-stroke: 0.01rem var(--text-stroke-color);
+                    -webkit-text-stroke: 0.05rem var(--white) !important;
                 }
 
                 padding-right: 5%;
@@ -186,6 +186,7 @@
             display: flex;
             flex-direction: column;
             z-index: 1;
+
             .home_s1_sticker {
                 height: 12rem;
                 width: 12rem;
@@ -551,7 +552,8 @@
         .home_sticker2 {
             z-index: 0;
         }
-        .home_subtagline_container{
+
+        .home_subtagline_container {
 
             .home_subtagline {
                 font-size: 0.8rem !important;
