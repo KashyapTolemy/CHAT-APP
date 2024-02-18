@@ -81,8 +81,10 @@ const Chat = () => {
 
   const handleChatChange = (chat) => {
     setCurrentChat(chat);
+    setShowContactSection(false);
   }
-
+  console.log(showButton);
+  console.log(showContactSection);
   return (
     <>{
       isLoading ? (
@@ -94,15 +96,16 @@ const Chat = () => {
           }
           <div className={styles.chat_page}>
             <div className={styles.container}>
-              <div className={styles.contacts_container} style={{ display: showButton && showContactSection ? 'block' : '' }}>
-              {/* <div className={`${styles.contacts_container} ${(showButton && showContactSection) ? styles.cc_dontwant : styles.cc_want}`}> */}
+              <div className={styles.contacts_container} style={{ display: !showButton || (showButton && showContactSection) ? '' : 'none' }}>
+                {/* <div className={`${styles.contacts_container} ${(showButton && showContactSection) ? styles.cc_dontwant : styles.cc_want}`}> */}
 
-                {
-                  !showButton || (showButton && showContactSection) ?
-                    <Contacts className={styles.contacts1} contacts={contacts} currentUser={currentUser} changeChat={handleChatChange} /> : null
-                }
+
+
+                <Contacts className={styles.contacts1} contacts={contacts} currentUser={currentUser} changeChat={handleChatChange}  />
+
               </div>
-              <div className={styles.chat_container}>
+
+              <div className={styles.chat_container} style={{ display: showButton && showContactSection ? 'none' : '' }}>
                 {
                   isLoaded && currentChat === undefined ? (
                     <Welcome className={styles.welcome} currentUser={currentUser} />
@@ -111,13 +114,13 @@ const Chat = () => {
                   )
                 }
               </div>
-              <div >
+              <div className={styles.contactopen_btn}>
                 {
                   showButton ?
                     (!showContactSection ?
-                      <button className={styles.resbutton} onClick={handleContact}>CHAT</button>
+                      <button className={styles.chat_btn} onClick={handleContact}>CHAT</button>
                       :
-                      <button className={styles.crossbutton} onClick={handleContact}>X</button>
+                      <button className={styles.chat_btn} onClick={handleContact}>CANCEL</button>
                     )
                     :
                     null

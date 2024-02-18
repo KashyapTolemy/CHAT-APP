@@ -19,15 +19,6 @@
 
         }
 
-        .cc_dontwant {
-            display: none;
-            width: 0%;
-        }
-
-        .cc_want {
-            // display: block;
-        }
-
         .chat_container {
             border: 0.1rem solid black;
             width: 72%;
@@ -70,11 +61,19 @@
 
 @media screen and (max-width:1000px) {
 
-    .contactopen_btn {
-        position: absolute;
-        bottom: 10%;
-
+    .contacts_container
+    {
+        width: 100% !important ;
     }
+    .chat_container
+    {
+        width: 100% !important;
+    }
+
+    // .contactopen_btn {
+    //     position: absolute;
+    //     bottom: 10%;
+    // }
 }
 // @media screen and (max-width:800px) {
 
