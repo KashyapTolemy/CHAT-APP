@@ -1,77 +1,32 @@
-
-
-    .chatinputcontainer {
-        display: flex;
-        // justify-content: center;
-        align-items: center;
-        height: 2rem;
-        width: 100%;
-        // margin-left: 1rem;
-        // margin-right: 1rem;
-        background: #090527;
+.input_page {
+    // height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .emoji_container {
+        padding-top: 0.5rem;
+        padding-left: 2%;
+        padding-right: 2%;
+        font-size: 3rem;
     }
 
-    .emojiicon {
-        margin-left: 1rem;
-        margin-right: 1rem;
-        background: #090527;
-        height: 2rem;
-        width: 2rem;
-    }
-
-    .emojii {
-        // position: relative;
-        // top:-5rem;
-        bottom: 5rem;
-        background: #090527;
-    }
-
-    .sendbutton {
-        background: #090527;
-        height: 2rem;
-        width: 3rem;
-    }
-
-    .emojisend {
-        background: #090527;
-        height: 2rem;
-        width: 2rem;
-    }
-
-    .messageinput {
-        display: flex;
-        font-size: medium;
-        align-items: center;
-        background: rgba(128, 128, 128, 0.432);
-        width: 60vw;
-        height: 2.5rem;
-        border-radius: 0.7rem;
-        margin: 0.5rem;
-        // box-shadow: 0 3px 10px rgba(240, 233, 233, 0.2);
-        // box-shadow: 0 0 5px 5px red;
-    }
-    
-    .inputcontainer {
+    .input_container {
         display: flex;
         align-items: center;
-        width: 57vw;
-        height: 4rem;
-        background: #090527;
-    }
-
-    emoji-picker {
-        width: 20rem;
-        height: 20rem;
-        position: fixed !important;
-        left:26rem;
-        bottom: 8rem !important;
-    }
-
-@media screen and (max-width:1000px) {
-    .chatinputcontainer{
-        width: 70vw;
-    }
-    .inputcontainer{
-        width: 70vw;
+        .msg_input {
+            height: 2rem;
+            margin-right: 1%;
+            width: 40vw;
+        }
+        .send_container
+        {
+            width: 3rem;
+            height: 3rem;
+            font-size: 3rem;
+            border: none;
+            background: transparent;
+            display: flex;
+            align-items: center;
+        }
     }
 }

@@ -1,9 +1,8 @@
 import styles from "../ChatContainer/style.module.scss";
 import React, { useState, useEffect, useRef } from "react";
-import Logout from "../Logout/Logout";
 import ChatInput from "../ChatInput/ChatInput";
 import axios from "axios";
-import { AiOutlineHome } from 'react-icons/ai'
+import { AiOutlineHome, AiOutlineLogout } from 'react-icons/ai'
 import { getAllMessageRoute, sendMessageRoute } from "../../utils/APIRoutes";
 import { v4 as uuidv4 } from "uuid"
 import { Link, useNavigate } from "react-router-dom";
@@ -14,11 +13,13 @@ const ChatContainer = ({ currentChat, currentUser, socket }) => {
     const scrollRef = useRef();
     const navigate = useNavigate();
     const [str, setStr] = useState("");
+
     useEffect(() => {
         const stringa = currentChat.username;
         setStr(stringa.charAt(0).toUpperCase() + stringa.slice(1));
-        console.log(str);
+        // console.log(str);
     })
+
     useEffect(() => {
         (async () => {
             if (currentChat) {
@@ -30,6 +31,7 @@ const ChatContainer = ({ currentChat, currentUser, socket }) => {
             }
         })()
     }, [currentChat])
+
     const handleSendMsg = async (msg) => {
         const msgs = [...messages];
         msgs.push({ fromSelf: true, message: msg });
@@ -44,7 +46,7 @@ const ChatContainer = ({ currentChat, currentUser, socket }) => {
             to: currentChat._id,
             message: msg,
         });
-        console.log(msg);
+        // console.log(msg);
     };
 
     const handleBack = () => {
@@ -54,9 +56,9 @@ const ChatContainer = ({ currentChat, currentUser, socket }) => {
     useEffect(() => {
         if (socket) {
             socket.on("msg-receive", ({ message, from }) => {
-                console.log(message)
-                console.log(from)
-                console.log(currentChat._id)
+                // console.log(message)
+                // console.log(from)
+                // console.log(currentChat._id)
                 if (from !== currentChat._id) return;
                 setArrivalMessage({ fromSelf: false, message: message })
             })
@@ -71,33 +73,36 @@ const ChatContainer = ({ currentChat, currentUser, socket }) => {
         scrollRef.current?.scrollIntoView({ behavior: "smooth" });
     }, [messages]);
 
+    const handleClick = async () => {
+        // console.log("working")
+        localStorage.clear();
+        navigate('/login');
+    }
+
     return (
         <>{
             currentChat && (
-                <div className={styles.container3}>
+                <div className={styles.chatcontainer_page}>
                     <div className={styles.navbar}>
-                        <div className={styles.chatheader}>
-                            <div className={styles.chatavatar}>
-                                <img
-                                    className={styles.chatimage}
-                                    src={`data:image/svg+xml;base64,${currentChat.avatarImage}`}
-                                    alt=""
-                                />
-                            </div>
-                            <div className={styles.chatuser}>
-                                <h2 className={styles.chatusername}>{str}</h2>
+                        <div className={styles.chat_avatar}>
+                            <img
+                                className={styles.chat_img}
+                                src={`data:image/svg+xml;base64,${currentChat.avatarImage}`}
+                                alt=""
+                            />
+                            <div className={styles.chat_user}>{str}
                             </div>
                         </div>
-                        <div className={styles.changebuttons}>
-                            <AiOutlineHome onClick={handleBack} className={styles.homebutton} />
-                            <Logout />
+                        <div className={styles.chat_btn}>
+                            <AiOutlineHome onClick={handleBack} className={styles.home_btn} />
+                            <AiOutlineLogout className={styles.logout_btn} onClick={handleClick} />
                         </div>
                     </div>
-                    <div className={styles.chatmessages}>{
+                    <div className={styles.chat_msgs}>{
                         messages.map((message) => {
                             return (
-                                <div className={styles.messageinout} ref={scrollRef} key={uuidv4()}>
-                                    <div className={`${styles.message1} 
+                                <div className={styles.msg_inout} ref={scrollRef} key={uuidv4()}>
+                                    <div className={`${styles.msg_container} 
                                         ${message.fromSelf ? styles.sent : styles.received}
                                     `}>
                                         <div className={styles.content}>

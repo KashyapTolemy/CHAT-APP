@@ -1,180 +1,86 @@
-@use "../../styles/mixins.scss";
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@100;300;400&family=Wix+Madefor+Display:wght@400;500&display=swap');
-
-// font-family: 'Roboto', sans-serif;
-// font-family: 'Wix Madefor Display', sans-serif;
-
-
-
-
-.container1 {
-    margin-top: 2rem;
-    margin-left: 5rem;
-    margin-right: 3rem;
-    box-sizing: border-box;
-    height: max-content;
-    width: 83vw;
-    border-radius: 0.7rem;
-    padding: 0;
-    border: 0.01rem solid rgba(255, 255, 255, 0.386);
-    border-color: #269ebf7c;
-    box-shadow: 0 0 0.5rem #2684bf5d;
-    background: none !important;
-}
-
-.container {
-    width: 86vw;
-    height: 43.1rem;
+.chat_page {
     display: flex;
-}
-
-.container2 {
-    // position: absolute;
-    width: 65vw;
-    // top: 2rem;
-    // left: 25.19rem;
-    border-top-right-radius: 0.7rem;
-    border-bottom-right-radius: 0.7rem;
-    border-right: 0.01rem solid rgba(255, 255, 255, 0.452);
-    border-top: 0.01rem solid rgba(255, 255, 255, 0.452);
-    border-bottom: 0.01rem solid rgba(255, 255, 255, 0.452);
-    height: auto;
-}
-
-.logoutcontainer {
-    position: absolute;
-    height: max-content;
-    z-index: 7;
-    background: inherit;
-}
-
-.resbutton {
-    position: absolute;
-    right: 45vw;
-    top: 41rem;
-    z-index: 10 !important;
-    display: block;
-    width: 5rem;
-    height: 2.5rem;
-    background: radial-gradient(10rem circle at bottom right,
-            rgb(35, 33, 68),
-            rgb(98, 65, 215));
-    border-radius: 0.3rem;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    color: #fff;
-    font-size: 1.3rem;
-    font-family: 'Gruppo', sans-serif;
-    font-weight: 900;
-    margin: 20px auto;
-
-    &:hover {
-        background: radial-gradient(circle at top right,
-                rgb(35, 33, 68),
-                rgb(98, 65, 215));
-    }
-
-}
-
-.crossbutton {
-    position: absolute;
-    right: 40vw;
-    top: 41rem;
-    z-index: 10 !important;
-    display: block;
-    width: 2.5rem;
-    height: 2.5rem;
-    background: radial-gradient(10rem circle at bottom right,
-            rgb(35, 33, 68),
-            rgb(178, 174, 174));
-    border-radius: 50%;
-    border: 0.001rem solid rgba(255, 255, 255, 0.5);
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    color: #fff;
-    font-size: 1.5rem;
-    font-family: 'Gruppo', sans-serif;
-    font-weight: 900;
-    margin: 20px auto;
-
-    &:hover {
-        background: radial-gradient(circle at top right,
-                rgb(35, 33, 68),
-                grey);
-    }
-
-}
-
-.forblur {
-    content: '';
-    position: absolute;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
     width: 100vw;
-    backdrop-filter: blur(1rem);
+    overflow-y: scroll;
+
+    .container {
+        width: 80%;
+        height: 80%;
+        display: flex;
+        justify-content: center;
+        background: white;
+
+        .contacts_container {
+            border: 0.1rem solid black;
+            width: 30%;
+
+        }
+
+        .cc_dontwant {
+            display: none;
+            width: 0%;
+        }
+
+        .cc_want {
+            // display: block;
+        }
+
+        .chat_container {
+            border: 0.1rem solid black;
+            width: 72%;
+        }
+
+        .contactopen_btn {
+            height: 0;
+            width: 0;
+            position: absolute;
+            bottom: 7%;
+            padding: 2%;
+            .chat_btn
+            {
+                background: var(--white);
+                color: white;
+                font-size: 1.5rem;
+                box-shadow: white 3px 3px, var(--white) 7px 7px;
+                transition: transform 0.3s, background 0.3s;
+                font-family: "Lexend Mega", sans-serif;
+                letter-spacing: -0.1rem;
+                &:hover {
+                    transform: scale(1.05);
+                    // background: rgb(76, 77, 94);
+                    background: var(--home-page3-color);
+                    color: var(--white);
+                    border: 0.1rem solid black;
+                }
+            }
+        }
+    }
+    .forblur {
+        content: '';
+        position: absolute;
+        height: 100vh;
+        width: 100vw;
+        // backdrop-filter: blur(1rem);
+        opacity: 0.7;
+    }
 }
 
+@media screen and (max-width:1000px) {
 
-@media screen and (min-width: 551px) and (max-width: 1000px) {
-    .container1 {
-        width: 75vw;
-    }
-
-    .container2 {
-        width: 75vw;
-    }
-
-    .contacts {
-        display: none;
-        z-index: 2;
-        height: 43.1rem;
-        width: 40vw;
-        background: transparent;
+    .contactopen_btn {
         position: absolute;
-        top: 2rem;
-        right: 0vw;
-        border-left: white;
-    }
+        bottom: 10%;
 
-    .resbutton {
-        position: absolute;
-        top: 45rem;
-    }
-
-    .crossbutton {
-        position: absolute;
-        top: 45rem;
     }
 }
+// @media screen and (max-width:800px) {
 
-@media screen and (max-width: 550px) {
-    .container1 {
-        width: 75vw;
-    }
+//     .contactopen_btn {
+//         position: absolute;
+//         bottom: 10%;
 
-    .container2 {
-        width: 75vw;
-    }
-
-    .contacts {
-        display: none;
-        z-index: 2;
-        height: 43.1rem;
-        width: 40vw;
-        background: transparent;
-        position: absolute;
-        top: 2rem;
-        right: 0vw;
-        border-left: white;
-    }
-
-    .resbutton {
-        position: absolute;
-        top: 45rem;
-    }
-
-    .crossbutton {
-        position: absolute;
-        top: 45rem;
-        right: 50vw
-    }
-}
+//     }
+// }

@@ -31,26 +31,24 @@ const ChatInput = ({ handleSendMsg }) => {
     }
     return (
         <>
-            <div className={styles.chatinputcontainer}>
-                <div className={styles.buttoncontainer}>
-                    <div className={styles.emojii}>
-                        <BsEmojiSmile className={styles.emojiicon} onClick={handleEmojiPickerHideShow} />
-                        {
-                            showEmojiPicker && (<EmojiPicker
-                                onEmojiClick={handleEmojiClick} />)
-                        }
-                    </div>
+            <div className={styles.input_page}>
+                <div className={styles.emoji_container}>
+                    <BsEmojiSmile className={styles.emoji} onClick={handleEmojiPickerHideShow} />
+                    {
+                        showEmojiPicker && (<EmojiPicker
+                            onEmojiClick={handleEmojiClick} />)
+                    }
                 </div>
-                <form className={styles.inputcontainer} onSubmit={(e) => {
+                <form className={styles.input_container} onSubmit={(e) => {
                     sendChat(e);
                     if (audioRef.current) {
                         audioRef.current.play();
                     }
                 }}>
                     <audio ref={audioRef} src={audio1} />
-                    <input className={styles.messageinput} value={msg} onChange={(e) => setMsg(e.target.value)} type="text" placeholder=" Type your message" />
-                    <button className={styles.sendbutton}>
-                        <IoMdSend className={styles.emojisend} />
+                    <input className={styles.msg_input} value={msg} onChange={(e) => setMsg(e.target.value)} type="text" placeholder=" Type your message" />
+                    <button className={styles.send_container}>
+                        <IoMdSend className={styles.send_btn} />
                     </button>
                 </form>
             </div>

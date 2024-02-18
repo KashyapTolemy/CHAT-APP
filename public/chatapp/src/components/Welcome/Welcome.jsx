@@ -1,6 +1,5 @@
 import styles from "../Welcome/style.module.scss";
 import React, { useState, useEffect } from "react";
-import Robot from '../../assets/welcome.gif'
 
 const Welcome = ({ currentUser }) => {
   const [str,setStr]=useState("");
@@ -10,15 +9,15 @@ const Welcome = ({ currentUser }) => {
   })
   return (
     <>
-      <div className={styles.container}>
-        <div className={styles.imagif}>
-          <img className={styles.image} src={Robot} alt="" />
+      <div className={styles.welcome_page}>
+        <div className={styles.img_container}>
+          <img className={styles.welcome_img} src='./stickers/chat3.png' alt="" />
         </div>
-        <div className={styles.text}>
-          <h1 className={styles.t1}>
-            Welcome, <span className={styles.t2}>{str}!!</span>
-          </h1>
-          <h2 className={styles.t3}>Please select a chat to start messaging.</h2>
+        <div className={styles.text_container}>
+          <div className={styles.welcome_text}>
+            Welcome, <span className={styles.welcome_name}>{str}!!</span>
+          </div>
+          <div className={styles.welcome_para}>Please select a chat to start messaging.</div>
         </div>
 
       </div>

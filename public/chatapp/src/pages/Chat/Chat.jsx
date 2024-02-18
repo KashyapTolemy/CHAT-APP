@@ -8,7 +8,7 @@ import Welcome from "../../components/Welcome/Welcome";
 import ChatContainer from "../../components/ChatContainer/ChatContainer";
 import { io } from "socket.io-client"
 import Loader from "../../components/Loader/Loader";
-import Logout from "../../components/Logout/Logout";
+// import Logout from "../../components/Logout/Logout";
 
 
 const Chat = () => {
@@ -39,9 +39,10 @@ const Chat = () => {
       window.removeEventListener('resize', handleResize);
     };
   }, [])
+
   const handleContact = () => {
     setShowContactSection(!showContactSection);
-    console.log(showContactSection);
+    // console.log(showContactSection);
   }
 
   useEffect(() => {
@@ -77,9 +78,11 @@ const Chat = () => {
       }
     })()
   }, [currentUser])
+
   const handleChatChange = (chat) => {
     setCurrentChat(chat);
   }
+
   return (
     <>{
       isLoading ? (
@@ -89,15 +92,17 @@ const Chat = () => {
           {
             showContactSection ? <div className={styles.forblur}></div> : null
           }
-          <div className={styles.container1}>
+          <div className={styles.chat_page}>
             <div className={styles.container}>
-              <div className={styles.contacts} style={{ display: showButton && showContactSection ? 'block' : '' }}>
+              <div className={styles.contacts_container} style={{ display: showButton && showContactSection ? 'block' : '' }}>
+              {/* <div className={`${styles.contacts_container} ${(showButton && showContactSection) ? styles.cc_dontwant : styles.cc_want}`}> */}
+
                 {
                   !showButton || (showButton && showContactSection) ?
                     <Contacts className={styles.contacts1} contacts={contacts} currentUser={currentUser} changeChat={handleChatChange} /> : null
                 }
               </div>
-              <div className={styles.container2}>
+              <div className={styles.chat_container}>
                 {
                   isLoaded && currentChat === undefined ? (
                     <Welcome className={styles.welcome} currentUser={currentUser} />
