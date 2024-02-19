@@ -91,9 +91,6 @@ const Chat = () => {
         <Loader />
       ) : (
         <>
-          {
-            showContactSection ? <div className={styles.forblur}></div> : null
-          }
           <div className={styles.chat_page}>
             <div className={styles.container}>
               <div className={styles.contacts_container} style={{ display: !showButton || (showButton && showContactSection) ? '' : 'none' }}>
@@ -114,16 +111,13 @@ const Chat = () => {
                   )
                 }
               </div>
-              <div className={styles.contactopen_btn}>
+              <div className={styles.contactopen_btn} style={{ display: showButton ? '' : 'none' }}>
                 {
-                  showButton ?
                     (!showContactSection ?
                       <button className={styles.chat_btn} onClick={handleContact}>CHAT</button>
                       :
                       <button className={styles.chat_btn} onClick={handleContact}>CANCEL</button>
                     )
-                    :
-                    null
                 }
               </div>
             </div>

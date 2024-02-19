@@ -21,6 +21,8 @@
 
             .chat_user {
                 font-size: 2rem;
+                font-family: 'Lexend Mega',sans-serif;
+                letter-spacing: -0.2rem;
             }
         }
 
@@ -44,12 +46,12 @@
     .chat_msgs {
         height: 58vh;
         overflow-y: scroll;
-        border-bottom: 0.1rem solid var(--white);
+        border-bottom: 0.1rem dashed var(--white);
         overflow-x: hidden;
         .msg_inout {
             display: flex;
-            flex-direction: column; /* Aligns messages vertically */
-            // width: 30%;
+            flex-direction: column;
+            font-family: 'Archivo',sans-serif;
         
             .msg_container {
                 display: flex;
@@ -57,11 +59,11 @@
             }
             
             .sent {
-                align-self: flex-end; /* Aligns sent messages to the right */
+                align-self: flex-end; 
                 padding: 2%;
                 margin: 2%;
                 width: min(6rem, max-content);
-                border: 0.1rem solid black;
+                border: 0.1rem solid var(--white);
                 word-break: break-all;
             }
             
@@ -70,7 +72,7 @@
                 padding: 2%;
                 margin: 2%;
                 width: max-content;
-                border: 0.1rem solid black;
+                border: 0.1rem solid var(--white);
             }
         }
         
