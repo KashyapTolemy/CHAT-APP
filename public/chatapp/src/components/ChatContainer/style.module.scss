@@ -9,6 +9,7 @@
         justify-content: space-between;
         border-bottom: 0.1rem solid var(--white);
         padding: 1%;
+        // background: rgb(240, 148, 151);
         .chat_avatar {
             display: flex;
             flex-direction: row;
@@ -17,11 +18,14 @@
             .chat_img {
                 height: 3rem;
                 width: 3rem;
+                border: 0.15rem solid black;
+                border-radius: 50%;
+                margin: 2%;
             }
 
             .chat_user {
                 font-size: 2rem;
-                font-family: 'Lexend Mega',sans-serif;
+                font-family: 'Lexend Mega', sans-serif;
                 letter-spacing: -0.2rem;
             }
         }
@@ -31,52 +35,77 @@
             flex-direction: row;
             align-items: center;
             padding: 1%;
+
             .home_btn {
-                height: 2rem;
-                width: 2rem;
+                height: 2.5rem;
+                width: 2.5rem;
+                margin: 1%;
             }
 
             .logout_btn {
-                height: 2rem;
-                width: 2rem;
+                height: 2.5rem;
+                width: 2.5rem;
+                margin: 1%;
             }
         }
     }
 
     .chat_msgs {
-        height: 58vh;
+        height: 60vh;
         overflow-y: scroll;
-        border-bottom: 0.1rem dashed var(--white);
+        border-bottom: 0.1rem solid var(--white);
         overflow-x: hidden;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        // background: rgb(154, 211, 207);
+        background: rgb(240, 148, 151);
+
         .msg_inout {
             display: flex;
             flex-direction: column;
-            font-family: 'Archivo',sans-serif;
-        
+            font-family: 'Archivo', sans-serif;
             .msg_container {
+                background: white;
                 display: flex;
                 flex-direction: column;
             }
-            
+
             .sent {
-                align-self: flex-end; 
-                padding: 2%;
+                align-self: flex-end;
+                padding: 1%;
                 margin: 2%;
+                margin-bottom: 1%;
+                margin-top: 1%;
+                font-size: 1.1rem;
                 width: min(6rem, max-content);
-                border: 0.1rem solid var(--white);
+                border: 0.1rem dashed var(--white);
+                border-radius: 0.3rem;
                 word-break: break-all;
             }
-            
+
             .received {
-                align-self: flex-start; /* Aligns received messages to the left */
-                padding: 2%;
+                align-self: flex-start;
+                /* Aligns received messages to the left */
+                padding: 1%;
+                font-size: 1.1rem;
                 margin: 2%;
+                margin-bottom: 1%;
+                margin-top: 1%;
                 width: max-content;
-                border: 0.1rem solid var(--white);
+                border: 0.1rem dashed var(--white);
+                border-radius: 0.3rem;
             }
         }
-        
-        
 
+    }
+
+    
+}
+
+@media screen and (max-width:375px) {
+    .chat_user
+    {
+        font-size: 1.5rem !important;
     }
 }

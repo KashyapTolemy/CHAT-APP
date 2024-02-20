@@ -83,8 +83,8 @@ const Chat = () => {
     setCurrentChat(chat);
     setShowContactSection(false);
   }
-  console.log(showButton);
-  console.log(showContactSection);
+  // console.log(showButton);
+  // console.log(showContactSection);
   return (
     <>{
       isLoading ? (

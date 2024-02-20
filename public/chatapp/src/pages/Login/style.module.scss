@@ -75,11 +75,13 @@
         .username {
             background: transparent;
             height: 2rem;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
             width: 17rem;
             font-size: 1rem;
             color: var(--white);
             border: 0.1rem solid var(--white);
+            border-radius: 0.5rem;
+            box-shadow: var(--white) 2px 2px;
             font-family: "Archivo", sans-serif;
             background: white;
 
@@ -98,6 +100,8 @@
             border: 0.1rem solid var(--white);
             font-family: "Archivo", sans-serif;
             background: white;
+            border-radius: 0.5rem;
+            box-shadow: var(--white) 2px 2px;
 
             &::placeholder {
                 padding: 0.2rem;

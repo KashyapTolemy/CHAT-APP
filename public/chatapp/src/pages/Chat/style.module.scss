@@ -15,10 +15,11 @@
         border: 0.1rem solid var(--white);
         // border-radius: 0.5rem;
         box-shadow: var(--white) 7px 7px;
+
         .contacts_container {
             border-right: 0.1rem solid var(--white);
             width: 30%;
-            
+
         }
 
         .chat_container {
@@ -30,9 +31,10 @@
             width: 0;
             position: absolute;
             bottom: 7%;
+            left: 40vw;
             padding: 2%;
-            .chat_btn
-            {
+
+            .chat_btn {
                 background: var(--white);
                 color: white;
                 font-size: 1.5rem;
@@ -40,6 +42,7 @@
                 transition: transform 0.3s, background 0.3s;
                 font-family: "Lexend Mega", sans-serif;
                 letter-spacing: -0.1rem;
+
                 &:hover {
                     transform: scale(1.05);
                     // background: rgb(76, 77, 94);
@@ -53,18 +56,16 @@
 }
 
 @media screen and (max-width:1000px) {
-    .chat_page
-    {
+    .chat_page {
         height: max-content;
     }
 
-    .contacts_container
-    {
-        width: 100% !important ;
+    .contacts_container {
+        width: 100% !important;
         border: 0rem !important;
     }
-    .chat_container
-    {
+
+    .chat_container {
         width: 100% !important;
     }
 
@@ -73,11 +74,3 @@
     //     bottom: 10%;
     // }
 }
-// @media screen and (max-width:800px) {
-
-//     .contactopen_btn {
-//         position: absolute;
-//         bottom: 10%;
-
-//     }
-// }

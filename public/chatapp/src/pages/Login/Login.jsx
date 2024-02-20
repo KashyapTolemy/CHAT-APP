@@ -5,7 +5,6 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"
 import axios from "axios"
 import { loginRoute } from "../../utils/APIRoutes";
-import { motion } from 'framer-motion';
 
 export default function Login() {
   const navigate = useNavigate();
@@ -74,60 +73,20 @@ export default function Login() {
       }
     }
   };
-  const [mousePosition, setMousePosition] = useState({
-    x: 0,
-    y: 0
-  });
-  const [cursorVariant, setCursorVariant] = useState("default");
 
 
-  useEffect(() => {
-    const mouseMove = e => {
-      setMousePosition({
-        x: e.clientX,
-        y: e.clientY
-      })
-    }
 
-    window.addEventListener("mousemove", mouseMove);
+ 
 
-    return () => {
-      window.removeEventListener("mousemove", mouseMove);
-    }
-  }, []);
-
-  const variants = {
-    default: {
-      x: mousePosition.x - 16,
-      y: mousePosition.y - 16,
-    },
-    text: {
-      height: 40,
-      width: 40,
-      x: mousePosition.x - 45,
-      y: mousePosition.y - 45,
-      backgroundColor: "yellow",
-      mixBlendMode: "difference"
-    }
-  }
-
-  const textEnter = () => setCursorVariant("text");
-  const textLeave = () => setCursorVariant("default");
 
   return (
     <>
       <div className={styles.login_container}>
-        {/* <div className={styles.smallLight}></div>
-        <motion.div
-          className={styles.cursor1}
-          variants={variants}
-          animate={cursorVariant}
-        /> */}
           <a href= "./" className={styles.brand}>
             <img src="/images/logo1.png" className={styles.brand_img}></img>
             <h1 className={styles.brand_title}>Chatify</h1>
           </a>
-        <form onMouseEnter={textEnter} onMouseLeave={textLeave} className={styles.form} onSubmit={(event) => handleSubmit(event)}>
+        <form className={styles.form} onSubmit={(event) => handleSubmit(event)}>
           <div className={styles.welcome_text}>Welcome!</div>
           <input
             type="text"

@@ -5,7 +5,6 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"
 import axios from "axios"
 import { SetAvatarRoute } from "../../utils/APIRoutes";
-import { motion } from 'framer-motion';
 import { Buffer } from "buffer";
 import Loader from "../../components/Loader/Loader";
 
@@ -14,7 +13,7 @@ const SetAvatar = () => {
   const apiKey = '4zgBsur12FtEPY'
   const navigate = useNavigate()
   const [avatars, setAvatars] = useState([])
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
   const [selectedAvatar, setSelectedAvatar] = useState(undefined)
   const toastOptions = {
     position: "bottom-right",
@@ -69,45 +68,9 @@ const SetAvatar = () => {
     })();
   }, []);
 
-  const [mousePosition, setMousePosition] = useState({
-    x: 0,
-    y: 0
-  });
-  const [cursorVariant, setCursorVariant] = useState("default");
 
 
-  useEffect(() => {
-    const mouseMove = e => {
-      setMousePosition({
-        x: e.clientX,
-        y: e.clientY
-      })
-    }
 
-    window.addEventListener("mousemove", mouseMove);
-
-    return () => {
-      window.removeEventListener("mousemove", mouseMove);
-    }
-  }, []);
-
-  const variants = {
-    default: {
-      x: mousePosition.x - 16,
-      y: mousePosition.y - 16,
-    },
-    text: {
-      height: 40,
-      width: 40,
-      x: mousePosition.x - 45,
-      y: mousePosition.y - 45,
-      backgroundColor: "yellow",
-      mixBlendMode: "difference"
-    }
-  }
-
-  const textEnter = () => setCursorVariant("text");
-  const textLeave = () => setCursorVariant("default");
 
   return (
     <>{
@@ -115,13 +78,7 @@ const SetAvatar = () => {
         <Loader />
       ) : (
         <div className={styles.set_avatar_container}>
-            {/* <div className={styles.smallLight}></div>
-            <motion.div
-              className={styles.cursor1}
-              variants={variants}
-              animate={cursorVariant}
-            /> */}
-            <div onMouseEnter={textEnter} onMouseLeave={textLeave} className={styles.select_avatar_container}>
+            <div className={styles.select_avatar_container}>
               <div className={styles.title_container}>
                 <h1 className={styles.title}>Pick an avatar as your profile picture. </h1>
               </div>

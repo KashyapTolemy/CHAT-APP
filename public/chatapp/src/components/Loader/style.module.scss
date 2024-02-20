@@ -1,0 +1,201 @@
+.loader_page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    .star1 {
+        position: absolute;
+        top: 15vh;
+        left: 15vw;
+        height: 10rem;
+    }
+
+    .star2 {
+        position: absolute;
+        bottom: 20vh;
+        right: 15vw;
+        height: 10rem;
+    }
+}
+
+.loader_container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    background: white;
+    height: max-content;
+    border: 0.1rem solid black;
+    border-radius: 1.1rem;
+    box-shadow: var(--white) 7px 7px;
+}
+
+.loader_navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 0.2rem solid black;
+    padding: 1%;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    background: blue;
+}
+
+.circles {
+    display: flex;
+    flex-direction: row;
+
+    .circle1 {
+        height: 2rem;
+        width: 2rem;
+        border: 0.15rem solid black;
+        border-radius: 50%;
+        margin-right: 5%;
+    }
+
+    .circle2 {
+        height: 2rem;
+        width: 2rem;
+        border: 0.15rem solid black;
+        border-radius: 50%;
+        margin-right: 5%;
+        background: var(--home-page3-color);
+    }
+
+    .circle3 {
+        height: 2rem;
+        width: 2rem;
+        border: 0.15rem solid black;
+        border-radius: 50%;
+        margin-right: 5%;
+        background: white;
+    }
+}
+
+
+.extras {
+    display: flex;
+    flex-direction: row;
+    font-size: 1.5rem;
+}
+
+.minimize {
+
+    height: 2.5rem;
+    background: var(--home-page3-color);
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.cross {
+    height: 2.5rem;
+    background: var(--home-page3-color);
+    margin-right: 1rem;
+}
+
+.loader_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // align-items: center;
+    padding-left: 10%;
+    height: 15rem;
+}
+
+.loader_title {
+    font-size: 2.5rem;
+    font-family: 'Protest Strike', sans-serif;
+    margin-bottom: 5%;
+}
+
+.loader_bars {
+    height: 3rem;
+    width: 80%;
+    border: 0.1rem solid black;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    background: var(--home-page3-color);
+
+    .bar1 {
+        width: 1%;
+        height: 1rem;
+        border: 0.1rem solid black;
+        border-radius: 0.3rem;
+        padding: 2%;
+        margin-right: 1%;
+        margin-left: 1%;
+        background: red;
+    }
+
+    .bar {
+        width: 1%;
+        height: 1rem;
+        border: 0.1rem solid black;
+        border-radius: 0.3rem;
+        padding: 2%;
+        margin-right: 1%;
+        background: red;
+    }
+
+    .bar_moving {
+        width: 1%;
+        height: 1rem;
+        border: 0.1rem solid black;
+        border-radius: 0.3rem;
+        padding: 2%;
+        margin-right: 1%;
+        background: red;
+    }
+}
+
+
+@keyframes pulse {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.bar_moving {
+    animation: pulse 1.5s infinite;
+}
+
+@media screen and (max-width: 600px) {
+    .star1 {
+        position: absolute;
+        top: 18vh !important;
+        left: 10vw !important;
+        height: 5rem !important;
+    }
+
+    .star2 {
+        position: absolute;
+        bottom: 20vh;
+        right: 15vw;
+        height: 5rem !important;
+    }
+
+    .loader_container {
+        width: 80% !important;
+
+        .loader_title {
+            font-size: 2rem !important;
+        }
+    }
+}

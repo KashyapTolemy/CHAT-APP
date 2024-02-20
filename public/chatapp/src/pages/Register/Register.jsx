@@ -2,10 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "../Register/style.module.scss";
 import { ToastContainer, toast } from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css"
 import axios from "axios"
 import { registerRoute } from "../../utils/APIRoutes";
-import { motion } from 'framer-motion';
 
 const Register = () => {
 
@@ -95,60 +93,16 @@ const Register = () => {
     setValues({ ...values, [event.target.name]: event.target.value });
   };
 
-  const [mousePosition, setMousePosition] = useState({
-    x: 0,
-    y: 0
-  });
-  const [cursorVariant, setCursorVariant] = useState("default");
 
-
-  useEffect(() => {
-    const mouseMove = e => {
-      setMousePosition({
-        x: e.clientX,
-        y: e.clientY
-      })
-    }
-
-    window.addEventListener("mousemove", mouseMove);
-
-    return () => {
-      window.removeEventListener("mousemove", mouseMove);
-    }
-  }, []);
-
-  const variants = {
-    default: {
-      x: mousePosition.x - 16,
-      y: mousePosition.y - 16,
-    },
-    text: {
-      height: 40,
-      width: 40,
-      x: mousePosition.x - 45,
-      y: mousePosition.y - 45,
-      backgroundColor: "yellow",
-      mixBlendMode: "difference"
-    }
-  }
-
-  const textEnter = () => setCursorVariant("text");
-  const textLeave = () => setCursorVariant("default");
 
   return (
     <>
       <div className={styles.register_container}>
-        {/* <div className={styles.smallLight}></div>
-        <motion.div
-          className={styles.cursor1}
-          variants={variants}
-          animate={cursorVariant}
-        /> */}
           <a href="./" className={styles.brand}>
             <img src="/images/logo1.png" className={styles.brand_img}></img>
             <h1 className={styles.brand_title}>Chatify</h1>
           </a>
-        <form onMouseEnter={textEnter} onMouseLeave={textLeave} className={styles.form} onSubmit={(event) => handleSubmit(event)}>
+        <form className={styles.form} onSubmit={(event) => handleSubmit(event)}>
           <div className={styles.welcome_text}>Welcome!</div>
           <input
             type="text"

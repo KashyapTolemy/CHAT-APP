@@ -1,70 +1,22 @@
 import React, { useState, useEffect } from "react";
 import styles from "../Home/style.module.scss";
 import { Link, useNavigate } from "react-router-dom";
-import { FaUsers } from "react-icons/fa"
-import { AiFillMessage, AiFillInstagram, AiFillLinkedin, AiFillGithub } from "react-icons/ai"
-import { motion } from 'framer-motion';
-import logo from "/images/logo1.png";
 import Loader from "../../components/Loader/Loader";
 // import axios from "axios";
 // import { allUsersRoute, getAllMessageRoute } from "../../utils/APIRoutes";
 
 const Home = () => {
     const navigate = useNavigate();
-    const [clicked, setClicked] = useState(false);
-    const [isLoading, setIsLoading] = useState(false);
-
-    // useEffect(() => {
-    //     setTimeout(() => {
-    //         setIsLoading(false);
-    //     }, 4000);
-    // }, []);
-
-    const helper = () => {
-        setClicked(!clicked);
-    }
-
-    const [mousePosition, setMousePosition] = useState({
-        x: 0,
-        y: 0
-    });
-    const [cursorVariant, setCursorVariant] = useState("default");
-
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        const mouseMove = e => {
-            setMousePosition({
-                x: e.clientX,
-                y: e.clientY
-            })
-        }
-
-        window.addEventListener("mousemove", mouseMove);
-
-        return () => {
-            window.removeEventListener("mousemove", mouseMove);
-        }
+        setTimeout(() => {
+            setIsLoading(false);
+        }, 4000);
     }, []);
 
-    const variants = {
-        default: {
-            x: mousePosition.x - 16,
-            y: mousePosition.y - 16,
-        },
-        text: {
-            height: 40,
-            width: 40,
-            x: mousePosition.x - 45,
-            y: mousePosition.y - 45,
-            backgroundColor: "transparent",
-            mixBlendMode: "difference"
-        }
-    }
 
 
-
-    const textEnter = () => setCursorVariant("text");
-    const textLeave = () => setCursorVariant("default");
     return (
         <>{
             isLoading ? (

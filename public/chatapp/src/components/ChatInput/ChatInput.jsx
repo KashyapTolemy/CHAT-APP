@@ -1,10 +1,5 @@
 import styles from "../ChatInput/style.module.scss";
-import "../ChatInput/emoji-picker.scss";
 import React, { useState, useEffect, useRef } from "react";
-import EmojiPicker from "emoji-picker-react";
-// import "emoji-picker-element";
-// import { Emoji } from 'emoji-mart';
-import { BsEmojiSmile, BsEmojiSmileFill } from 'react-icons/bs'
 import { IoMdSend } from 'react-icons/io'
 import audio1 from '../../assets/notification2.mp3';
 
@@ -32,13 +27,12 @@ const ChatInput = ({ handleSendMsg }) => {
     return (
         <>
             <div className={styles.input_page}>
-                <div className={styles.emoji_container}>
+                {/* <div className={styles.emoji_container}>
                     <BsEmojiSmile className={styles.emoji} onClick={handleEmojiPickerHideShow} />
                     {
                         showEmojiPicker && (<EmojiPicker
                             onEmojiClick={handleEmojiClick} />)
-                    }
-                </div>
+                    }/* </div> */}
                 <form className={styles.input_container} onSubmit={(e) => {
                     sendChat(e);
                     if (audioRef.current) {
@@ -46,7 +40,7 @@ const ChatInput = ({ handleSendMsg }) => {
                     }
                 }}>
                     <audio ref={audioRef} src={audio1} />
-                    <input className={styles.msg_input} value={msg} onChange={(e) => setMsg(e.target.value)} type="text" placeholder=" Type your message" />
+                    <input className={styles.msg_input} value={msg} onChange={(e) => setMsg(e.target.value)} type="text" placeholder=" Type your message here" />
                     <button className={styles.send_container}>
                         <IoMdSend className={styles.send_btn} />
                     </button>
