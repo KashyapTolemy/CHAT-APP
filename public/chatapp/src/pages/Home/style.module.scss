@@ -4,15 +4,13 @@
     height: max-content;
     width: 100vw;
     overflow-y: scroll;
-    /* Always show scrollbar */
-    scrollbar-width: none;
-    /* Firefox */
-    -ms-overflow-style: none;
-    overflow-x: hidden;
 
+    overflow-x: hidden;
+    &::-webkit-scrollbar {
+        display: none;
+    }
     .home_page1 {
         height: max-content;
-
         .navbar {
             display: flex;
             // justify-content: space-between;
@@ -100,7 +98,8 @@
                 height: max-content;
                 margin-bottom: 1rem;
                 // word-wrap: break-word;
-
+                // color: white;
+                -webkit-text-stroke: 0.05rem white;
                 .home_oneplace {
                     color: var(--home-page3-color);
                     -webkit-text-stroke: 0.1rem var(--white);
